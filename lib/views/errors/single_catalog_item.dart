@@ -10,6 +10,7 @@ import 'package:bokon_app/models/catalog/item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_html/flutter_html.dart';
+import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
@@ -106,7 +107,7 @@ class _GridItemState extends State<GridItem> {
                 )
               : const SizedBox(),
           Container(
-            height: 200,
+            height: 400,
             decoration: BoxDecoration(
               borderRadius: const BorderRadius.all(Radius.circular(8.0)),
               color: kButtonBg.withOpacity(.6),
@@ -136,25 +137,28 @@ class _GridItemState extends State<GridItem> {
                     alignment: Alignment.topLeft,
                     padding: const EdgeInsets.symmetric(
                         horizontal: 15, vertical: 15),
-                    child:
-                        // Html(
-                        //   data: widget.item.content,
-                        //   style: {
-                        //     "p": Style(
-                        //       color: kPrimary,
-                        //       fontSize: FontSize(20),
-                        //       fontWeight: FontWeight.w500,
-                        //     )
-                        //   },
-                        // ),
-                        Text(
-                      widget.item.description,
-                      style: appStyle(
-                        16,
-                        kPrimary,
-                        FontWeight.w400,
-                      ),
+                    child: Markdown(
+                      data: widget.item.content,
+                      imageDirectory: 'https://bokon.ru',
                     ),
+                    // Html(
+                    //   data: widget.item.content,
+                    //   style: {
+                    //     "p": Style(
+                    //       color: kPrimary,
+                    //       fontSize: FontSize(20),
+                    //       fontWeight: FontWeight.w500,
+                    //     )
+                    //   },
+                    // ),
+                    //   Text(
+                    // widget.item.description,
+                    // style: appStyle(
+                    //   16,
+                    //   kPrimary,
+                    //   FontWeight.w400,
+                    // ),
+                    // ),
                   ),
                 ),
               ],

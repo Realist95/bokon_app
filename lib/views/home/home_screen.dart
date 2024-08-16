@@ -6,10 +6,13 @@ import 'package:bokon_app/common/custom_navigation_drawer.dart';
 import 'package:bokon_app/common/main_app_bar.dart';
 import 'package:bokon_app/common/shimmers/categories_shemmer.dart';
 import 'package:bokon_app/controllers/catalog_controller.dart';
+import 'package:bokon_app/controllers/content_controller.dart';
 import 'package:bokon_app/hooks/fetch_articles.dart';
 import 'package:bokon_app/models/content/article.dart';
+import 'package:bokon_app/views/articles/single_article.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
@@ -149,6 +152,7 @@ class GridArticle extends StatefulWidget {
 
 class _GridArticleState extends State<GridArticle> {
   // final controller = Get.put(ContentController());
+  final controller = Get.put(ContentController());
 
   @override
   Widget build(BuildContext context) {
@@ -186,8 +190,11 @@ class _GridArticleState extends State<GridArticle> {
               const SizedBox(
                 height: 5,
               ),
+              // Markdown(data: widget.item.description),
               Text(
                 widget.item.description,
+                maxLines: 3,
+                overflow: TextOverflow.ellipsis,
                 style: appStyle(
                   14,
                   const Color.fromRGBO(27, 30, 36, 1),
@@ -211,7 +218,14 @@ class _GridArticleState extends State<GridArticle> {
                       ),
                     ),
                     child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        controller.setCurrentItem(widget.item);
+                        Get.to(
+                          () => SingleArticle(),
+                          transition: Transition.leftToRight,
+                          duration: const Duration(microseconds: 500),
+                        );
+                      },
                       child: Text(
                         "прочитать".toUpperCase(),
                         style: appStyle(

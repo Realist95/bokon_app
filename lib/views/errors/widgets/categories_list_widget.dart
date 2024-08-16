@@ -89,9 +89,9 @@ class _GridItemState extends State<GridItem> {
             child: Text(
               widget.item.name.toUpperCase(),
               style: appStyle(
-                18,
+                14,
                 kPrimary,
-                FontWeight.w500,
+                FontWeight.w400,
               ),
             ),
           ),

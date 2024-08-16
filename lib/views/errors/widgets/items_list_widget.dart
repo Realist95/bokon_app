@@ -76,6 +76,7 @@ class _GridItemState extends State<GridItem> {
             ),
           ),
           Container(
+            height: 70.h,
             alignment: Alignment.centerLeft,
             padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
             decoration: BoxDecoration(
@@ -98,10 +99,12 @@ class _GridItemState extends State<GridItem> {
               widget.item.parent!.titleH1.isNotEmpty
                   ? widget.item.parent!.titleH1
                   : widget.item.parent!.description.toUpperCase(),
+              textAlign: TextAlign.center,
+              maxLines: 2,
               style: appStyle(
-                18,
+                14,
                 kPrimary,
-                FontWeight.w500,
+                FontWeight.w400,
               ),
             ),
           ),

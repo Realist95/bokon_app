@@ -90,13 +90,25 @@ class _GridItemState extends State<GridItem> {
             ),
           ],
         ),
-        child: Text(
-          widget.item.name.toUpperCase(),
-          style: appStyle(
-            18,
-            kPrimary,
-            FontWeight.w500,
-          ),
+        child: Column(
+          children: [
+            Text(
+              widget.item.name,
+              style: appStyle(
+                18,
+                kPrimary,
+                FontWeight.w500,
+              ),
+            ),
+            Text(
+              widget.item.description,
+              style: appStyle(
+                14,
+                kPrimary,
+                FontWeight.w400,
+              ),
+            ),
+          ],
         ),
       ),
     );

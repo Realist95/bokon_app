@@ -87,7 +87,7 @@ class HelpArticle extends StatelessWidget {
                     child: ListTile(
                       contentPadding: const EdgeInsets.all(0),
                       onTap: () async {
-                        await launchUrl(Uri.parse('https://t.me/+79882404142'));
+                        await launchUrl(Uri.parse('https://t.me/+79776005008'));
                       },
                       title: Column(
                         children: [
@@ -125,7 +125,7 @@ class HelpArticle extends StatelessWidget {
                       contentPadding: const EdgeInsets.all(0),
                       onTap: () async {
                         await launchUrl(Uri.parse(
-                            'https://api.whatsapp.com/send?phone=9882404142'));
+                            'https://api.whatsapp.com/send?phone=9776005008'));
                       },
                       title: Column(
                         children: [

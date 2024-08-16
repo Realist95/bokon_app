@@ -63,7 +63,7 @@ class _SendErrorState extends State<SendError> {
                           ),
                         ),
                         child: Text(
-                          'Сообщить об ошибке',
+                          'Описание проблемы',
                           style: appStyle(
                             24,
                             const Color.fromRGBO(27, 29, 31, 1),
@@ -127,15 +127,6 @@ class _SendErrorState extends State<SendError> {
                                       mask: "+7(###) ###-##-##"),
                                 ],
                                 controller: phone,
-                                padding: const EdgeInsets.symmetric(
-                                  horizontal: 20,
-                                  vertical: 10,
-                                ),
-                              ),
-                              InputFiled(
-                                label: "E-mail",
-                                keyboardType: TextInputType.emailAddress,
-                                controller: email,
                                 padding: const EdgeInsets.symmetric(
                                   horizontal: 20,
                                   vertical: 10,
