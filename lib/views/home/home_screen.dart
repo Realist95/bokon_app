@@ -1,19 +1,14 @@
-// import 'dart:ffi';
-
 import 'package:bokon_app/common/app_style.dart';
 import 'package:bokon_app/common/background_container.dart';
 import 'package:bokon_app/common/custom_navigation_drawer.dart';
 import 'package:bokon_app/common/main_app_bar.dart';
 import 'package:bokon_app/common/shimmers/categories_shemmer.dart';
 import 'package:bokon_app/controllers/catalog_controller.dart';
-import 'package:bokon_app/controllers/content_controller.dart';
 import 'package:bokon_app/hooks/fetch_articles.dart';
 import 'package:bokon_app/models/content/article.dart';
-import 'package:bokon_app/views/articles/single_article.dart';
+import 'package:bokon_app/views/articles/widgets/grid_article.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:flutter_markdown/flutter_markdown.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class HomeScreen extends HookWidget {
@@ -37,7 +32,7 @@ class HomeScreen extends HookWidget {
           automaticallyImplyLeading: false,
           toolbarHeight: 90,
           backgroundColor: Colors.transparent,
-          flexibleSpace: MainAppBar(false, ''),
+          flexibleSpace: const MainAppBar(false, ''),
         ),
         drawer: const CustomNavigationDrawer(),
         body: isLoading
@@ -105,7 +100,7 @@ class _ContentWidgetTabsState extends State<ContentWidgetTabs> {
                 children: [
                   Container(
                     margin: const EdgeInsets.symmetric(
-                      horizontal: 15,
+                      // horizontal: 15,
                       vertical: 15,
                     ),
                     child: ListView(
@@ -125,7 +120,9 @@ class _ContentWidgetTabsState extends State<ContentWidgetTabs> {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 15, vertical: 16),
                       children: widget.itemsList
-                          .map((item) => GridArticle(item: item))
+                          .map(
+                            (item) => GridArticle(item: item),
+                          )
                           .toList(growable: false),
                     ),
                   ),
@@ -136,110 +133,6 @@ class _ContentWidgetTabsState extends State<ContentWidgetTabs> {
               ),
             )
           ],
-        ),
-      ),
-    );
-  }
-}
-
-class GridArticle extends StatefulWidget {
-  const GridArticle({super.key, required this.item});
-  final ArticleModel item;
-
-  @override
-  State<GridArticle> createState() => _GridArticleState();
-}
-
-class _GridArticleState extends State<GridArticle> {
-  // final controller = Get.put(ContentController());
-  final controller = Get.put(ContentController());
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialButton(
-      // focusColor: kButtonBgActive,
-      onPressed: () {
-        // controller.setCurrentItem(widget.item);
-        // Get.to(
-        //   () => SingleArticle(),
-        //   transition: Transition.leftToRight,
-        //   duration: const Duration(microseconds: 500),
-        // );
-      },
-      // textColor: kButtonText,
-      padding: const EdgeInsets.all(0),
-      child: ListTile(
-        contentPadding: const EdgeInsets.all(0),
-        title: Container(
-          padding: const EdgeInsets.all(16),
-          height: 236.h,
-          decoration: BoxDecoration(
-            color: const Color.fromRGBO(255, 255, 255, 0.59),
-            borderRadius: BorderRadius.circular(12),
-          ),
-          child: Column(
-            children: [
-              Text(
-                widget.item.name,
-                style: appStyle(
-                  19,
-                  const Color.fromRGBO(27, 30, 36, 1),
-                  FontWeight.w500,
-                ),
-              ),
-              const SizedBox(
-                height: 5,
-              ),
-              // Markdown(data: widget.item.description),
-              Text(
-                widget.item.description,
-                maxLines: 3,
-                overflow: TextOverflow.ellipsis,
-                style: appStyle(
-                  14,
-                  const Color.fromRGBO(27, 30, 36, 1),
-                  FontWeight.w400,
-                ),
-              ),
-              const SizedBox(height: 30),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Container(
-                    // margin: margin,
-                    height: 40.h,
-                    width: 120.w,
-                    // padding:
-                    // const EdgeInsets.symmetric(horizontal: 16),
-                    decoration: const BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(4),
-                      ),
-                    ),
-                    child: TextButton(
-                      onPressed: () {
-                        controller.setCurrentItem(widget.item);
-                        Get.to(
-                          () => SingleArticle(),
-                          transition: Transition.leftToRight,
-                          duration: const Duration(microseconds: 500),
-                        );
-                      },
-                      child: Text(
-                        "прочитать".toUpperCase(),
-                        style: appStyle(
-                          14,
-                          const Color.fromRGBO(255, 117, 54, 1),
-                          FontWeight.w500,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              )
-            ],
-          ),
         ),
       ),
     );

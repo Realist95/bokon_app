@@ -2,14 +2,12 @@ import 'package:bokon_app/common/app_style.dart';
 import 'package:bokon_app/common/background_container.dart';
 import 'package:bokon_app/common/custom_navigation_drawer.dart';
 import 'package:bokon_app/common/main_app_bar.dart';
-import 'package:bokon_app/common/shimmers/categories_shemmer.dart';
 import 'package:bokon_app/constants/constants.dart';
 import 'package:bokon_app/controllers/catalog_controller.dart';
 import 'package:bokon_app/hooks/fetch_categories.dart';
 import 'package:bokon_app/models/catalog/item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -141,27 +139,82 @@ class _GridItemState extends State<GridItem> {
                       data: widget.item.content,
                       imageDirectory: 'https://bokon.ru',
                     ),
-                    // Html(
-                    //   data: widget.item.content,
-                    //   style: {
-                    //     "p": Style(
-                    //       color: kPrimary,
-                    //       fontSize: FontSize(20),
-                    //       fontWeight: FontWeight.w500,
-                    //     )
-                    //   },
-                    // ),
-                    //   Text(
-                    // widget.item.description,
-                    // style: appStyle(
-                    //   16,
-                    //   kPrimary,
-                    //   FontWeight.w400,
-                    // ),
-                    // ),
                   ),
                 ),
               ],
+            ),
+          ),
+          const SizedBox(height: 35),
+          ListTile(
+            focusColor: kButtonBgActive,
+            onTap: () {
+              Get.toNamed('/help');
+            },
+            textColor: kButtonText,
+            contentPadding: const EdgeInsets.all(0),
+            title: Container(
+              alignment: Alignment.center,
+              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 18),
+              decoration: BoxDecoration(
+                borderRadius: const BorderRadius.all(Radius.circular(8.0)),
+                color: kButtonBg.withOpacity(.6),
+                border: Border.all(
+                  color: kButtonBorder,
+                ),
+                boxShadow: const [
+                  BoxShadow(
+                    color: Color.fromRGBO(0, 0, 0, .8),
+                    spreadRadius: 0,
+                    blurRadius: 3,
+                    offset: Offset(0, 0),
+                    blurStyle: BlurStyle.outer,
+                  ),
+                ],
+              ),
+              child: Text(
+                'Тех поддержка',
+                style: appStyle(
+                  18,
+                  kPrimary,
+                  FontWeight.w500,
+                ),
+              ),
+            ),
+          ),
+          ListTile(
+            focusColor: kButtonBgActive,
+            onTap: () {
+              Get.toNamed('/send-error');
+            },
+            textColor: kButtonText,
+            contentPadding: const EdgeInsets.all(0),
+            title: Container(
+              alignment: Alignment.center,
+              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 18),
+              decoration: BoxDecoration(
+                borderRadius: const BorderRadius.all(Radius.circular(8.0)),
+                color: kButtonBg.withOpacity(.6),
+                border: Border.all(
+                  color: kButtonBorder,
+                ),
+                boxShadow: const [
+                  BoxShadow(
+                    color: Color.fromRGBO(0, 0, 0, .8),
+                    spreadRadius: 0,
+                    blurRadius: 3,
+                    offset: Offset(0, 0),
+                    blurStyle: BlurStyle.outer,
+                  ),
+                ],
+              ),
+              child: Text(
+                'Сообщить об ошибке',
+                style: appStyle(
+                  18,
+                  kPrimary,
+                  FontWeight.w500,
+                ),
+              ),
             ),
           ),
         ],

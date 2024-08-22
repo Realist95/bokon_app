@@ -20,11 +20,11 @@ class ItemsList extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    print("subCategory ${controller.subCategory!.id}");
+    // print("subCategory ${controller.subCategory!.id}");
     final hookResult = useFetchItems(controller.subCategory!.id, 1000);
     List<CatalogItemModel> items = hookResult.data ?? [];
     final isLoading = hookResult.isLoading;
-    final error = hookResult.error;
+    // final error = hookResult.error;
     final numberError = TextEditingController();
     final validate = useState<bool>(true);
 
@@ -39,7 +39,7 @@ class ItemsList extends HookWidget {
         appBar: AppBar(
           toolbarHeight: 90,
           backgroundColor: Colors.transparent,
-          flexibleSpace: MainAppBar(true, controller.category!.name),
+          flexibleSpace: MainAppBar(true, controller.subCategory!.name),
           automaticallyImplyLeading: false,
         ),
         body: isLoading

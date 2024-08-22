@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'package:bokon_app/models/feedback/error_model.dart';
-import 'package:bokon_app/views/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
@@ -18,7 +17,7 @@ class FormController extends GetxController {
     // }
 
     Uri url = Uri.parse("https://bokon.ru/feedback/getadd");
-
+    setLoading = true;
     try {
       final response = await http.post(
         url,
@@ -44,9 +43,11 @@ class FormController extends GetxController {
           colorText: Colors.white,
           margin: const EdgeInsets.only(bottom: 30, left: 15, right: 15),
         );
-      }
 
-      Get.offAll(() => const HomeScreen());
+        // Get.offAll(() => const HomeScreen());
+      } else {
+        throw Exception('Неизвестная ошибка');
+      }
     } catch (e) {
       debugPrint(e.toString());
 

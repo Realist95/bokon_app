@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:bokon_app/common/app_style.dart';
 import 'package:bokon_app/common/background_container.dart';
 import 'package:bokon_app/common/custom_navigation_drawer.dart';
@@ -173,7 +171,6 @@ class _SendErrorState extends State<SendError> {
 
                                       String data =
                                           errorModelToJson(errorModel);
-                                      print(data);
                                       controller.sendErrorForm(data);
                                     } else {
                                       final snackBar = SnackBar(
@@ -200,7 +197,9 @@ class _SendErrorState extends State<SendError> {
                                     }
                                   },
                                   child: Text(
-                                    'Отправить',
+                                    controller.isLoading
+                                        ? 'Отправка...'
+                                        : 'Отправить',
                                     style: appStyle(
                                       18,
                                       Colors.white,

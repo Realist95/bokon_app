@@ -202,12 +202,15 @@ class _GridItemState extends State<GridItem> {
             ),
           ],
         ),
-        child: Text(
-          widget.item.name.toUpperCase(),
-          style: appStyle(
-            18,
-            kPrimary,
-            FontWeight.w500,
+        child: Container(
+          alignment: Alignment.center,
+          child: Text(
+            widget.item.name,
+            style: appStyle(
+              16,
+              kPrimary,
+              FontWeight.w500,
+            ),
           ),
         ),
       ),

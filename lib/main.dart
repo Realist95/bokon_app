@@ -3,7 +3,6 @@ import 'package:bokon_app/views/articles/articles_updates.dart';
 import 'package:bokon_app/views/articles/help_article.dart';
 import 'package:bokon_app/views/articles/send_error.dart';
 import 'package:bokon_app/views/errors/catalog.dart';
-import 'package:bokon_app/views/errors/filter_screen.dart';
 import 'package:bokon_app/views/errors/groups_list.dart';
 import 'package:bokon_app/views/home/home_screen.dart';
 import 'package:flutter/material.dart';

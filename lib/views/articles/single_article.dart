@@ -7,12 +7,8 @@ import 'package:bokon_app/controllers/content_controller.dart';
 import 'package:bokon_app/models/content/article.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
-import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 import 'package:get/get.dart';
-import 'package:html/parser.dart' as html;
-import 'package:html/dom.dart' as dom;
 
 class SingleArticle extends HookWidget {
   SingleArticle({super.key});
@@ -21,6 +17,8 @@ class SingleArticle extends HookWidget {
   @override
   Widget build(BuildContext context) {
     ArticleModel item = controller.currentItem!;
+    var params = Get.parameters;
+    final String title = params['title'].toString();
 
     return BackGroundContainer(
       child: Scaffold(
@@ -28,7 +26,7 @@ class SingleArticle extends HookWidget {
         appBar: AppBar(
           toolbarHeight: 90,
           backgroundColor: Colors.transparent,
-          flexibleSpace: const MainAppBar(true, ''),
+          flexibleSpace: MainAppBar(true, title),
           automaticallyImplyLeading: false,
         ),
         drawer: const CustomNavigationDrawer(),

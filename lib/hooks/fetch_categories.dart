@@ -66,7 +66,7 @@ FetchHook useFetchItems(int parentId, int limit) {
     isLoading.value = true;
 
     try {
-      print("$apiBaseUrl/catalog:get.items");
+      // print("$apiBaseUrl/catalog:get.items");
       Uri url = Uri.parse("$apiBaseUrl/catalog:get.items");
       final response = await http.post(
         url,

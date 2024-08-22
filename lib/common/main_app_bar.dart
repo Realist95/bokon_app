@@ -62,8 +62,12 @@ class MainAppBar extends StatelessWidget {
                     : const SizedBox(),
                 SizedBox(
                   child: Text(
-                    title.toString(),
-                    style: appStyle(28, Colors.black, FontWeight.w600),
+                    title.toString().toUpperCase(),
+                    style: appStyle(
+                      20,
+                      const Color(0xFF7A7680),
+                      FontWeight.w600,
+                    ),
                   ),
                 ),
                 MaterialButton(

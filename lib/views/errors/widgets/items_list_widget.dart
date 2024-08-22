@@ -1,13 +1,9 @@
 import 'package:bokon_app/controllers/catalog_controller.dart';
-import 'package:bokon_app/models/catalog/category.dart';
 import 'package:bokon_app/models/catalog/item.dart';
 import 'package:bokon_app/views/errors/single_catalog_item.dart';
 import 'package:flutter/material.dart';
 import 'package:bokon_app/common/app_style.dart';
 import 'package:bokon_app/constants/constants.dart';
-import 'package:bokon_app/services/img_network.dart';
-import 'package:bokon_app/views/errors/items_list.dart';
-import 'package:bokon_app/views/errors/subgroups_list.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
@@ -18,10 +14,51 @@ class ItemsListWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 16),
-      children:
-          items.map((item) => GridItem(item: item)).toList(growable: false),
-    );
+        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 16),
+        children: [
+          Container(
+            margin: EdgeInsets.symmetric(vertical: 15.h),
+            decoration: BoxDecoration(
+              borderRadius: const BorderRadius.all(Radius.circular(8.0)),
+              color: kButtonBg.withOpacity(.6),
+              border:
+                  Border.all(color: const Color.fromRGBO(122, 118, 128, 0.65)),
+            ),
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 15),
+                  child: Text(
+                    'ВАЖНО!',
+                    textAlign: TextAlign.center,
+                    style: appStyle(
+                      20,
+                      const Color(0xFFD52B1E),
+                      FontWeight.w500,
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                    bottom: 15,
+                    left: 15,
+                    right: 15,
+                  ),
+                  child: Text(
+                    'Этот код принадлежит к разным системам, выберете интересующий блок для устранения ошибки',
+                    textAlign: TextAlign.center,
+                    style: appStyle(
+                      18,
+                      const Color(0xFF464646),
+                      FontWeight.w400,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          ...items.map((item) => GridItem(item: item)),
+        ]);
   }
 }
 
@@ -77,7 +114,7 @@ class _GridItemState extends State<GridItem> {
           ),
           Container(
             height: 70.h,
-            alignment: Alignment.centerLeft,
+            alignment: Alignment.center,
             padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
             decoration: BoxDecoration(
               borderRadius: const BorderRadius.all(Radius.circular(8.0)),
@@ -98,13 +135,13 @@ class _GridItemState extends State<GridItem> {
             child: Text(
               widget.item.parent!.titleH1.isNotEmpty
                   ? widget.item.parent!.titleH1
-                  : widget.item.parent!.description.toUpperCase(),
+                  : widget.item.parent!.description,
               textAlign: TextAlign.center,
               maxLines: 2,
               style: appStyle(
-                14,
+                16,
                 kPrimary,
-                FontWeight.w400,
+                FontWeight.w500,
               ),
             ),
           ),

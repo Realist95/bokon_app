@@ -7,11 +7,10 @@ import 'package:bokon_app/constants/constants.dart';
 import 'package:bokon_app/controllers/catalog_controller.dart';
 import 'package:bokon_app/hooks/fetch_categories.dart';
 import 'package:bokon_app/models/catalog/item.dart';
-import 'package:bokon_app/views/errors/single_catalog_item.dart';
 import 'package:bokon_app/views/errors/widgets/items_list_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
@@ -27,11 +26,11 @@ class FilterScreen extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    print("categoryId ${categoryId}");
+    // print("categoryId ${categoryId}");
     final hookResult = useFetchItems(categoryId, 1000);
     List<CatalogItemModel> items = hookResult.data ?? [];
     final isLoading = hookResult.isLoading;
-    final error = hookResult.error;
+    // final error = hookResult.error;
     final validate = useState<bool>(true);
 
     String? validateSearch(String value) {
@@ -119,7 +118,7 @@ class FilterScreen extends HookWidget {
                   labelStyle: appStyle(
                     16,
                     const Color.fromRGBO(85, 85, 109, 1),
-                    FontWeight.w400,
+                    FontWeight.w500,
                   ),
                   suffixIcon: Container(
                     margin: const EdgeInsets.only(right: 14),
@@ -162,20 +161,6 @@ class FilterScreen extends HookWidget {
                 : items.isNotEmpty
                     ? Expanded(
                         child: ItemsListWidget(items: items),
-                        // child: GridView(
-                        //   padding: const EdgeInsets.symmetric(
-                        //       horizontal: 15, vertical: 15),
-                        //   gridDelegate:
-                        //       const SliverGridDelegateWithMaxCrossAxisExtent(
-                        //     maxCrossAxisExtent: 150,
-                        //     childAspectRatio: 2.3,
-                        //     mainAxisSpacing: 10,
-                        //     crossAxisSpacing: 10,
-                        //   ),
-                        //   children: items
-                        //       .map((item) => GridItem(item: item))
-                        //       .toList(growable: false),
-                        // ),
                       )
                     : Container(
                         width: MediaQuery.of(context).size.width,

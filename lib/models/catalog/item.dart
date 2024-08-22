@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:bokon_app/models/catalog/category.dart';
 
 List<CatalogItemModel> categoriesModelFromJson(String str) =>
@@ -11,8 +10,6 @@ String categoriesModelToJson(List<CatalogItemModel> data) =>
 ResponseItemsModel responseItemsModelFromJson(String str) {
   return ResponseItemsModel.fromJson(json.decode(str));
 }
-// ResponseCategoriesModel responseCategoriesModelFromJson(String str) =>
-//     json.decode(str).map((x) => ResponseCategoriesModel.fromJson(x));
 
 class CatalogItemModel {
   final int id;
@@ -70,34 +67,13 @@ class ResponseItemsModel {
   });
 
   factory ResponseItemsModel.fromJson(Map<String, dynamic> json) {
-    print(ResponseItemsModel(
-      items: List<CatalogItemModel>.from(
-          (json['items'] ?? []).map((x) => CatalogItemModel.fromJson(x))),
-      // items: categoriesModelFromJson(json['items'] ?? []),
-      page: json['paging']['page'] ?? 0,
-      limit: json['paging']['limit'] ?? 0,
-      totalItems: json['paging']['totalItems'] ?? 0,
-      totalPages: json['paging']['totalPages'] ?? 0,
-    ));
-
     return ResponseItemsModel(
       items: List<CatalogItemModel>.from(
           (json['items'] ?? []).map((x) => CatalogItemModel.fromJson(x))),
-      // items: categoriesModelFromJson(json['items'] ?? []),
       page: json['paging']['page'] ?? 0,
       limit: json['paging']['limit'] ?? 0,
       totalItems: json['paging']['totalItems'] ?? 0,
       totalPages: json['paging']['totalPages'] ?? 0,
     );
   }
-  // factory ResponseItemsModel.fromJson(Map<String, dynamic> json) =>
-  //     ResponseItemsModel(
-  //       items: List<CatalogItemModel>.from(
-  //           (json['items'] ?? []).map((x) => CatalogItemModel.fromJson(x))),
-  //       // items: categoriesModelFromJson(json['items'] ?? []),
-  //       page: json['paging']['page'] ?? 0,
-  //       limit: json['paging']['limit'] ?? 0,
-  //       totalItems: json['paging']['totalItems'] ?? 0,
-  //       totalPages: json['paging']['totalPages'] ?? 0,
-  //     );
 }

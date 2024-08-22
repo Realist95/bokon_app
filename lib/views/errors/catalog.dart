@@ -22,7 +22,7 @@ class CatalogScreen extends HookWidget {
 
     List<CategoryModel> items = hookResult.data ?? [];
     final isLoading = hookResult.isLoading;
-    final error = hookResult.error;
+    // final error = hookResult.error;
 
     return BackGroundContainer(
       child: Scaffold(
@@ -92,13 +92,19 @@ class _GridItemState extends State<GridItem> {
         ),
         child: Column(
           children: [
-            Text(
-              widget.item.name,
-              style: appStyle(
-                18,
-                kPrimary,
-                FontWeight.w500,
+            Container(
+              alignment: Alignment.center,
+              child: Text(
+                widget.item.name,
+                style: appStyle(
+                  20,
+                  kPrimary,
+                  FontWeight.w700,
+                ),
               ),
+            ),
+            const SizedBox(
+              height: 5,
             ),
             Text(
               widget.item.description,
