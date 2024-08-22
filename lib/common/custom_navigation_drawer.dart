@@ -77,14 +77,14 @@ class CustomNavigationDrawer extends StatelessWidget {
                     height: 1,
                     color: const Color(0xFFbfbfbf),
                   ),
-                  buildMenuItem(
-                      'Новости', '/articles-list/8', {"id": "8"}, context),
+                  buildMenuItem('Новости', '/articles-list/8',
+                      {"id": "8", "title": "Новости"}, context),
                   Container(
                     height: 1,
                     color: const Color(0xFFbfbfbf),
                   ),
-                  buildMenuItem(
-                      'Инструкция', '/articles-list/10', {"id": "10"}, context),
+                  buildMenuItem('Инструкция', '/articles-list/10',
+                      {"id": "10", "title": "Инструкция"}, context),
                   Container(
                     height: 1,
                     color: const Color(0xFFbfbfbf),

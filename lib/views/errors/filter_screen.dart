@@ -50,7 +50,7 @@ class FilterScreen extends HookWidget {
         appBar: AppBar(
           toolbarHeight: 90,
           backgroundColor: Colors.transparent,
-          flexibleSpace: const MainAppBar(true),
+          flexibleSpace: const MainAppBar(true, ''),
           automaticallyImplyLeading: false,
         ),
         body: Column(

@@ -31,7 +31,7 @@ class CatalogScreen extends HookWidget {
           automaticallyImplyLeading: false,
           toolbarHeight: 90,
           backgroundColor: Colors.transparent,
-          flexibleSpace: const MainAppBar(true),
+          flexibleSpace: const MainAppBar(true, 'Справочник'),
         ),
         drawer: const CustomNavigationDrawer(),
         body: isLoading

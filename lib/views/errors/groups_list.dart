@@ -21,7 +21,7 @@ class GroupsList extends StatelessWidget {
         appBar: AppBar(
           toolbarHeight: 90,
           backgroundColor: Colors.transparent,
-          flexibleSpace: const MainAppBar(true),
+          flexibleSpace: MainAppBar(true, controller.category!.name),
           automaticallyImplyLeading: false,
         ),
         drawer: const CustomNavigationDrawer(),

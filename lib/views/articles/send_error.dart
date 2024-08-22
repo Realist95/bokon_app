@@ -1,15 +1,15 @@
+import 'dart:convert';
+
 import 'package:bokon_app/common/app_style.dart';
 import 'package:bokon_app/common/background_container.dart';
 import 'package:bokon_app/common/custom_navigation_drawer.dart';
 import 'package:bokon_app/common/input_filed.dart';
 import 'package:bokon_app/common/main_app_bar.dart';
-import 'package:bokon_app/constants/constants.dart';
+import 'package:bokon_app/controllers/form_controller.dart';
+import 'package:bokon_app/models/feedback/error_model.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class SendError extends StatefulWidget {
   const SendError({super.key});
@@ -25,8 +25,10 @@ class _SendErrorState extends State<SendError> {
   final generation = TextEditingController();
   final name = TextEditingController();
   final phone = TextEditingController();
-  final email = TextEditingController();
   final message = TextEditingController();
+
+  final controller = Get.put(FormController());
+
   @override
   Widget build(BuildContext context) {
     return BackGroundContainer(
@@ -35,7 +37,7 @@ class _SendErrorState extends State<SendError> {
         appBar: AppBar(
           toolbarHeight: 90,
           backgroundColor: Colors.transparent,
-          flexibleSpace: const MainAppBar(true),
+          flexibleSpace: const MainAppBar(true, 'Отправить ошибку'),
           automaticallyImplyLeading: false,
         ),
         drawer: const CustomNavigationDrawer(),
@@ -160,6 +162,19 @@ class _SendErrorState extends State<SendError> {
                                   ),
                                   onPressed: () {
                                     if (formKey.currentState!.validate()) {
+                                      ErrorModel errorModel = ErrorModel(
+                                        block: block.text,
+                                        errorNumber: errorNumber.text,
+                                        generation: generation.text,
+                                        name: name.text,
+                                        phone: phone.text,
+                                        message: message.text,
+                                      );
+
+                                      String data =
+                                          errorModelToJson(errorModel);
+                                      print(data);
+                                      controller.sendErrorForm(data);
                                     } else {
                                       final snackBar = SnackBar(
                                         backgroundColor: const Color.fromRGBO(
@@ -175,14 +190,11 @@ class _SendErrorState extends State<SendError> {
                                         action: SnackBarAction(
                                           textColor: Colors.white,
                                           label: 'Ok',
-                                          onPressed: () {
-                                            // Some code to undo the change.
-                                          },
+                                          onPressed: () {},
                                         ),
                                       );
 
-                                      // Find the ScaffoldMessenger in the widget tree
-                                      // and use it to show a SnackBar.
+                                      // Ошибка валидации
                                       ScaffoldMessenger.of(context)
                                           .showSnackBar(snackBar);
                                     }

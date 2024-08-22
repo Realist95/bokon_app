@@ -22,6 +22,8 @@ class ArticlesList extends HookWidget {
     var params = Get.parameters;
     int? ctype = int.parse((params['id'] ?? '0').toString());
 
+    final String title = params['title'].toString();
+
     final hookResult = useFetchArticles(ctype);
     List<ArticleModel> items = hookResult.data ?? [];
     final isLoading = hookResult.isLoading;
@@ -32,7 +34,7 @@ class ArticlesList extends HookWidget {
         appBar: AppBar(
           toolbarHeight: 90,
           backgroundColor: Colors.transparent,
-          flexibleSpace: const MainAppBar(true),
+          flexibleSpace: MainAppBar(true, title),
           automaticallyImplyLeading: false,
         ),
         drawer: const CustomNavigationDrawer(),

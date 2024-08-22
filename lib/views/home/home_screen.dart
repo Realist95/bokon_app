@@ -37,7 +37,7 @@ class HomeScreen extends HookWidget {
           automaticallyImplyLeading: false,
           toolbarHeight: 90,
           backgroundColor: Colors.transparent,
-          flexibleSpace: const MainAppBar(false),
+          flexibleSpace: MainAppBar(false, ''),
         ),
         drawer: const CustomNavigationDrawer(),
         body: isLoading

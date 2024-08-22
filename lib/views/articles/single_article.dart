@@ -28,7 +28,7 @@ class SingleArticle extends HookWidget {
         appBar: AppBar(
           toolbarHeight: 90,
           backgroundColor: Colors.transparent,
-          flexibleSpace: const MainAppBar(true),
+          flexibleSpace: const MainAppBar(true, ''),
           automaticallyImplyLeading: false,
         ),
         drawer: const CustomNavigationDrawer(),
@@ -58,28 +58,26 @@ class _GridItemState extends State<GridItem> {
         color: kButtonBg.withOpacity(.6),
         border: Border.all(color: const Color.fromRGBO(122, 118, 128, 0.65)),
       ),
-      child: Expanded(
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 15, left: 15),
-              child: Text(
-                widget.item.name,
-                style: appStyle(
-                  18,
-                  kPrimary,
-                  FontWeight.w600,
-                ),
+      child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(top: 15, left: 15),
+            child: Text(
+              widget.item.name,
+              style: appStyle(
+                18,
+                kPrimary,
+                FontWeight.w600,
               ),
             ),
-            Expanded(
-              child: Markdown(
-                data: widget.item.content,
-                imageDirectory: 'https://bokon.ru',
-              ),
+          ),
+          Expanded(
+            child: Markdown(
+              data: widget.item.content,
+              imageDirectory: 'https://bokon.ru',
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
 

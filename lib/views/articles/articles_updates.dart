@@ -19,13 +19,13 @@ class ArticlesUpdates extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    final hookResult = useFetchArticles(11);
-    List<ArticleModel> items = hookResult.data ?? [];
-    final isLoading = hookResult.isLoading;
-
     final hookResult2 = useFetchCtype(11);
     CtypeModel ctype = hookResult2.data?[0] ??
         CtypeModel(id: 0, name: '', content: '', description: '');
+
+    final hookResult = useFetchArticles(11);
+    List<ArticleModel> items = hookResult.data ?? [];
+    final isLoading = hookResult.isLoading;
 
     return BackGroundContainer(
       child: Scaffold(
@@ -33,7 +33,7 @@ class ArticlesUpdates extends HookWidget {
         appBar: AppBar(
           toolbarHeight: 90,
           backgroundColor: Colors.transparent,
-          flexibleSpace: const MainAppBar(true),
+          flexibleSpace: const MainAppBar(true, 'Обновления'),
           automaticallyImplyLeading: false,
         ),
         drawer: const CustomNavigationDrawer(),
