@@ -64,6 +64,7 @@ class SubGroupsList extends HookWidget {
                     () => FilterScreen(
                       numberError: numberError,
                       categoryId: controller.category!.id,
+                      needNotice: true,
                     ),
                     transition: Transition.leftToRight,
                     duration: const Duration(microseconds: 500),
@@ -119,6 +120,7 @@ class SubGroupsList extends HookWidget {
                           () => FilterScreen(
                             numberError: numberError,
                             categoryId: controller.category!.id,
+                            needNotice: true,
                           ),
                           transition: Transition.leftToRight,
                           duration: const Duration(microseconds: 500),

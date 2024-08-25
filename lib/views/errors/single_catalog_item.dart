@@ -124,20 +124,26 @@ class _GridItemState extends State<GridItem> {
                         ? widget.item.parent!.titleH1
                         : widget.item.parent!.description,
                     style: appStyle(
-                      14,
+                      16,
                       kPrimary,
-                      FontWeight.w700,
+                      FontWeight.w600,
                     ),
                   ),
                 ),
                 Flexible(
                   child: Container(
                     alignment: Alignment.topLeft,
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 15, vertical: 15),
+                    padding: const EdgeInsets.all(15),
                     child: Markdown(
                       data: widget.item.content,
                       imageDirectory: 'https://bokon.ru',
+                      styleSheet: MarkdownStyleSheet(
+                        p: appStyle(
+                          14,
+                          const Color(0xFF000000),
+                          FontWeight.w400,
+                        ),
+                      ),
                     ),
                   ),
                 ),

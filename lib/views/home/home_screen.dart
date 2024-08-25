@@ -32,7 +32,7 @@ class HomeScreen extends HookWidget {
           automaticallyImplyLeading: false,
           toolbarHeight: 90,
           backgroundColor: Colors.transparent,
-          flexibleSpace: const MainAppBar(false, ''),
+          flexibleSpace: const MainAppBar(false, 'Главная'),
         ),
         drawer: const CustomNavigationDrawer(),
         body: isLoading
@@ -107,13 +107,18 @@ class _ContentWidgetTabsState extends State<ContentWidgetTabs> {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 15, vertical: 16),
                       children: widget.newsList
-                          .map((item) => GridArticle(item: item))
+                          .map(
+                            (item) => GridArticle(
+                              item: item,
+                              arguments: const {"title": "Новости"},
+                            ),
+                          )
                           .toList(growable: false),
                     ),
                   ),
                   Container(
                     margin: const EdgeInsets.symmetric(
-                      horizontal: 15,
+                      // horizontal: 15,
                       vertical: 15,
                     ),
                     child: ListView(
@@ -121,7 +126,10 @@ class _ContentWidgetTabsState extends State<ContentWidgetTabs> {
                           horizontal: 15, vertical: 16),
                       children: widget.itemsList
                           .map(
-                            (item) => GridArticle(item: item),
+                            (item) => GridArticle(
+                              item: item,
+                              arguments: const {"title": "Инструкция"},
+                            ),
                           )
                           .toList(growable: false),
                     ),

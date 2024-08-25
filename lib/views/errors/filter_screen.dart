@@ -10,7 +10,6 @@ import 'package:bokon_app/models/catalog/item.dart';
 import 'package:bokon_app/views/errors/widgets/items_list_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
@@ -19,10 +18,12 @@ class FilterScreen extends HookWidget {
     super.key,
     required this.numberError,
     required this.categoryId,
+    required this.needNotice,
   });
   final CatalogController controller = Get.find();
   final TextEditingController numberError;
   final int categoryId;
+  final bool needNotice;
 
   @override
   Widget build(BuildContext context) {
@@ -78,6 +79,7 @@ class FilterScreen extends HookWidget {
                     builder: (context) => FilterScreen(
                       numberError: numberError,
                       categoryId: categoryId,
+                      needNotice: needNotice,
                     ),
                   ))
                       .then((value) {
@@ -136,6 +138,7 @@ class FilterScreen extends HookWidget {
                             builder: (context) => FilterScreen(
                               numberError: numberError,
                               categoryId: controller.category!.id,
+                              needNotice: needNotice,
                             ),
                           ),
                         )
@@ -160,7 +163,8 @@ class FilterScreen extends HookWidget {
                 ? const CategoriesShimmer()
                 : items.isNotEmpty
                     ? Expanded(
-                        child: ItemsListWidget(items: items),
+                        child: ItemsListWidget(
+                            items: items, needNotice: needNotice,),
                       )
                     : Container(
                         width: MediaQuery.of(context).size.width,

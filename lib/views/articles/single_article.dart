@@ -18,7 +18,9 @@ class SingleArticle extends HookWidget {
   Widget build(BuildContext context) {
     ArticleModel item = controller.currentItem!;
     var params = Get.parameters;
-    final String title = params['title'].toString();
+    var arguments = Get.arguments ?? {};
+    final String title =
+        (params['title'] ?? (arguments['title'] ?? '')).toString();
 
     return BackGroundContainer(
       child: Scaffold(
@@ -63,7 +65,7 @@ class _GridItemState extends State<GridItem> {
             child: Text(
               widget.item.name,
               style: appStyle(
-                18,
+                16,
                 kPrimary,
                 FontWeight.w600,
               ),
@@ -73,6 +75,13 @@ class _GridItemState extends State<GridItem> {
             child: Markdown(
               data: widget.item.content,
               imageDirectory: 'https://bokon.ru',
+              styleSheet: MarkdownStyleSheet(
+                p: appStyle(
+                  14,
+                  const Color(0xFF000000),
+                  FontWeight.w400,
+                ),
+              ),
             ),
           ),
         ],

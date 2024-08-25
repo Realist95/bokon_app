@@ -59,9 +59,9 @@ class ArticlesUpdates extends HookWidget {
                     child: Text(
                       ctype.content,
                       style: appStyle(
-                        18,
-                        kPrimary,
-                        FontWeight.w600,
+                        16,
+                        const Color(0xFF000000),
+                        FontWeight.w400,
                       ),
                     ),
                   ),
@@ -102,6 +102,7 @@ class _GridItemState extends State<GridItem> {
           () => SingleArticle(),
           transition: Transition.leftToRight,
           duration: const Duration(microseconds: 500),
+          arguments: {"title": "Инструкция"},
         );
       },
       textColor: kButtonText,

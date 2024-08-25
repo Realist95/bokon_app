@@ -8,15 +8,20 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class ItemsListWidget extends StatelessWidget {
-  const ItemsListWidget({super.key, required this.items});
+  const ItemsListWidget({
+    super.key,
+    required this.items,
+    required this.needNotice,
+  });
   final List<dynamic> items;
+  final bool needNotice;
 
   @override
   Widget build(BuildContext context) {
     return ListView(
         padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 16),
         children: [
-          Container(
+          needNotice ? Container(
             margin: EdgeInsets.symmetric(vertical: 15.h),
             decoration: BoxDecoration(
               borderRadius: const BorderRadius.all(Radius.circular(8.0)),
@@ -56,7 +61,7 @@ class ItemsListWidget extends StatelessWidget {
                 ),
               ],
             ),
-          ),
+          ) : const SizedBox(),
           ...items.map((item) => GridItem(item: item)),
         ]);
   }

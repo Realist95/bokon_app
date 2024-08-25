@@ -13,9 +13,6 @@ class MainAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    MainAxisAlignment mainAxisAlignment =
-        !needBack ? MainAxisAlignment.start : MainAxisAlignment.spaceBetween;
-
     return SizedBox(
       width: width,
       height: 140.h,
@@ -32,7 +29,7 @@ class MainAppBar extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 15.w),
             child: ButtonBar(
               buttonPadding: EdgeInsets.zero,
-              alignment: mainAxisAlignment,
+              alignment: MainAxisAlignment.spaceBetween,
               children: [
                 (needBack)
                     ? MaterialButton(

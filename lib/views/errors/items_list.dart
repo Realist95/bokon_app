@@ -68,6 +68,7 @@ class ItemsList extends HookWidget {
                           () => FilterScreen(
                             numberError: numberError,
                             categoryId: controller.subCategory!.id,
+                            needNotice: false,
                           ),
                           transition: Transition.leftToRight,
                           duration: const Duration(microseconds: 500),
@@ -123,6 +124,7 @@ class ItemsList extends HookWidget {
                                 () => FilterScreen(
                                   numberError: numberError,
                                   categoryId: controller.subCategory!.id,
+                                  needNotice: false,
                                 ),
                                 transition: Transition.leftToRight,
                                 duration: const Duration(microseconds: 500),

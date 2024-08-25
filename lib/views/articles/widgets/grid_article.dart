@@ -7,8 +7,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class GridArticle extends StatefulWidget {
-  const GridArticle({super.key, required this.item});
+  const GridArticle({super.key, required this.item, required this.arguments});
   final ArticleModel item;
+  final Map arguments;
 
   @override
   State<GridArticle> createState() => _GridArticleState();
@@ -21,7 +22,15 @@ class _GridArticleState extends State<GridArticle> {
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
-      onPressed: () {},
+      onPressed: () {
+        controller.setCurrentItem(widget.item);
+        Get.to(
+          () => SingleArticle(),
+          transition: Transition.leftToRight,
+          duration: const Duration(microseconds: 500),
+          arguments: widget.arguments,
+        );
+      },
       padding: const EdgeInsets.all(0),
       child: ListTile(
         contentPadding: const EdgeInsets.all(0),
