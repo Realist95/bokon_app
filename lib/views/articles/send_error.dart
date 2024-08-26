@@ -6,11 +6,19 @@ import 'package:bokon_app/common/main_app_bar.dart';
 import 'package:bokon_app/controllers/form_controller.dart';
 import 'package:bokon_app/models/feedback/error_model.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 class SendError extends StatefulWidget {
-  const SendError({super.key});
+  const SendError({
+    super.key,
+    required this.block,
+    required this.errorNumber,
+  });
+
+  final String block;
+  final String errorNumber;
 
   @override
   State<SendError> createState() => _SendErrorState();
@@ -29,6 +37,13 @@ class _SendErrorState extends State<SendError> {
 
   @override
   Widget build(BuildContext context) {
+    if (widget.block.isNotEmpty) {
+      block.text = widget.block;
+    }
+    if (widget.errorNumber.isNotEmpty) {
+      errorNumber.text = widget.errorNumber;
+    }
+
     return BackGroundContainer(
       child: Scaffold(
         backgroundColor: Colors.transparent,
@@ -102,10 +117,14 @@ class _SendErrorState extends State<SendError> {
                                 textError: "Укажите годы выпуска!",
                                 isRequired: true,
                                 controller: generation,
+                                keyboardType: TextInputType.number,
                                 padding: const EdgeInsets.symmetric(
                                   horizontal: 20,
                                   vertical: 10,
                                 ),
+                                listInputFormatters: [
+                                  LengthLimitingTextInputFormatter(4),
+                                ],
                               ),
                               InputFiled(
                                 label: "Ваше имя",
@@ -134,6 +153,7 @@ class _SendErrorState extends State<SendError> {
                               ),
                               InputFiled(
                                 label: "Сообщение",
+                                maxLines: 3,
                                 controller: message,
                                 padding: const EdgeInsets.symmetric(
                                   horizontal: 20,
@@ -171,7 +191,7 @@ class _SendErrorState extends State<SendError> {
 
                                       String data =
                                           errorModelToJson(errorModel);
-                                      controller.sendErrorForm(data);
+                                      controller.sendErrorForm(data, context);
                                     } else {
                                       final snackBar = SnackBar(
                                         backgroundColor: const Color.fromRGBO(

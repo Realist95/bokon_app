@@ -69,7 +69,10 @@ class MyApp extends StatelessWidget {
             ),
             GetPage(
               name: '/send-error',
-              page: () => const SendError(),
+              page: () => const SendError(
+                block: '',
+                errorNumber: '',
+              ),
               transition: Transition.leftToRight,
               transitionDuration: const Duration(microseconds: 500),
             ),

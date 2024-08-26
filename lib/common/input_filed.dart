@@ -6,6 +6,7 @@ class InputFiled extends StatelessWidget {
   const InputFiled({
     super.key,
     this.label = "",
+    this.maxLines = 1,
     this.textError = "",
     this.isRequired = false,
     this.padding = const EdgeInsets.all(20),
@@ -14,6 +15,7 @@ class InputFiled extends StatelessWidget {
     this.controller,
   });
   final String label;
+  final int maxLines;
   final String textError;
   final bool isRequired;
   final EdgeInsets padding;
@@ -34,6 +36,7 @@ class InputFiled extends StatelessWidget {
     return Padding(
       padding: padding,
       child: TextFormField(
+        maxLines: maxLines,
         controller: controller,
         decoration: InputDecoration(
           border: const OutlineInputBorder(

@@ -36,7 +36,6 @@ class _GridArticleState extends State<GridArticle> {
         contentPadding: const EdgeInsets.all(0),
         title: Container(
           padding: const EdgeInsets.symmetric(vertical: 26, horizontal: 22),
-          height: 236.h,
           decoration: BoxDecoration(
             color: const Color.fromRGBO(255, 255, 255, 0.59),
             borderRadius: BorderRadius.circular(12),
@@ -46,33 +45,38 @@ class _GridArticleState extends State<GridArticle> {
             // mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      widget.item.name,
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                      style: appStyle(
-                        19,
-                        const Color.fromRGBO(27, 30, 36, 1),
-                        FontWeight.w500,
-                      ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    widget.item.name,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: appStyle(
+                      19,
+                      const Color.fromRGBO(27, 30, 36, 1),
+                      FontWeight.w500,
                     ),
-                    const SizedBox(height: 10),
-                    Text(
-                      widget.item.description,
-                      maxLines: 3,
-                      overflow: TextOverflow.ellipsis,
-                      style: appStyle(
-                        14,
-                        const Color.fromRGBO(27, 30, 36, 1),
-                        FontWeight.w400,
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                  widget.item.description.isNotEmpty
+                      ? Container(
+                          padding: EdgeInsets.only(
+                            top: 10.h,
+                            bottom: 20.h,
+                          ),
+                          child: Text(
+                            widget.item.description,
+                            maxLines: 3,
+                            overflow: TextOverflow.ellipsis,
+                            style: appStyle(
+                              14,
+                              const Color.fromRGBO(27, 30, 36, 1),
+                              FontWeight.w400,
+                            ),
+                          ),
+                        )
+                      : const SizedBox(height: 20),
+                ],
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,

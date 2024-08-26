@@ -11,7 +11,7 @@ class FormController extends GetxController {
 
   set setLoading(bool newState) => _isLoading.value = newState;
 
-  void sendErrorForm(String data) async {
+  void sendErrorForm(String data, context) async {
     // if (formKey.currentState!.validate()) {
     //   formKey.currentState!.save();
     // }
@@ -44,7 +44,7 @@ class FormController extends GetxController {
           margin: const EdgeInsets.only(bottom: 30, left: 15, right: 15),
         );
 
-        // Get.offAll(() => const HomeScreen());
+        Navigator.pop(context);
       } else {
         throw Exception('Неизвестная ошибка');
       }

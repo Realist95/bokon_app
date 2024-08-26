@@ -6,6 +6,7 @@ import 'package:bokon_app/constants/constants.dart';
 import 'package:bokon_app/controllers/catalog_controller.dart';
 import 'package:bokon_app/hooks/fetch_categories.dart';
 import 'package:bokon_app/models/catalog/item.dart';
+import 'package:bokon_app/views/articles/send_error.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
@@ -23,7 +24,6 @@ class SingleCatalogItems extends HookWidget {
     CatalogItemModel item = controller.currentItem!;
     final isLoading = hookResult.isLoading;
     final error = hookResult.error;
-
     return BackGroundContainer(
       child: Scaffold(
         backgroundColor: Colors.transparent,
@@ -190,7 +190,14 @@ class _GridItemState extends State<GridItem> {
           ListTile(
             focusColor: kButtonBgActive,
             onTap: () {
-              Get.toNamed('/send-error');
+              Get.to(
+                () => SendError(
+                  block: widget.item.parent!.name,
+                  errorNumber: widget.item.name,
+                ),
+                transition: Transition.leftToRight,
+                duration: const Duration(microseconds: 500),
+              );
             },
             textColor: kButtonText,
             contentPadding: const EdgeInsets.all(0),
