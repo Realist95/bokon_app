@@ -12,12 +12,14 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
+const keyCtypeCache = 'cacheCtypes';
+
+const keyCtypeArticles = 'cacheArticles';
+
 FetchHook useFetchArticles(int ctype, [int limit = 10]) {
   final articles = useState<List<ArticleModel>?>(null);
-  // final categories = useState<List<CategoryModel>?>(null);
   final isLoading = useState<bool>(false);
   final error = useState<Exception?>(null);
-  // final apiError = useState<ApiError?>(null);
 
   /// ищет локальные позиции по типу контента
   Future<List<ArticleModel>> getLocalData(int ctype) async {
@@ -27,7 +29,7 @@ FetchHook useFetchArticles(int ctype, [int limit = 10]) {
     return Future.delayed(const Duration(seconds: 1), () async {
       final prefs = await SharedPreferences.getInstance();
 
-      final articlesPrefs = prefs.getString('cacheArticles') ?? '';
+      final articlesPrefs = prefs.getString(keyCtypeArticles) ?? '';
       if (articlesPrefs.isNotEmpty) {
         final localArticles = articlesModelFromJson(articlesPrefs.toString());
         items = (localArticles
@@ -99,10 +101,8 @@ FetchHook useFetchArticles(int ctype, [int limit = 10]) {
 
 FetchHook useFetchCtype(int ctype, [int limit = 10]) {
   final ctypes = useState<List<CtypeModel>?>(null);
-  // final categories = useState<List<CategoryModel>?>(null);
   final isLoading = useState<bool>(false);
   final error = useState<Exception?>(null);
-  // final apiError = useState<ApiError?>(null);
 
   /// ищет локальные типы контента по id
   Future<List<CtypeModel>> getLocalData(int ctype) async {
@@ -111,7 +111,7 @@ FetchHook useFetchCtype(int ctype, [int limit = 10]) {
     return Future.delayed(const Duration(seconds: 1), () async {
       final prefs = await SharedPreferences.getInstance();
 
-      final ctypesPrefs = prefs.getString('cacheCtypes') ?? '';
+      final ctypesPrefs = prefs.getString(keyCtypeCache) ?? '';
 
       if (ctypesPrefs.isEmpty) return items;
 
@@ -181,7 +181,6 @@ FetchHook useFetchAllArticles() {
   final items = useState<List<ArticleModel>?>(null);
   final isLoading = useState<bool>(false);
   final error = useState<Exception?>(null);
-  // final apiError = useState<ApiError?>(null);
 
   Future<void> fetchData() async {
     final prefs = await SharedPreferences.getInstance();
@@ -200,23 +199,18 @@ FetchHook useFetchAllArticles() {
             'Content-Type': 'application/json; charset=UTF-8',
           },
         );
-        // debugPrint(response.statusCode.toString());
-        // debugPrint(response.body);
         if (response.statusCode == 200) {
-          // ApiError.value = apiErrorFromJson(response.body);
           items.value = responseArticlesModelFromJson(response.body).items;
         }
       }
     } catch (e) {
       debugPrint(e.toString());
-      // error.value = e as Exception;
-      // print(error.value);
     } finally {
       isLoading.value = false;
 
       if (items.value != null) {
         prefs.setString(
-          'cacheArticles',
+          keyCtypeArticles,
           articlesModelToJson(items.value ?? []),
         );
       }
@@ -273,7 +267,7 @@ FetchHook useFetchAllCtype() {
       isLoading.value = false;
       if (ctypes.value != null) {
         prefs.setString(
-          'cacheCtypes',
+          keyCtypeCache,
           ctypeModelToJson(ctypes.value ?? []),
         );
       }

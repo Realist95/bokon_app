@@ -1,10 +1,6 @@
 import 'dart:async';
 import 'package:bokon_app/hooks/fetch_articles.dart';
 import 'package:bokon_app/hooks/fetch_categories.dart';
-import 'package:bokon_app/models/catalog/category.dart';
-import 'package:bokon_app/models/catalog/item.dart';
-import 'package:bokon_app/models/content/article.dart';
-import 'package:bokon_app/models/content/ctype.dart';
 import 'package:bokon_app/views/articles/articles_list.dart';
 import 'package:bokon_app/views/articles/articles_updates.dart';
 import 'package:bokon_app/views/articles/help_article.dart';
@@ -14,7 +10,6 @@ import 'package:bokon_app/views/errors/groups_list.dart';
 import 'package:bokon_app/views/home/home_screen.dart';
 import 'package:bokon_app/views/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
