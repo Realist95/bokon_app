@@ -30,34 +30,34 @@ class _SplashScreenState extends State<SplashScreen>
     Directory downloadsDirectory;
     downloadsDirectory = await getApplicationCacheDirectory();
     // print(downloadsDirectory);
-    // try {
-    //   // print(urlPath);
-    //   String newPath = "${downloadsDirectory.path}/uploads/$path";
-    //   downloadsDirectory = Directory(newPath);
-    //   await downloadsDirectory.create(recursive: true);
-    //   // print("newPath : $newPath");
-    //   if (await downloadsDirectory.exists()) {
-    //     File savePath = File("${downloadsDirectory.path}/bokon.zip");
+    try {
+      // print(urlPath);
+      String newPath = "${downloadsDirectory.path}/uploads/$path";
+      downloadsDirectory = Directory(newPath);
+      await downloadsDirectory.create(recursive: true);
+      // print("newPath : $newPath");
+      if (await downloadsDirectory.exists()) {
+        File savePath = File("${downloadsDirectory.path}/bokon.zip");
 
-    //     dio.download(urlPath, savePath.path,
-    //         onReceiveProgress: (downloaded, totlaSize) async {
-    //       print(downloaded / totlaSize);
-    //       if (downloaded / totlaSize == 1) {
-    //         print("OpenFile, ${savePath.path}");
+        dio.download(urlPath, savePath.path,
+            onReceiveProgress: (downloaded, totlaSize) async {
+          print(downloaded / totlaSize);
+          if (downloaded / totlaSize == 1) {
+            print("OpenFile, ${savePath.path}");
 
-    //         final inputStream = InputFileStream(savePath.path);
-    //         print(inputStream.file);
+            final inputStream = InputFileStream(savePath.path);
+            print(inputStream.file);
 
-    //         final archive = ZipDecoder().decodeBuffer(inputStream);
-    //         extractArchiveToDisk(archive, newPath);
-    //         // await OpenFile.open(savePath.path,
-    //         // type: 'application/x-zip-compressed');
-    //       }
-    //     });
-    //   }
-    // } catch (e) {
-    //   debugPrint("Exception: ${e.toString()}");
-    // }
+            final archive = ZipDecoder().decodeBuffer(inputStream);
+            extractArchiveToDisk(archive, newPath);
+            // await OpenFile.open(savePath.path,
+            // type: 'application/x-zip-compressed');
+          }
+        });
+      }
+    } catch (e) {
+      debugPrint("Exception: ${e.toString()}");
+    }
 
     return true;
   }

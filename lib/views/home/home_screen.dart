@@ -132,10 +132,15 @@ class _ContentWidgetTabsState extends State<ContentWidgetTabs> {
                           horizontal: 15, vertical: 16),
                       children: widget.itemsList
                           .map(
-                            (item) => GridArticle(
-                              item: item,
-                              arguments: const {"title": "Инструкция"},
-                            ),
+                            (item) => !item.isSpecial
+                                ? GridArticle(
+                                    item: item,
+                                    arguments: const {"title": "Инструкция"},
+                                  )
+                                : GridSpecialArticle(
+                                    item: item,
+                                    arguments: const {"title": "Инструкция"},
+                                  ),
                           )
                           .toList(growable: false),
                     ),
