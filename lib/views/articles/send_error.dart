@@ -67,6 +67,7 @@ class _SendErrorState extends State<SendError> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
+                        margin: const EdgeInsets.only(bottom: 15),
                         width: MediaQuery.of(context).size.width,
                         alignment: Alignment.topCenter,
                         padding: const EdgeInsets.symmetric(vertical: 30),
@@ -90,42 +91,6 @@ class _SendErrorState extends State<SendError> {
                         child: SingleChildScrollView(
                           child: Column(
                             children: [
-                              InputFiled(
-                                label: "Название блока",
-                                textError: "Укажите название блока!",
-                                isRequired: true,
-                                controller: block,
-                                padding: const EdgeInsets.only(
-                                  top: 30,
-                                  left: 20,
-                                  right: 20,
-                                  bottom: 10,
-                                ),
-                              ),
-                              InputFiled(
-                                label: "Номер ошибки",
-                                textError: "Укажите номер ошибки!",
-                                isRequired: true,
-                                controller: errorNumber,
-                                padding: const EdgeInsets.symmetric(
-                                  horizontal: 20,
-                                  vertical: 10,
-                                ),
-                              ),
-                              InputFiled(
-                                label: "Годы выпуска",
-                                textError: "Укажите годы выпуска!",
-                                isRequired: true,
-                                controller: generation,
-                                keyboardType: TextInputType.number,
-                                padding: const EdgeInsets.symmetric(
-                                  horizontal: 20,
-                                  vertical: 10,
-                                ),
-                                listInputFormatters: [
-                                  LengthLimitingTextInputFormatter(4),
-                                ],
-                              ),
                               InputFiled(
                                 label: "Ваше имя",
                                 textError: "Укажите ваше имя!",
@@ -153,7 +118,7 @@ class _SendErrorState extends State<SendError> {
                               ),
                               InputFiled(
                                 label: "Сообщение",
-                                maxLines: 3,
+                                maxLines: 5,
                                 controller: message,
                                 padding: const EdgeInsets.symmetric(
                                   horizontal: 20,

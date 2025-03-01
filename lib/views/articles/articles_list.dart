@@ -40,7 +40,9 @@ class ArticlesList extends HookWidget {
                     const EdgeInsets.symmetric(horizontal: 15, vertical: 16),
                 children: items
                     .map(
-                      (item) => GridArticle(item: item, arguments: const {}),
+                      (item) => !item.isSpecial
+                          ? GridArticle(item: item, arguments: const {})
+                          : const SizedBox(),
                     )
                     .toList(growable: false),
               ),
