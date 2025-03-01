@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:bokon_app/common/app_style.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -56,7 +58,105 @@ class MainAppBar extends StatelessWidget {
                           Navigator.pop(context);
                         },
                       )
-                    : const SizedBox(),
+                    : MaterialButton(
+                        elevation: 0,
+                        minWidth: 46,
+                        height: 46,
+                        child: Container(
+                          width: 46,
+                          height: 46,
+                          decoration: const BoxDecoration(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(6.0)),
+                            color: Colors.white,
+                          ),
+                          child: const Center(
+                            child: Icon(
+                              CupertinoIcons.power,
+                              color: kPrimaryAlt,
+                              size: 26.0,
+                            ),
+                          ),
+                        ),
+                        onPressed: () {
+                          showDialog(
+                            context: context,
+                            builder: (context) => AlertDialog(
+                              backgroundColor:
+                                  const Color.fromRGBO(255, 255, 255, 0.85),
+                              title: Text(
+                                'Вы уверены, что хотите выйти из приложения?',
+                                textAlign: TextAlign.center,
+                                style: appStyle(
+                                  18,
+                                  const Color(0xFF000000),
+                                  FontWeight.w400,
+                                ),
+                              ),
+                              actions: <Widget>[
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  children: [
+                                    Container(
+                                      padding: const EdgeInsets.only(
+                                        top: 0,
+                                        left: 10,
+                                        right: 10,
+                                        bottom: 0,
+                                      ),
+                                      decoration: const BoxDecoration(
+                                        color: Color.fromRGBO(248, 148, 75, 1),
+                                        borderRadius: BorderRadius.all(
+                                          Radius.circular(6),
+                                        ),
+                                      ),
+                                      child: TextButton(
+                                        onPressed: () =>
+                                            Navigator.of(context).pop(false),
+                                        child: Text(
+                                          'Нет',
+                                          style: appStyle(
+                                            18,
+                                            Colors.white,
+                                            FontWeight.w500,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Container(
+                                      padding: const EdgeInsets.only(
+                                        top: 0,
+                                        left: 10,
+                                        right: 10,
+                                        bottom: 0,
+                                      ),
+                                      decoration: const BoxDecoration(
+                                        color: Color.fromRGBO(255, 255, 255, 1),
+                                        borderRadius: BorderRadius.all(
+                                          Radius.circular(6),
+                                        ),
+                                      ),
+                                      child: TextButton(
+                                        onPressed: () => exit(0),
+                                        child: Text(
+                                          'Да',
+                                          style: appStyle(
+                                            18,
+                                            const Color.fromRGBO(
+                                                248, 148, 75, 1),
+                                            FontWeight.w500,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          );
+                        },
+                      ),
                 SizedBox(
                   child: Text(
                     title.toString().toUpperCase(),

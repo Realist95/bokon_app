@@ -127,18 +127,32 @@ class _GridItemState extends State<GridItem> {
                 ],
               ),
               child: Container(
-                // height: 50,
                 alignment: Alignment.centerLeft,
                 padding: const EdgeInsets.all(15),
-                child: Text(
-                  widget.item.name,
-                  style: GoogleFonts.roboto(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w500,
-                    color: kPrimary,
-                    // height: 24,
-                  ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      widget.item.name,
+                      style: GoogleFonts.roboto(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
+                        color: kPrimary,
+                        // height: 24,
+                      ),
+                    ),
+                    Text(
+                      widget.item.date,
+                      style: GoogleFonts.roboto(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                        color: const Color(0xFF7A7680),
+                        // height: 24,
+                      ),
+                    ),
+                  ],
                 ),
+                // height: 50,
               ),
             ),
           ],

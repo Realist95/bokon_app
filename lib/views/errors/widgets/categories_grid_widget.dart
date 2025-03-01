@@ -11,6 +11,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'dart:convert';
 
 class CategoriesGridWidget extends HookWidget {
   CategoriesGridWidget({super.key, required this.items});
@@ -162,6 +163,9 @@ class _GridItemState extends State<GridItem> {
         ? "https://bokon.ru/uploads/shop/photos/original/${widget.item.image}"
         : "https://app.bokon.ru/img/icons/short-logo.jpg";
 
+    final String base64 =
+        widget.item.imageBase64.isNotEmpty ? widget.item.imageBase64 : "";
+
     return MaterialButton(
       focusColor: kButtonBgActive,
       onPressed: () {
@@ -213,16 +217,29 @@ class _GridItemState extends State<GridItem> {
                   width: 350.w,
                   height: 200.h,
                   // fit: FlexFit.tight,
-                  child: ImgNetwork(
-                    fit: BoxFit.cover,
-                    pathImg: pathImg,
-                    borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(16),
-                      topRight: Radius.circular(16),
-                      bottomRight: Radius.circular(8),
-                      bottomLeft: Radius.circular(8),
-                    ),
-                  ),
+                  child: base64.isNotEmpty
+                      ? ClipRRect(
+                          borderRadius: const BorderRadius.only(
+                            topLeft: Radius.circular(16),
+                            topRight: Radius.circular(16),
+                            bottomRight: Radius.circular(8),
+                            bottomLeft: Radius.circular(8),
+                          ),
+                          child: Image.memory(
+                            base64Decode(base64),
+                            fit: BoxFit.cover,
+                          ),
+                        )
+                      : ImgNetwork(
+                          fit: BoxFit.cover,
+                          pathImg: pathImg,
+                          borderRadius: const BorderRadius.only(
+                            topLeft: Radius.circular(16),
+                            topRight: Radius.circular(16),
+                            bottomRight: Radius.circular(8),
+                            bottomLeft: Radius.circular(8),
+                          ),
+                        ),
                 ),
                 Flexible(
                   child: Container(

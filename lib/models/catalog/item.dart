@@ -1,10 +1,10 @@
 import 'dart:convert';
 import 'package:bokon_app/models/catalog/category.dart';
 
-List<CatalogItemModel> categoriesModelFromJson(String str) =>
+List<CatalogItemModel> catalogItemsModelFromJson(String str) =>
     List<CatalogItemModel>.from(
         json.decode(str).map((x) => CatalogItemModel.fromJson(x)));
-String categoriesModelToJson(List<CatalogItemModel> data) =>
+String itemsModelToJson(List<CatalogItemModel> data) =>
     json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
 ResponseItemsModel responseItemsModelFromJson(String str) {
@@ -14,7 +14,7 @@ ResponseItemsModel responseItemsModelFromJson(String str) {
 class CatalogItemModel {
   final int id;
   final String name;
-  // final String maingroup;
+  final int maingroup;
   final String content;
   final String description;
   final String difficulty;
@@ -23,7 +23,7 @@ class CatalogItemModel {
   CatalogItemModel({
     required this.id,
     required this.name,
-    // required this.maingroup,
+    required this.maingroup,
     required this.content,
     required this.description,
     required this.difficulty,
@@ -32,22 +32,23 @@ class CatalogItemModel {
 
   factory CatalogItemModel.fromJson(Map<String, dynamic> json) =>
       CatalogItemModel(
-        id: int.parse(json['id']),
+        id: int.parse(json['id'].toString()),
         name: json['name'],
-        // maingroup: json['maingroup'],
-        content: json['content'],
-        description: json['description'],
-        difficulty: json['difficulty'] ?? '',
+        maingroup: int.parse(json['maingroup'].toString()),
+        content: json['content'].toString(),
+        description: json['description'].toString(),
+        difficulty: json['difficulty'].toString(),
         parent: CategoryModel.fromJson(json['parent'] ?? {}),
       );
 
   Map<String, dynamic> toJson() => {
         "id": id,
         "name": name,
-        // "maingroup": maingroup,
-        // "content": content,
-        // "description": description,
-        // "difficulty": difficulty,
+        "maingroup": maingroup,
+        "content": content,
+        "description": description,
+        "difficulty": difficulty,
+        "parent": parent?.toJson(),
       };
 }
 

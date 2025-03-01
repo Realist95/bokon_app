@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:bokon_app/common/app_style.dart';
 import 'package:bokon_app/common/background_container.dart';
 import 'package:bokon_app/common/custom_navigation_drawer.dart';
@@ -5,6 +7,7 @@ import 'package:bokon_app/common/main_app_bar.dart';
 import 'package:bokon_app/constants/constants.dart';
 import 'package:bokon_app/controllers/content_controller.dart';
 import 'package:bokon_app/models/content/article.dart';
+import 'package:bokon_app/views/photoviewer/gallery_photo_wrapper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
@@ -50,6 +53,8 @@ class GridItem extends StatefulWidget {
 class _GridItemState extends State<GridItem> {
   @override
   Widget build(BuildContext context) {
+    const String imagePath = '/data/user/0/com.bokon.bokon_app/cache/uploads';
+
     // debugPrint(widget.item.content);
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
@@ -74,7 +79,21 @@ class _GridItemState extends State<GridItem> {
           Expanded(
             child: Markdown(
               data: widget.item.content,
-              imageDirectory: 'https://bokon.ru',
+              imageDirectory: imagePath,
+              imageBuilder: (uri, title, alt) {
+                return SizedBox(
+                  width: MediaQuery.of(context).size.width,
+                  height: 200,
+                  child: GalleryPhotoWrapper(
+                    imageUrl: File("$imagePath${uri.path}").path,
+                    child: Image(
+                      image: FileImage(
+                        File('$imagePath${uri.path}'),
+                      ),
+                    ),
+                  ),
+                );
+              },
               styleSheet: MarkdownStyleSheet(
                 p: appStyle(
                   14,

@@ -164,7 +164,9 @@ class FilterScreen extends HookWidget {
                 : items.isNotEmpty
                     ? Expanded(
                         child: ItemsListWidget(
-                            items: items, needNotice: needNotice,),
+                          items: items,
+                          needNotice: needNotice,
+                        ),
                       )
                     : Container(
                         width: MediaQuery.of(context).size.width,
@@ -247,89 +249,3 @@ class FilterScreen extends HookWidget {
     );
   }
 }
-
-// class GridItem extends StatefulWidget {
-//   const GridItem({super.key, required this.item});
-
-//   final CatalogItemModel item;
-
-//   @override
-//   State<GridItem> createState() => _GridItemState();
-// }
-
-// class _GridItemState extends State<GridItem> {
-//   final CatalogController controller = Get.find();
-
-//   @override
-//   Widget build(BuildContext context) {
-//     // print(widget.item.parent!.name);
-//     return MaterialButton(
-//       focusColor: kButtonBgActive,
-//       onPressed: () {
-//         controller.setCurrentItem(widget.item);
-//         Get.to(
-//           () => SingleCatalogItems(),
-//           transition: Transition.leftToRight,
-//           duration: const Duration(microseconds: 500),
-//         );
-//       },
-//       textColor: kButtonText,
-//       padding: const EdgeInsets.all(0),
-//       child: Stack(
-//         alignment: AlignmentDirectional.bottomEnd,
-//         children: [
-//           Container(
-//             height: 1,
-//             decoration: const BoxDecoration(
-//               borderRadius: BorderRadius.all(Radius.circular(8.0)),
-//               boxShadow: [
-//                 BoxShadow(
-//                   color: Color.fromRGBO(0, 0, 0, .15),
-//                   spreadRadius: -4,
-//                   blurRadius: 1,
-//                   offset: Offset(0, 1),
-//                 ),
-//               ],
-//             ),
-//           ),
-//           Container(
-//             decoration: BoxDecoration(
-//               borderRadius: const BorderRadius.all(Radius.circular(8.0)),
-//               color: kButtonBg.withOpacity(.6),
-//               boxShadow: const [
-//                 BoxShadow(
-//                   color: Color.fromRGBO(0, 0, 0, .4),
-//                   spreadRadius: 0,
-//                   blurRadius: 2,
-//                   offset: Offset(0, 1),
-//                   blurStyle: BlurStyle.outer,
-//                 ),
-//               ],
-//             ),
-//             child: Column(
-//               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//               children: [
-//                 Flexible(
-//                   child: Container(
-//                     alignment: Alignment.center,
-//                     padding: const EdgeInsets.symmetric(horizontal: 15),
-//                     child: Text(
-//                       widget.item.parent!.titleH1.isNotEmpty
-//                           ? widget.item.parent!.titleH1
-//                           : widget.item.parent!.description.toUpperCase(),
-//                       style: appStyle(
-//                         20,
-//                         kPrimary,
-//                         FontWeight.w500,
-//                       ),
-//                     ),
-//                   ),
-//                 ),
-//               ],
-//             ),
-//           ),
-//         ],
-//       ),
-//     );
-//   }
-// }

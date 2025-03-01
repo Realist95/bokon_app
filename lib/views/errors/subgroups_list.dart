@@ -20,9 +20,10 @@ class SubGroupsList extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final items = controller.category!.childrens;
-    final hookResult = useFetchItems(controller.category!.id, 10000);
-    final isLoading = hookResult.isLoading;
-    final error = hookResult.error;
+    // final hookResult = 
+    useFetchItems(controller.category!.id, 10000);
+    // final isLoading = hookResult.isLoading;
+    // final error = hookResult.error;
     final numberError = TextEditingController();
     final validate = useState<bool>(true);
 

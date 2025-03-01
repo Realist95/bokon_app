@@ -67,7 +67,7 @@ class CustomNavigationDrawer extends StatelessWidget {
               child: ListView(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 children: [
-                  buildMenuItem('Главная', '/', null, context),
+                  buildMenuItem('Главная', '/home', null, context),
                   Container(
                     height: 1,
                     color: const Color(0xFFbfbfbf),
