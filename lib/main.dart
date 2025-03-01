@@ -36,21 +36,6 @@ Future<void> main() async {
     },
   );
 
-  final String catalogItems =
-      await rootBundle.loadString('assets/json/catalog_items.json');
-  final String catalogCategories =
-      await rootBundle.loadString('assets/json/catalog_categories.json');
-
-  if (prefs.getString('CatalogItems') == null ||
-      prefs.getString('CatalogItems').toString().isEmpty) {
-    prefs.setString('CatalogItems', catalogItems);
-  }
-
-  if (prefs.getString('CatalogTreeCategories') == null ||
-      prefs.getString('CatalogTreeCategories').toString().isEmpty) {
-    prefs.setString('CatalogTreeCategories', catalogCategories);
-  }
-
   runApp(MyApp(preferences: prefs));
 }
 
@@ -65,23 +50,11 @@ class MyApp extends HookWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    final hookCatalogTreeCategories = useFetchAllCategories();
-    if (hookCatalogTreeCategories.isLoading == false &&
-        hookCatalogTreeCategories.data != null) {
-      preferences.setString(
-        'CatalogTreeCategories',
-        categoriesModelToJson(hookCatalogTreeCategories.data),
-      );
-    }
+    // Загружает в кэш список категорий для раздела справочник
+    useFetchAllCategories();
 
-    final hookCatalogItems = useFetchAllItems();
-    if (hookCatalogItems.isLoading == false && hookCatalogItems.data != null) {
-      // print(hookCatalogItems.data);
-      preferences.setString(
-        'CatalogItems',
-        itemsModelToJson(hookCatalogItems.data),
-      );
-    }
+    // загружает в кэш список позиций для раздела справочник
+    useFetchAllItems();
 
     // сохраняет позиции контента в кэш при каждом подключении интернета
     useFetchAllArticles();

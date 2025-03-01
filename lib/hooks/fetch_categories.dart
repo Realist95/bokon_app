@@ -7,6 +7,7 @@ import 'package:bokon_app/models/catalog/item.dart';
 import 'package:bokon_app/models/hook_models/hook_result.dart';
 import 'package:connectivity/connectivity.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
@@ -221,10 +222,13 @@ FetchHook useFetchAllCategories([bool getTree = true]) {
   final categories = useState<List<CategoryModel>?>(null);
   final isLoading = useState<bool>(false);
   final error = useState<Exception?>(null);
-  // final apiError = useState<ApiError?>(null);
+
+  const keyCacheCategories = 'cacheCatalogTreeCategories';
+  const localPathCategories = 'assets/json/catalog_categories.json';
 
   Future<void> fetchData(getTree) async {
     isLoading.value = true;
+    final prefs = await SharedPreferences.getInstance();
 
     final isOnline =
         await Connectivity().checkConnectivity() != ConnectivityResult.none;
@@ -243,17 +247,31 @@ FetchHook useFetchAllCategories([bool getTree = true]) {
             'Content-Type': 'application/json; charset=UTF-8',
           },
         );
-        // debugPrint(response.statusCode.toString());
         if (response.statusCode == 200) {
-          // ApiError.value = apiErrorFromJson(response.body);
           categories.value =
               responseCategoriesModelFromJson(response.body).items;
         }
       }
     } catch (e) {
-      debugPrint(e.toString());
+      // debugPrint(e.toString());
     } finally {
       isLoading.value = false;
+      String catalogCategories = '';
+      if (categories.value != null) {
+        catalogCategories = categoriesModelToJson(categories.value ?? []);
+      }
+
+      /// Если ранее в кэше не было ошибок, то загрузим ошибки из файла
+      if (prefs.getString(keyCacheCategories) == null ||
+          prefs.getString(keyCacheCategories).toString().isEmpty) {
+        /// Получает файл с ошибками из локального файла
+        catalogCategories = await rootBundle.loadString(localPathCategories);
+      }
+
+      /// Сохраняет категории в кэш, если они имеются
+      if (catalogCategories.isNotEmpty) {
+        prefs.setString(keyCacheCategories, catalogCategories);
+      }
     }
   }
 
@@ -277,13 +295,15 @@ FetchHook useFetchAllCategories([bool getTree = true]) {
 
 FetchHook useFetchAllItems([int parent = 0]) {
   final items = useState<List<CatalogItemModel>?>(null);
-  // final data = useState<ResponseItemsModel?>(null);
-  // final categories = useState<List<CategoryModel>?>(null);
   final isLoading = useState<bool>(false);
   final error = useState<Exception?>(null);
-  // final apiError = useState<ApiError?>(null);
+
+  const keyCacheItems = 'cacheCatalogItems';
+  const localPathItems = 'assets/json/catalog_items.json';
+
   Future<void> fetchData(parent) async {
     isLoading.value = true;
+    final prefs = await SharedPreferences.getInstance();
     final isOnline =
         await Connectivity().checkConnectivity() != ConnectivityResult.none;
 
@@ -297,18 +317,30 @@ FetchHook useFetchAllItems([int parent = 0]) {
             'Content-Type': 'application/json; charset=UTF-8',
           },
         );
-        // debugPrint(response.statusCode.toString());
         if (response.statusCode == 200) {
-          // ApiError.value = apiErrorFromJson(response.body);
           items.value = responseItemsModelFromJson(response.body).items;
         }
       }
     } catch (e) {
-      debugPrint(e.toString());
-      // error.value = e as Exception;
-      // print(error.value);
+      // debugPrint(e.toString());
     } finally {
       isLoading.value = false;
+      String catalogItems = '';
+      if (items.value != null) {
+        catalogItems = itemsModelToJson(items.value ?? []);
+      }
+
+      /// Если ранее в кэше не было ошибок, то загрузим ошибки из файла
+      if (prefs.getString(keyCacheItems) == null ||
+          prefs.getString(keyCacheItems).toString().isEmpty) {
+        /// Получает файл с ошибками из локального файла
+        catalogItems = await rootBundle.loadString(localPathItems);
+      }
+
+      /// Сохраняет категории в кэш, если они имеются
+      if (catalogItems.isNotEmpty) {
+        prefs.setString(keyCacheItems, catalogItems);
+      }
     }
   }
 
