@@ -12,6 +12,12 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
+const keyCacheItems = 'cacheCatalogItems';
+const localPathItems = 'assets/json/catalog_items.json';
+
+const keyCacheCategories = 'cacheCatalogTreeCategories';
+const localPathCategories = 'assets/json/catalog_categories.json';
+
 FetchHook useFetchCategories() {
   final categories = useState<List<CategoryModel>?>(null);
   // final categories = useState<List<CategoryModel>?>(null);
@@ -25,7 +31,7 @@ FetchHook useFetchCategories() {
     return Future.delayed(const Duration(seconds: 1), () async {
       final prefs = await SharedPreferences.getInstance();
 
-      final categoriesPrefs = prefs.getString('CatalogTreeCategories') ?? '';
+      final categoriesPrefs = prefs.getString(keyCacheCategories) ?? '';
       if (categoriesPrefs.isEmpty) return items;
 
       items = categoriesModelFromJson(categoriesPrefs.toString());
@@ -87,39 +93,42 @@ FetchHook useFetchItems(int parentId, int limit) {
   List<int> localCategories = [];
   // List<CategoryModel> localCategories = [];
 
-  getAllCategories(List arr, parentid) {
+  getAllCategories(List arr, int parentId) {
     for (var item in arr) {
-      if (item.id == parentId || item.parent == parentId) {
-        localCategories.add(item.id);
-        getAllCategories(item.childrens, parentid);
-      } else if (item.childrens.isNotEmpty) {
-        getAllCategories(item.childrens, parentid);
+      if (item.id != parentId && item.parent != parentId) {
+        getAllCategories(item.childrens, parentId);
+        continue;
+      }
+
+      localCategories.add(item.id);
+      if (item.childrens.isNotEmpty) {
+        getAllCategories(item.childrens, item.id);
       }
     }
 
     return localCategories;
   }
 
-  List<int> getLast(List arr, int parentId, List<int> ids) {
-    print(arr);
-    final categories =
-        (arr.where((item) => (item.id == parentId || item.parent == parentId)))
-            .toList();
+  // List<int> getLast(List arr, int parentId, List<int> ids) {
+  //   print(arr);
+  //   final categories =
+  //       (arr.where((item) => (item.id == parentId || item.parent == parentId)))
+  //           .toList();
 
-    print(categories);
+  //   print(categories);
 
-    for (var category in categories) {
-      if (category.childrens.isNotEmpty) {
-        getLast(category.childrens, category.id, ids);
-      }
+  //   for (var category in categories) {
+  //     if (category.childrens.isNotEmpty) {
+  //       getLast(category.childrens, category.id, ids);
+  //     }
 
-      print(category.id);
+  //     print(category.id);
 
-      if (!ids.contains(category.id)) ids.add(category.id);
-    }
+  //     if (!ids.contains(category.id)) ids.add(category.id);
+  //   }
 
-    return ids;
-  }
+  //   return ids;
+  // }
 
   Future<List<CatalogItemModel>> getLocalData(
     int parentId, [
@@ -138,12 +147,11 @@ FetchHook useFetchItems(int parentId, int limit) {
     return Future.delayed(const Duration(seconds: 1), () async {
       final prefs = await SharedPreferences.getInstance();
 
-      final ctypesPrefs = prefs.getString('CatalogItems') ?? '';
-
-      if (ctypesPrefs.isEmpty) return items;
+      final catalogItems = prefs.getString(keyCacheItems) ?? '';
+      if (catalogItems.isEmpty) return items;
 
       final localCatalogItems =
-          catalogItemsModelFromJson(ctypesPrefs.toString());
+          catalogItemsModelFromJson(catalogItems.toString());
 
       items = (localCatalogItems
           .where((item) => categoryIds.contains(item.maingroup))
@@ -155,40 +163,42 @@ FetchHook useFetchItems(int parentId, int limit) {
 
   Future<void> fetchData() async {
     isLoading.value = true;
-    final isOnline =
-        await Connectivity().checkConnectivity() != ConnectivityResult.none;
+    // final isOnline =
+    // await Connectivity().checkConnectivity() != ConnectivityResult.none;
 
     final prefs = await SharedPreferences.getInstance();
 
-    final categoriesPrefs = prefs.getString('CatalogTreeCategories') ?? '';
+    final categoriesPrefs = prefs.getString(keyCacheCategories) ?? '';
     List<CategoryModel> treeCategories =
         categoriesModelFromJson(categoriesPrefs.toString());
     List<int> categoryIds = [];
 
     categoryIds = getAllCategories(treeCategories, parentId);
+    // print(categoryIds);
 
     // categoryIds = getLast(localCategories, parentId, categoryIds);
 
     try {
-      if (isOnline) {
-        // print("$apiBaseUrl/catalog:get.items");
-        Uri url = Uri.parse("$apiBaseUrl/catalog:get.items");
-        final response = await http.post(
-          url,
-          body: jsonEncode(
-              {"category": parentId.toString(), "limit": limit.toString()}),
-          headers: {
-            'Content-Type': 'application/json; charset=UTF-8',
-          },
-        );
-        debugPrint(response.statusCode.toString());
-        if (response.statusCode == 200) {
-          // ApiError.value = apiErrorFromJson(response.body);
-          items.value = responseItemsModelFromJson(response.body).items;
-        }
-      } else {
-        items.value = await getLocalData(parentId, categoryIds);
-      }
+      items.value = await getLocalData(parentId, categoryIds);
+      // if (isOnline) {
+      //   // print("$apiBaseUrl/catalog:get.items");
+      //   Uri url = Uri.parse("$apiBaseUrl/catalog:get.items");
+      //   final response = await http.post(
+      //     url,
+      //     body: jsonEncode(
+      //         {"category": parentId.toString(), "limit": limit.toString()}),
+      //     headers: {
+      //       'Content-Type': 'application/json; charset=UTF-8',
+      //     },
+      //   );
+      //   debugPrint(response.statusCode.toString());
+      //   if (response.statusCode == 200) {
+      //     // ApiError.value = apiErrorFromJson(response.body);
+      //     items.value = responseItemsModelFromJson(response.body).items;
+      //   }
+      // } else {
+      //   items.value = await getLocalData(parentId, categoryIds);
+      // }
     } catch (e) {
       debugPrint('useFetchItemsError');
       debugPrint(e.toString());
@@ -222,9 +232,6 @@ FetchHook useFetchAllCategories([bool getTree = true]) {
   final categories = useState<List<CategoryModel>?>(null);
   final isLoading = useState<bool>(false);
   final error = useState<Exception?>(null);
-
-  const keyCacheCategories = 'cacheCatalogTreeCategories';
-  const localPathCategories = 'assets/json/catalog_categories.json';
 
   Future<void> fetchData(getTree) async {
     isLoading.value = true;
@@ -297,9 +304,6 @@ FetchHook useFetchAllItems([int parent = 0]) {
   final items = useState<List<CatalogItemModel>?>(null);
   final isLoading = useState<bool>(false);
   final error = useState<Exception?>(null);
-
-  const keyCacheItems = 'cacheCatalogItems';
-  const localPathItems = 'assets/json/catalog_items.json';
 
   Future<void> fetchData(parent) async {
     isLoading.value = true;

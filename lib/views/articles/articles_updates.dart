@@ -11,6 +11,7 @@ import 'package:bokon_app/models/content/ctype.dart';
 import 'package:bokon_app/views/articles/single_article.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -41,27 +42,31 @@ class ArticlesUpdates extends HookWidget {
             ? const CategoriesShimmer()
             : Column(
                 children: [
-                  Container(
-                    width: MediaQuery.of(context).size.width,
-                    padding: const EdgeInsets.all(15),
-                    margin: const EdgeInsets.symmetric(
-                      horizontal: 15,
-                      vertical: 15,
-                    ),
-                    // height: 200,
-                    decoration: BoxDecoration(
-                      borderRadius:
-                          const BorderRadius.all(Radius.circular(8.0)),
-                      color: kButtonBg.withOpacity(.6),
-                      border: Border.all(
-                          color: const Color.fromRGBO(122, 118, 128, 0.65)),
-                    ),
-                    child: Text(
-                      ctype.content,
-                      style: appStyle(
-                        16,
-                        const Color(0xFF000000),
-                        FontWeight.w400,
+                  Expanded(
+                    child: Container(
+                      width: MediaQuery.of(context).size.width,
+                      padding: const EdgeInsets.all(15),
+                      margin: const EdgeInsets.symmetric(
+                        horizontal: 15,
+                        vertical: 15,
+                      ),
+                      // height: 200,
+                      decoration: BoxDecoration(
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(8.0)),
+                        color: kButtonBg.withOpacity(.6),
+                        border: Border.all(
+                            color: const Color.fromRGBO(122, 118, 128, 0.65)),
+                      ),
+                      child: Markdown(
+                        data: ctype.content,
+                        styleSheet: MarkdownStyleSheet(
+                          p: appStyle(
+                            16,
+                            const Color(0xFF000000),
+                            FontWeight.w400,
+                          ),
+                        ),
                       ),
                     ),
                   ),

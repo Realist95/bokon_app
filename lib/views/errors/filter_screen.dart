@@ -8,7 +8,8 @@ import 'package:bokon_app/controllers/catalog_controller.dart';
 import 'package:bokon_app/hooks/fetch_categories.dart';
 import 'package:bokon_app/models/catalog/item.dart';
 import 'package:bokon_app/views/errors/widgets/items_list_widget.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide BoxDecoration, BoxShadow;
+import 'package:flutter_inset_shadow/flutter_inset_shadow.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -79,7 +80,7 @@ class FilterScreen extends HookWidget {
                     builder: (context) => FilterScreen(
                       numberError: numberError,
                       categoryId: categoryId,
-                      needNotice: needNotice,
+                      needNotice: (items.length <= 1) ? false : needNotice,
                     ),
                   ))
                       .then((value) {
@@ -138,7 +139,8 @@ class FilterScreen extends HookWidget {
                             builder: (context) => FilterScreen(
                               numberError: numberError,
                               categoryId: controller.category!.id,
-                              needNotice: needNotice,
+                              needNotice:
+                                  (items.length <= 1) ? false : needNotice,
                             ),
                           ),
                         )
@@ -165,83 +167,143 @@ class FilterScreen extends HookWidget {
                     ? Expanded(
                         child: ItemsListWidget(
                           items: items,
-                          needNotice: needNotice,
+                          needNotice: (items.length <= 1) ? false : needNotice,
                         ),
                       )
-                    : Container(
-                        width: MediaQuery.of(context).size.width,
-                        margin:
-                            const EdgeInsets.only(top: 20, left: 16, right: 16),
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 15,
-                          vertical: 16,
-                        ),
-                        decoration: BoxDecoration(
-                          borderRadius:
-                              const BorderRadius.all(Radius.circular(8.0)),
-                          color: kButtonBg.withOpacity(.6),
-                          border: Border.all(
-                              color: const Color.fromRGBO(122, 118, 128, 0.65)),
-                        ),
-                        child: Column(
-                          children: [
-                            Text(
-                              'Нет совпадений',
-                              style: appStyle(
-                                20,
-                                Colors.black,
-                                FontWeight.w500,
+                    : Column(
+                        children: [
+                          Container(
+                            width: MediaQuery.of(context).size.width,
+                            margin: const EdgeInsets.only(
+                                top: 20, left: 16, right: 16),
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 15,
+                              vertical: 16,
+                            ),
+                            decoration: BoxDecoration(
+                              borderRadius:
+                                  const BorderRadius.all(Radius.circular(8.0)),
+                              color: kButtonBg.withOpacity(.6),
+                              border: Border.all(
+                                  color: const Color.fromRGBO(
+                                      122, 118, 128, 0.65)),
+                            ),
+                            child: Column(
+                              children: [
+                                Text(
+                                  'Нет совпадений',
+                                  style: appStyle(
+                                    20,
+                                    Colors.black,
+                                    FontWeight.w500,
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                                Center(
+                                  child: Text(
+                                    'Данная неисправность не найдена,\n мы уже занимаемся её поиском,\n попробуйте повторить позднее.',
+                                    style: appStyle(
+                                      18,
+                                      Colors.black,
+                                      FontWeight.w400,
+                                    ),
+                                  ),
+                                ),
+                                const Padding(
+                                  padding: EdgeInsets.only(
+                                    top: 20,
+                                    bottom: 20,
+                                  ),
+                                  child: Center(
+                                    child: Image(
+                                      image:
+                                          AssetImage('assets/images/- 1.png'),
+                                    ),
+                                  ),
+                                ),
+                                Center(
+                                  child: Text(
+                                    'Но не ранее чем через 3 часа.',
+                                    style: appStyle(
+                                      18,
+                                      Colors.black,
+                                      FontWeight.w400,
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 15,
+                                ),
+                                Center(
+                                  child: Text(
+                                    'Нет времени ждать?',
+                                    style: appStyle(
+                                      18,
+                                      Colors.black,
+                                      FontWeight.w400,
+                                    ),
+                                  ),
+                                ),
+                                Center(
+                                  child: Text(
+                                    'Звони поищем вместе.',
+                                    style: appStyle(
+                                      18,
+                                      Colors.black,
+                                      FontWeight.w400,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Container(
+                            width: (MediaQuery.of(context).size.width - 30),
+                            height: 62,
+                            margin: const EdgeInsets.only(top: 15),
+                            decoration: BoxDecoration(
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.shade600,
+                                  spreadRadius: 1,
+                                  blurRadius: 2,
+                                  offset: const Offset(0, 5),
+                                  inset: true,
+                                ),
+                              ],
+                              border: Border.all(
+                                color: const Color.fromRGBO(222, 222, 226, 1),
+                                width: 1,
+                              ),
+                              color: const Color.fromRGBO(248, 148, 75, 1),
+                              borderRadius: const BorderRadius.all(
+                                Radius.circular(6),
                               ),
                             ),
-                            const SizedBox(
-                              height: 10,
-                            ),
-                            Center(
+                            child: TextButton(
+                              style: TextButton.styleFrom(
+                                shape: const BeveledRectangleBorder(
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(6),
+                                  ),
+                                ),
+                              ),
+                              onPressed: () {
+                                Get.toNamed('/help');
+                              },
                               child: Text(
-                                'Данная неисправность не найдена,\n мы уже занимаемся её поиском,\n попробуйте повторить позднее.',
+                                'Тех поддержка',
                                 style: appStyle(
                                   18,
-                                  Colors.black,
-                                  FontWeight.w400,
+                                  Colors.white,
+                                  FontWeight.w500,
                                 ),
                               ),
                             ),
-                            const Padding(
-                              padding: EdgeInsets.only(
-                                top: 20,
-                                bottom: 20,
-                              ),
-                              child: Center(
-                                child: Image(
-                                  image: AssetImage('assets/images/- 1.png'),
-                                ),
-                              ),
-                            ),
-                            Center(
-                              child: Text(
-                                'Но не ранее чем через 3 часа.',
-                                style: appStyle(
-                                  18,
-                                  Colors.black,
-                                  FontWeight.w400,
-                                ),
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 15,
-                            ),
-                            Center(
-                              child: Text(
-                                'Нет времени ждать?\nЗвони поищем вместе.',
-                                style: appStyle(
-                                  18,
-                                  Colors.black,
-                                  FontWeight.w400,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
           ],
         ),

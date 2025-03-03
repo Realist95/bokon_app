@@ -1,11 +1,11 @@
 import 'package:archive/archive_io.dart';
-import 'package:connectivity/connectivity.dart';
+// import 'package:connectivity/connectivity.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:open_file/open_file.dart';
+// import 'package:open_file/open_file.dart';
 import 'dart:io';
 import 'package:path_provider/path_provider.dart';
 
@@ -41,12 +41,12 @@ class _SplashScreenState extends State<SplashScreen>
 
         dio.download(urlPath, savePath.path,
             onReceiveProgress: (downloaded, totlaSize) async {
-          print(downloaded / totlaSize);
+          // print(downloaded / totlaSize);
           if (downloaded / totlaSize == 1) {
-            print("OpenFile, ${savePath.path}");
+            // print("OpenFile, ${savePath.path}");
 
             final inputStream = InputFileStream(savePath.path);
-            print(inputStream.file);
+            // print(inputStream.file);
 
             final archive = ZipDecoder().decodeBuffer(inputStream);
             extractArchiveToDisk(archive, newPath);

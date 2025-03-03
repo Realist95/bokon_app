@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:ffi';
 
 List<ArticleModel> articlesModelFromJson(String str) => List<ArticleModel>.from(
     json.decode(str).map((x) => ArticleModel.fromJson(x)));

@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:ffi';
 
 import 'package:bokon_app/constants/constants.dart';
 // import 'package:bokon_app/models/api_error.dart';
@@ -44,30 +43,32 @@ FetchHook useFetchArticles(int ctype, [int limit = 10]) {
   Future<void> fetchData(int ctype) async {
     isLoading.value = true;
 
-    // final isOnline =
-    // await Connectivity().checkConnectivity() != ConnectivityResult.none;
+    final isOnline =
+        await Connectivity().checkConnectivity() != ConnectivityResult.none;
 
     try {
       articles.value = await getLocalData(ctype);
-      // if (isOnline) {
-      //   Uri url = Uri.parse("$apiBaseUrl/content:get.items");
-      //   final response = await http.post(
-      //     url,
-      //     body: jsonEncode({
-      //       "ctype": ctype,
-      //       "limit": limit,
-      //     }),
-      //     headers: {
-      //       'Content-Type': 'application/json; charset=UTF-8',
-      //     },
-      //   );
-      //   // debugPrint(response.statusCode.toString());
-      //   // debugPrint(response.body);
-      //   if (response.statusCode == 200) {
-      //     // ApiError.value = apiErrorFromJson(response.body);
-      //     articles.value = responseArticlesModelFromJson(response.body).items;
-      //   }
-      // } else {
+      if (articles.value == null || articles.value!.isEmpty && isOnline) {
+        Uri url = Uri.parse("$apiBaseUrl/content:get.items");
+        final response = await http.post(
+          url,
+          body: jsonEncode({
+            "ctype": ctype,
+            "limit": limit,
+          }),
+          headers: {
+            'Content-Type': 'application/json; charset=UTF-8',
+          },
+        );
+        // debugPrint(response.statusCode.toString());
+        // debugPrint(response.body);
+        if (response.statusCode == 200) {
+          // ApiError.value = apiErrorFromJson(response.body);
+          articles.value = responseArticlesModelFromJson(response.body).items;
+        }
+      }
+
+      // print(articles.value);
       //   articles.value = await getLocalData(ctype);
       // }
     } catch (e) {
@@ -207,6 +208,7 @@ FetchHook useFetchAllArticles() {
       debugPrint(e.toString());
     } finally {
       isLoading.value = false;
+      debugPrint(articlesModelToJson(items.value ?? []));
 
       if (items.value != null) {
         prefs.setString(

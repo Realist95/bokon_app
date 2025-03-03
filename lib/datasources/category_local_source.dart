@@ -6,7 +6,7 @@ abstract class CategoryLocalSource {
   Future<void> saveCategories(List<CategoryModel> categories);
 }
 
-const CASHED_CATEGORIES = 'CACHED_CATEGORIES';
+const cachedCategories = 'CACHED_CATEGORIES';
 
 class CategoryLocalSourceImpl implements CategoryLocalSource {
   final SharedPreferences prefs;
@@ -17,7 +17,7 @@ class CategoryLocalSourceImpl implements CategoryLocalSource {
     List<CategoryModel> items = [];
     // Simulate fetching data from a remote server
     return Future.delayed(const Duration(seconds: 3), () async {
-      final categoriesPrefs = prefs.getString(CASHED_CATEGORIES) ?? '';
+      final categoriesPrefs = prefs.getString(cachedCategories) ?? '';
       if (categoriesPrefs.isEmpty) return items;
       items = categoriesModelFromJson(categoriesPrefs.toString());
       return items;
@@ -26,7 +26,7 @@ class CategoryLocalSourceImpl implements CategoryLocalSource {
 
   @override
   Future<void> saveCategories(List<CategoryModel> categories) {
-    prefs.setString(CASHED_CATEGORIES, categoriesModelToJson(categories));
+    prefs.setString(cachedCategories, categoriesModelToJson(categories));
 
     return Future.value();
   }
