@@ -16,7 +16,9 @@ class CategoryModel {
   final String image;
   final List childrens;
   final String titleH1;
+  final int parent;
   final String description;
+  final String imageBase64;
 
   CategoryModel({
     required this.id,
@@ -24,17 +26,21 @@ class CategoryModel {
     required this.image,
     required this.childrens,
     required this.titleH1,
+    required this.parent,
     required this.description,
+    required this.imageBase64,
   });
 
   factory CategoryModel.fromJson(Map<String, dynamic> json) => CategoryModel(
-        id: int.parse(json['id']),
+        id: int.parse(json['id'].toString()),
         name: json['name'],
-        image: json['image'],
+        image: json['image'].toString(),
         childrens: List<CategoryModel>.from(
             (json['childrens'] ?? []).map((x) => CategoryModel.fromJson(x))),
         titleH1: json['title_h1'] ?? '',
+        parent: int.parse(json['parent'].toString()),
         description: json['description'] ?? '',
+        imageBase64: json['image_64'] ?? '',
       );
 
   Map<String, dynamic> toJson() => {
@@ -42,6 +48,10 @@ class CategoryModel {
         "name": name,
         "image": image,
         "childrens": childrens,
+        "title_h1": titleH1,
+        "description": description,
+        "image_64": imageBase64,
+        "parent": parent,
       };
 }
 

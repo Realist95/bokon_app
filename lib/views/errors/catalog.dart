@@ -22,7 +22,7 @@ class CatalogScreen extends HookWidget {
 
     List<CategoryModel> items = hookResult.data ?? [];
     final isLoading = hookResult.isLoading;
-    final error = hookResult.error;
+    // final error = hookResult.error;
 
     return BackGroundContainer(
       child: Scaffold(
@@ -31,7 +31,7 @@ class CatalogScreen extends HookWidget {
           automaticallyImplyLeading: false,
           toolbarHeight: 90,
           backgroundColor: Colors.transparent,
-          flexibleSpace: const MainAppBar(true),
+          flexibleSpace: const MainAppBar(true, 'Справочник'),
         ),
         drawer: const CustomNavigationDrawer(),
         body: isLoading
@@ -90,13 +90,31 @@ class _GridItemState extends State<GridItem> {
             ),
           ],
         ),
-        child: Text(
-          widget.item.name.toUpperCase(),
-          style: appStyle(
-            18,
-            kPrimary,
-            FontWeight.w500,
-          ),
+        child: Column(
+          children: [
+            Container(
+              alignment: Alignment.center,
+              child: Text(
+                widget.item.name,
+                style: appStyle(
+                  20,
+                  kPrimary,
+                  FontWeight.w700,
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 5,
+            ),
+            Text(
+              widget.item.description,
+              style: appStyle(
+                14,
+                kPrimary,
+                FontWeight.w400,
+              ),
+            ),
+          ],
         ),
       ),
     );

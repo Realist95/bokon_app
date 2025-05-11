@@ -20,9 +20,10 @@ class SubGroupsList extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final items = controller.category!.childrens;
-    final hookResult = useFetchItems(controller.category!.id, 10000);
-    final isLoading = hookResult.isLoading;
-    final error = hookResult.error;
+    // final hookResult = 
+    useFetchItems(controller.category!.id, 10000);
+    // final isLoading = hookResult.isLoading;
+    // final error = hookResult.error;
     final numberError = TextEditingController();
     final validate = useState<bool>(true);
 
@@ -36,7 +37,7 @@ class SubGroupsList extends HookWidget {
         appBar: AppBar(
           toolbarHeight: 90,
           backgroundColor: Colors.transparent,
-          flexibleSpace: const MainAppBar(true),
+          flexibleSpace: MainAppBar(true, controller.category!.name),
           automaticallyImplyLeading: false,
         ),
         drawer: const CustomNavigationDrawer(),
@@ -64,6 +65,7 @@ class SubGroupsList extends HookWidget {
                     () => FilterScreen(
                       numberError: numberError,
                       categoryId: controller.category!.id,
+                      needNotice: true,
                     ),
                     transition: Transition.leftToRight,
                     duration: const Duration(microseconds: 500),
@@ -119,6 +121,7 @@ class SubGroupsList extends HookWidget {
                           () => FilterScreen(
                             numberError: numberError,
                             categoryId: controller.category!.id,
+                            needNotice: true,
                           ),
                           transition: Transition.leftToRight,
                           duration: const Duration(microseconds: 500),
@@ -202,12 +205,15 @@ class _GridItemState extends State<GridItem> {
             ),
           ],
         ),
-        child: Text(
-          widget.item.name.toUpperCase(),
-          style: appStyle(
-            18,
-            kPrimary,
-            FontWeight.w500,
+        child: Container(
+          alignment: Alignment.center,
+          child: Text(
+            widget.item.name,
+            style: appStyle(
+              16,
+              kPrimary,
+              FontWeight.w500,
+            ),
           ),
         ),
       ),

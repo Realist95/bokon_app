@@ -2,7 +2,6 @@ import 'package:bokon_app/common/app_style.dart';
 import 'package:bokon_app/common/background_container.dart';
 import 'package:bokon_app/common/custom_navigation_drawer.dart';
 import 'package:bokon_app/common/main_app_bar.dart';
-import 'package:bokon_app/constants/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -19,7 +18,7 @@ class HelpArticle extends StatelessWidget {
         appBar: AppBar(
           toolbarHeight: 90,
           backgroundColor: Colors.transparent,
-          flexibleSpace: const MainAppBar(true),
+          flexibleSpace: const MainAppBar(true, 'Помощь'),
           automaticallyImplyLeading: false,
         ),
         drawer: const CustomNavigationDrawer(),
@@ -87,7 +86,7 @@ class HelpArticle extends StatelessWidget {
                     child: ListTile(
                       contentPadding: const EdgeInsets.all(0),
                       onTap: () async {
-                        await launchUrl(Uri.parse('https://t.me/+79882404142'));
+                        await launchUrl(Uri.parse('https://t.me/+79776005008'));
                       },
                       title: Column(
                         children: [
@@ -125,7 +124,7 @@ class HelpArticle extends StatelessWidget {
                       contentPadding: const EdgeInsets.all(0),
                       onTap: () async {
                         await launchUrl(Uri.parse(
-                            'https://api.whatsapp.com/send?phone=9882404142'));
+                            'https://api.whatsapp.com/send?phone=9776005008'));
                       },
                       title: Column(
                         children: [

@@ -7,9 +7,11 @@ import 'package:bokon_app/constants/constants.dart';
 import 'package:bokon_app/controllers/content_controller.dart';
 import 'package:bokon_app/hooks/fetch_articles.dart';
 import 'package:bokon_app/models/content/article.dart';
+import 'package:bokon_app/models/content/ctype.dart';
 import 'package:bokon_app/views/articles/single_article.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -18,6 +20,10 @@ class ArticlesUpdates extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
+    final hookResult2 = useFetchCtype(11);
+    CtypeModel ctype = hookResult2.data?[0] ??
+        CtypeModel(id: 0, name: '', content: '', description: '');
+
     final hookResult = useFetchArticles(11);
     List<ArticleModel> items = hookResult.data ?? [];
     final isLoading = hookResult.isLoading;
@@ -28,7 +34,7 @@ class ArticlesUpdates extends HookWidget {
         appBar: AppBar(
           toolbarHeight: 90,
           backgroundColor: Colors.transparent,
-          flexibleSpace: const MainAppBar(true),
+          flexibleSpace: const MainAppBar(true, 'Обновления'),
           automaticallyImplyLeading: false,
         ),
         drawer: const CustomNavigationDrawer(),
@@ -36,25 +42,31 @@ class ArticlesUpdates extends HookWidget {
             ? const CategoriesShimmer()
             : Column(
                 children: [
-                  Container(
-                    width: MediaQuery.of(context).size.width,
-                    padding: const EdgeInsets.all(15),
-                    margin: const EdgeInsets.symmetric(
-                        horizontal: 15, vertical: 15),
-                    // height: 200,
-                    decoration: BoxDecoration(
-                      borderRadius:
-                          const BorderRadius.all(Radius.circular(8.0)),
-                      color: kButtonBg.withOpacity(.6),
-                      border: Border.all(
-                          color: const Color.fromRGBO(122, 118, 128, 0.65)),
-                    ),
-                    child: Text(
-                      "Описание текста О приложении",
-                      style: appStyle(
-                        18,
-                        kPrimary,
-                        FontWeight.w600,
+                  Expanded(
+                    child: Container(
+                      width: MediaQuery.of(context).size.width,
+                      padding: const EdgeInsets.all(15),
+                      margin: const EdgeInsets.symmetric(
+                        horizontal: 15,
+                        vertical: 15,
+                      ),
+                      // height: 200,
+                      decoration: BoxDecoration(
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(8.0)),
+                        color: kButtonBg.withOpacity(.6),
+                        border: Border.all(
+                            color: const Color.fromRGBO(122, 118, 128, 0.65)),
+                      ),
+                      child: Markdown(
+                        data: ctype.content,
+                        styleSheet: MarkdownStyleSheet(
+                          p: appStyle(
+                            16,
+                            const Color(0xFF000000),
+                            FontWeight.w400,
+                          ),
+                        ),
                       ),
                     ),
                   ),
@@ -95,6 +107,7 @@ class _GridItemState extends State<GridItem> {
           () => SingleArticle(),
           transition: Transition.leftToRight,
           duration: const Duration(microseconds: 500),
+          arguments: {"title": "Инструкция"},
         );
       },
       textColor: kButtonText,
@@ -119,18 +132,32 @@ class _GridItemState extends State<GridItem> {
                 ],
               ),
               child: Container(
-                // height: 50,
                 alignment: Alignment.centerLeft,
                 padding: const EdgeInsets.all(15),
-                child: Text(
-                  widget.item.name,
-                  style: GoogleFonts.roboto(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w500,
-                    color: kPrimary,
-                    // height: 24,
-                  ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      widget.item.name,
+                      style: GoogleFonts.roboto(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
+                        color: kPrimary,
+                        // height: 24,
+                      ),
+                    ),
+                    Text(
+                      widget.item.date,
+                      style: GoogleFonts.roboto(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                        color: const Color(0xFF7A7680),
+                        // height: 24,
+                      ),
+                    ),
+                  ],
                 ),
+                // height: 50,
               ),
             ),
           ],

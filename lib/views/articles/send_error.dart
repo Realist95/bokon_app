@@ -3,16 +3,22 @@ import 'package:bokon_app/common/background_container.dart';
 import 'package:bokon_app/common/custom_navigation_drawer.dart';
 import 'package:bokon_app/common/input_filed.dart';
 import 'package:bokon_app/common/main_app_bar.dart';
-import 'package:bokon_app/constants/constants.dart';
+import 'package:bokon_app/controllers/form_controller.dart';
+import 'package:bokon_app/models/feedback/error_model.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
+// import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class SendError extends StatefulWidget {
-  const SendError({super.key});
+  const SendError({
+    super.key,
+    required this.block,
+    required this.errorNumber,
+  });
+
+  final String block;
+  final String errorNumber;
 
   @override
   State<SendError> createState() => _SendErrorState();
@@ -25,17 +31,26 @@ class _SendErrorState extends State<SendError> {
   final generation = TextEditingController();
   final name = TextEditingController();
   final phone = TextEditingController();
-  final email = TextEditingController();
   final message = TextEditingController();
+
+  final controller = Get.put(FormController());
+
   @override
   Widget build(BuildContext context) {
+    if (widget.block.isNotEmpty) {
+      block.text = widget.block;
+    }
+    if (widget.errorNumber.isNotEmpty) {
+      errorNumber.text = widget.errorNumber;
+    }
+
     return BackGroundContainer(
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: AppBar(
           toolbarHeight: 90,
           backgroundColor: Colors.transparent,
-          flexibleSpace: const MainAppBar(true),
+          flexibleSpace: const MainAppBar(true, 'Отправить ошибку'),
           automaticallyImplyLeading: false,
         ),
         drawer: const CustomNavigationDrawer(),
@@ -52,6 +67,7 @@ class _SendErrorState extends State<SendError> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
+                        margin: const EdgeInsets.only(bottom: 15),
                         width: MediaQuery.of(context).size.width,
                         alignment: Alignment.topCenter,
                         padding: const EdgeInsets.symmetric(vertical: 30),
@@ -63,7 +79,7 @@ class _SendErrorState extends State<SendError> {
                           ),
                         ),
                         child: Text(
-                          'Сообщить об ошибке',
+                          'Описание проблемы',
                           style: appStyle(
                             24,
                             const Color.fromRGBO(27, 29, 31, 1),
@@ -75,38 +91,6 @@ class _SendErrorState extends State<SendError> {
                         child: SingleChildScrollView(
                           child: Column(
                             children: [
-                              InputFiled(
-                                label: "Название блока",
-                                textError: "Укажите название блока!",
-                                isRequired: true,
-                                controller: block,
-                                padding: const EdgeInsets.only(
-                                  top: 30,
-                                  left: 20,
-                                  right: 20,
-                                  bottom: 10,
-                                ),
-                              ),
-                              InputFiled(
-                                label: "Номер ошибки",
-                                textError: "Укажите номер ошибки!",
-                                isRequired: true,
-                                controller: errorNumber,
-                                padding: const EdgeInsets.symmetric(
-                                  horizontal: 20,
-                                  vertical: 10,
-                                ),
-                              ),
-                              InputFiled(
-                                label: "Годы выпуска",
-                                textError: "Укажите годы выпуска!",
-                                isRequired: true,
-                                controller: generation,
-                                padding: const EdgeInsets.symmetric(
-                                  horizontal: 20,
-                                  vertical: 10,
-                                ),
-                              ),
                               InputFiled(
                                 label: "Ваше имя",
                                 textError: "Укажите ваше имя!",
@@ -133,16 +117,8 @@ class _SendErrorState extends State<SendError> {
                                 ),
                               ),
                               InputFiled(
-                                label: "E-mail",
-                                keyboardType: TextInputType.emailAddress,
-                                controller: email,
-                                padding: const EdgeInsets.symmetric(
-                                  horizontal: 20,
-                                  vertical: 10,
-                                ),
-                              ),
-                              InputFiled(
                                 label: "Сообщение",
+                                maxLines: 5,
                                 controller: message,
                                 padding: const EdgeInsets.symmetric(
                                   horizontal: 20,
@@ -169,6 +145,18 @@ class _SendErrorState extends State<SendError> {
                                   ),
                                   onPressed: () {
                                     if (formKey.currentState!.validate()) {
+                                      ErrorModel errorModel = ErrorModel(
+                                        block: block.text,
+                                        errorNumber: errorNumber.text,
+                                        generation: generation.text,
+                                        name: name.text,
+                                        phone: phone.text,
+                                        message: message.text,
+                                      );
+
+                                      String data =
+                                          errorModelToJson(errorModel);
+                                      controller.sendErrorForm(data, context);
                                     } else {
                                       final snackBar = SnackBar(
                                         backgroundColor: const Color.fromRGBO(
@@ -184,20 +172,19 @@ class _SendErrorState extends State<SendError> {
                                         action: SnackBarAction(
                                           textColor: Colors.white,
                                           label: 'Ok',
-                                          onPressed: () {
-                                            // Some code to undo the change.
-                                          },
+                                          onPressed: () {},
                                         ),
                                       );
 
-                                      // Find the ScaffoldMessenger in the widget tree
-                                      // and use it to show a SnackBar.
+                                      // Ошибка валидации
                                       ScaffoldMessenger.of(context)
                                           .showSnackBar(snackBar);
                                     }
                                   },
                                   child: Text(
-                                    'Отправить',
+                                    controller.isLoading
+                                        ? 'Отправка...'
+                                        : 'Отправить',
                                     style: appStyle(
                                       18,
                                       Colors.white,

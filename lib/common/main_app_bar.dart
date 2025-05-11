@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:bokon_app/common/app_style.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -5,9 +8,10 @@ import 'package:bokon_app/constants/constants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class MainAppBar extends StatelessWidget {
-  const MainAppBar(this.needBack, {super.key});
+  const MainAppBar(this.needBack, this.title, {super.key});
 
   final bool needBack;
+  final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -23,65 +27,169 @@ class MainAppBar extends StatelessWidget {
             height: 40.h,
             // color: const Color(0xFF717173),
           ),
-          ButtonBar(
-            buttonPadding: EdgeInsets.zero,
-            alignment: MainAxisAlignment.start,
-            children: [
-              SizedBox(
-                width: 15.h,
-              ),
-              (needBack)
-                  ? MaterialButton(
-                      elevation: 0,
-                      minWidth: 46,
-                      height: 46,
-                      child: Container(
-                        width: 46,
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 15.w),
+            child: ButtonBar(
+              buttonPadding: EdgeInsets.zero,
+              alignment: MainAxisAlignment.spaceBetween,
+              children: [
+                (needBack)
+                    ? MaterialButton(
+                        elevation: 0,
+                        minWidth: 46,
                         height: 46,
-                        decoration: const BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(6.0)),
-                          color: Colors.white,
-                        ),
-                        child: const Center(
-                          child: Icon(
-                            CupertinoIcons.arrow_left,
-                            color: kPrimaryAlt,
-                            size: 26.0,
+                        child: Container(
+                          width: 46,
+                          height: 46,
+                          decoration: const BoxDecoration(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(6.0)),
+                            color: Colors.white,
+                          ),
+                          child: const Center(
+                            child: Icon(
+                              CupertinoIcons.arrow_left,
+                              color: kPrimaryAlt,
+                              size: 26.0,
+                            ),
                           ),
                         ),
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                      )
+                    : MaterialButton(
+                        elevation: 0,
+                        minWidth: 46,
+                        height: 46,
+                        child: Container(
+                          width: 46,
+                          height: 46,
+                          decoration: const BoxDecoration(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(6.0)),
+                            color: Colors.white,
+                          ),
+                          child: const Center(
+                            child: Icon(
+                              CupertinoIcons.power,
+                              color: kPrimaryAlt,
+                              size: 26.0,
+                            ),
+                          ),
+                        ),
+                        onPressed: () {
+                          showDialog(
+                            context: context,
+                            builder: (context) => AlertDialog(
+                              backgroundColor:
+                                  const Color.fromRGBO(255, 255, 255, 0.85),
+                              title: Text(
+                                'Вы уверены, что хотите выйти из приложения?',
+                                textAlign: TextAlign.center,
+                                style: appStyle(
+                                  18,
+                                  const Color(0xFF000000),
+                                  FontWeight.w400,
+                                ),
+                              ),
+                              actions: <Widget>[
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  children: [
+                                    Container(
+                                      padding: const EdgeInsets.only(
+                                        top: 0,
+                                        left: 10,
+                                        right: 10,
+                                        bottom: 0,
+                                      ),
+                                      decoration: const BoxDecoration(
+                                        color: Color.fromRGBO(248, 148, 75, 1),
+                                        borderRadius: BorderRadius.all(
+                                          Radius.circular(6),
+                                        ),
+                                      ),
+                                      child: TextButton(
+                                        onPressed: () =>
+                                            Navigator.of(context).pop(false),
+                                        child: Text(
+                                          'Нет',
+                                          style: appStyle(
+                                            18,
+                                            Colors.white,
+                                            FontWeight.w500,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Container(
+                                      padding: const EdgeInsets.only(
+                                        top: 0,
+                                        left: 10,
+                                        right: 10,
+                                        bottom: 0,
+                                      ),
+                                      decoration: const BoxDecoration(
+                                        color: Color.fromRGBO(255, 255, 255, 1),
+                                        borderRadius: BorderRadius.all(
+                                          Radius.circular(6),
+                                        ),
+                                      ),
+                                      child: TextButton(
+                                        onPressed: () => exit(0),
+                                        child: Text(
+                                          'Да',
+                                          style: appStyle(
+                                            18,
+                                            const Color.fromRGBO(
+                                                248, 148, 75, 1),
+                                            FontWeight.w500,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          );
+                        },
                       ),
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                    )
-                  : const SizedBox(),
-              (needBack)
-                  ? SizedBox(
-                      width: 10.w,
-                    )
-                  : const SizedBox(),
-              MaterialButton(
-                elevation: 0,
-                minWidth: 46,
-                height: 46,
-                child: Container(
-                  width: 46,
-                  height: 46,
-                  decoration: const BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(6.0)),
-                      color: Colors.white),
-                  child: Center(
-                    child: SvgPicture.asset(
-                      'assets/images/burger.svg',
+                SizedBox(
+                  child: Text(
+                    title.toString().toUpperCase(),
+                    style: appStyle(
+                      20,
+                      const Color(0xFF7A7680),
+                      FontWeight.w600,
                     ),
                   ),
                 ),
-                onPressed: () {
-                  Scaffold.of(context).openDrawer();
-                  // Scaffold.of(context).hasDrawer;
-                },
-              ),
-            ],
+                MaterialButton(
+                  elevation: 0,
+                  minWidth: 46,
+                  height: 46,
+                  child: Container(
+                    width: 46,
+                    height: 46,
+                    decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(6.0)),
+                        color: Colors.white),
+                    child: Center(
+                      child: SvgPicture.asset(
+                        'assets/images/burger.svg',
+                      ),
+                    ),
+                  ),
+                  onPressed: () {
+                    Scaffold.of(context).openDrawer();
+                    // Scaffold.of(context).hasDrawer;
+                  },
+                ),
+              ],
+            ),
           ),
           SizedBox(
             height: 10.h,

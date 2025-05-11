@@ -3,10 +3,7 @@ import 'package:bokon_app/models/catalog/category.dart';
 import 'package:flutter/material.dart';
 import 'package:bokon_app/common/app_style.dart';
 import 'package:bokon_app/constants/constants.dart';
-import 'package:bokon_app/services/img_network.dart';
 import 'package:bokon_app/views/errors/items_list.dart';
-import 'package:bokon_app/views/errors/subgroups_list.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class CategoriesListWidget extends StatelessWidget {
@@ -89,9 +86,9 @@ class _GridItemState extends State<GridItem> {
             child: Text(
               widget.item.name.toUpperCase(),
               style: appStyle(
-                18,
+                14,
                 kPrimary,
-                FontWeight.w500,
+                FontWeight.w400,
               ),
             ),
           ),
