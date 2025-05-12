@@ -23,10 +23,10 @@ class MainAppBar extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          Container(
-            height: 40.h,
-            // color: const Color(0xFF717173),
-          ),
+          // Container(
+          //   height: 40.h,
+          //   // color: const Color(0xFF717173),
+          // ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 15.w),
             child: ButtonBar(
