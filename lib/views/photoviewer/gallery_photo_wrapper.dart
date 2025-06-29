@@ -10,14 +10,14 @@ import 'package:photo_view/photo_view.dart';
 
 class GalleryPhotoWrapper extends StatelessWidget {
   const GalleryPhotoWrapper({
-    Key? key,
+    super.key,
     required this.child,
     required this.imageUrl,
     this.backgroundColor = Colors.black,
     this.backgroundIsTransparent = true,
     // this.disposeLevel,
     // this.disableSwipeToDismiss = false,
-  }) : super(key: key);
+  });
 
   final Widget child;
   final String imageUrl;
@@ -72,12 +72,12 @@ class GalleryPhotoWrapper extends StatelessWidget {
 
 class FullScreenPhoto extends StatefulWidget {
   const FullScreenPhoto({
-    Key? key,
+    super.key,
     required this.child,
     required this.tag,
     this.backgroundColor = Colors.black,
     this.backgroundIsTransparent = true,
-  }) : super(key: key);
+  });
 
   final ImageProvider child;
   final Color backgroundColor;
@@ -97,7 +97,7 @@ class _FullScreenViewerState extends State<FullScreenPhoto> {
 
   double _opacity = 1;
 
-  double _disposeLimit = 150;
+  final double _disposeLimit = 150;
 
   Duration _animationDuration = Duration.zero;
 

@@ -6,7 +6,8 @@ import 'package:bokon_app/common/custom_navigation_drawer.dart';
 import 'package:bokon_app/common/main_app_bar.dart';
 import 'package:bokon_app/constants/constants.dart';
 import 'package:bokon_app/controllers/catalog_controller.dart';
-import 'package:bokon_app/hooks/fetch_categories.dart';
+// import 'package:bokon_app/hooks/catalog_hook.dart';
+import 'package:bokon_app/models/catalog/category.dart';
 import 'package:bokon_app/models/catalog/item.dart';
 import 'package:bokon_app/views/articles/send_error.dart';
 import 'package:bokon_app/views/photoviewer/gallery_photo_wrapper.dart';
@@ -23,10 +24,11 @@ class SingleCatalogItems extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final hookResult =
-    useFetchItems(controller.category!.id, 1000);
+    // final hookResult = useFetchItems(controller.category!.id, 1000);
 
     CatalogItemModel item = controller.currentItem!;
+    CatalogCategoryModel parent =
+        controller.subCategory ?? controller.category!;
     // final isLoading = hookResult.isLoading;
     // final error = hookResult.error;
     return BackGroundContainer(
@@ -39,16 +41,21 @@ class SingleCatalogItems extends HookWidget {
           automaticallyImplyLeading: false,
         ),
         drawer: const CustomNavigationDrawer(),
-        body: GridItem(item: item),
+        body: GridItem(item: item, parent: parent),
       ),
     );
   }
 }
 
 class GridItem extends StatefulWidget {
-  const GridItem({super.key, required this.item});
+  const GridItem({
+    super.key,
+    required this.item,
+    required this.parent,
+  });
 
   final CatalogItemModel item;
+  final CatalogCategoryModel parent;
 
   @override
   State<GridItem> createState() => _GridItemState();
@@ -135,9 +142,9 @@ class _GridItemState extends State<GridItem> {
                   padding: const EdgeInsets.only(top: 15),
                   child: Text(
                     textAlign: TextAlign.center,
-                    widget.item.parent!.titleH1.isNotEmpty
-                        ? widget.item.parent!.titleH1
-                        : widget.item.parent!.description,
+                    widget.parent.titleH1.isNotEmpty
+                        ? widget.parent.titleH1
+                        : widget.parent.description,
                     style: appStyle(
                       16,
                       kPrimary,
@@ -224,7 +231,7 @@ class _GridItemState extends State<GridItem> {
             onTap: () {
               Get.to(
                 () => SendError(
-                  block: widget.item.parent!.name,
+                  block: widget.parent.name,
                   errorNumber: widget.item.name,
                 ),
                 transition: Transition.leftToRight,

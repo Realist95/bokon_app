@@ -3,8 +3,8 @@ import 'package:bokon_app/models/content/article.dart';
 import 'package:get/get.dart';
 
 class ContentController extends GetxController {
-  CategoryModel? _category;
-  CategoryModel? get category => _category;
+  CatalogCategoryModel? _category;
+  CatalogCategoryModel? get category => _category;
 
   ArticleModel? _currentItem;
   ArticleModel? get currentItem => _currentItem;
@@ -13,7 +13,7 @@ class ContentController extends GetxController {
   //   _category = current;
   // }
 
-  void setCategory(CategoryModel current) {
+  void setCategory(CatalogCategoryModel current) {
     _category = current;
     update();
   }

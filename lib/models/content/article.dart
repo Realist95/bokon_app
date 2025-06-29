@@ -1,18 +1,13 @@
-import 'dart:convert';
+import 'package:hive_ce/hive.dart';
 
-List<ArticleModel> articlesModelFromJson(String str) => List<ArticleModel>.from(
-    json.decode(str).map((x) => ArticleModel.fromJson(x)));
-String articlesModelToJson(List<ArticleModel> data) =>
-    json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
-
-ResponseArticlesModel responseArticlesModelFromJson(String str) {
-  return ResponseArticlesModel.fromJson(json.decode(str));
+ResponseArticlesModel responseArticlesModelFromJson(Map<String, dynamic> json) {
+  return ResponseArticlesModel.fromJson(json);
 }
 
-class ArticleModel {
+class ArticleModel extends HiveObject {
   final int id;
   final String name;
-  final String ctype;
+  final int ctype;
   // final String image;
   final String content;
   final String date;
@@ -31,24 +26,14 @@ class ArticleModel {
   });
 
   factory ArticleModel.fromJson(Map<String, dynamic> json) => ArticleModel(
-        id: int.parse(json['id'] as String),
+        id: json['id'] as int,
         name: json['name'] as String,
-        ctype: json['ctype'].toString(),
+        ctype: json['ctype'] as int,
         content: json['content'] as String,
         date: json['date'] as String,
         isSpecial: json['is_special'] as bool,
         description: (json['description'] ?? '') as String,
       );
-
-  Map<String, dynamic> toJson() => {
-        "id": id.toString(),
-        "name": name,
-        "ctype": ctype,
-        "content": content,
-        "date": date,
-        "is_special": isSpecial,
-        "description": description,
-      };
 }
 
 class ResponseArticlesModel {
@@ -69,8 +54,10 @@ class ResponseArticlesModel {
   factory ResponseArticlesModel.fromJson(Map<String, dynamic> json) =>
       ResponseArticlesModel(
         items: List<ArticleModel>.from(
-            (json['items'] ?? []).map((x) => ArticleModel.fromJson(x))),
-        // items: categoriesModelFromJson(json['items'] ?? []),
+          (json['items'] ?? []).map(
+            (x) => ArticleModel.fromJson(x),
+          ),
+        ),
         page: json['paging']['page'] ?? 0,
         limit: json['paging']['limit'] ?? 0,
         totalItems: json['paging']['totalItems'] ?? 0,

@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:bokon_app/controllers/catalog_controller.dart';
 import 'package:bokon_app/models/catalog/category.dart';
 import 'package:bokon_app/views/errors/filter_screen.dart';
@@ -51,7 +53,7 @@ class CategoriesGridWidget extends HookWidget {
               Get.to(
                 () => FilterScreen(
                   numberError: numberError,
-                  categoryId: controller.category!.id,
+                  category: controller.category,
                   needNotice: true,
                 ),
                 transition: Transition.leftToRight,
@@ -107,7 +109,7 @@ class CategoriesGridWidget extends HookWidget {
                     Get.to(
                       () => FilterScreen(
                         numberError: numberError,
-                        categoryId: controller.category!.id,
+                        category: controller.category,
                         needNotice: true,
                       ),
                       transition: Transition.leftToRight,
@@ -148,7 +150,7 @@ class CategoriesGridWidget extends HookWidget {
 
 class GridItem extends StatefulWidget {
   const GridItem({super.key, required this.item});
-  final CategoryModel item;
+  final CatalogCategoryModel item;
 
   @override
   State<GridItem> createState() => _GridItemState();
@@ -159,12 +161,11 @@ class _GridItemState extends State<GridItem> {
 
   @override
   Widget build(BuildContext context) {
+    const String imagePath =
+        '/data/user/0/com.bokon_app.test.bokon_app/cache/uploads/shop/photos/original/';
     final String pathImg = widget.item.image.isNotEmpty
-        ? "https://bokon.ru/uploads/shop/photos/original/${widget.item.image}"
-        : "https://app.bokon.ru/img/icons/short-logo.jpg";
-
-    final String base64 =
-        widget.item.imageBase64.isNotEmpty ? widget.item.imageBase64 : "";
+        ? imagePath + widget.item.image
+        : 'assets/images/short-logo.png';
 
     return MaterialButton(
       focusColor: kButtonBgActive,
@@ -217,29 +218,35 @@ class _GridItemState extends State<GridItem> {
                   width: 350.w,
                   height: 200.h,
                   // fit: FlexFit.tight,
-                  child: base64.isNotEmpty
-                      ? ClipRRect(
-                          borderRadius: const BorderRadius.only(
-                            topLeft: Radius.circular(16),
-                            topRight: Radius.circular(16),
-                            bottomRight: Radius.circular(8),
-                            bottomLeft: Radius.circular(8),
-                          ),
-                          child: Image.memory(
-                            base64Decode(base64),
+                  child:
+                      //   ImgNetwork(
+                      //     fit: BoxFit.cover,
+                      //     pathImg: pathImg,
+                      //     borderRadius: const BorderRadius.only(
+                      //       topLeft: Radius.circular(16),
+                      //       topRight: Radius.circular(16),
+                      //       bottomRight: Radius.circular(8),
+                      //       bottomLeft: Radius.circular(8),
+                      //     ),
+                      //   )
+                      // :
+                      ClipRRect(
+                    borderRadius: const BorderRadius.only(
+                      topLeft: Radius.circular(16),
+                      topRight: Radius.circular(16),
+                      bottomRight: Radius.circular(8),
+                      bottomLeft: Radius.circular(8),
+                    ),
+                    child: widget.item.image.isNotEmpty
+                        ? Image.file(
+                            File(pathImg),
+                            fit: BoxFit.cover,
+                          )
+                        : Image.asset(
+                            'assets/images/short-logo.png',
                             fit: BoxFit.cover,
                           ),
-                        )
-                      : ImgNetwork(
-                          fit: BoxFit.cover,
-                          pathImg: pathImg,
-                          borderRadius: const BorderRadius.only(
-                            topLeft: Radius.circular(16),
-                            topRight: Radius.circular(16),
-                            bottomRight: Radius.circular(8),
-                            bottomLeft: Radius.circular(8),
-                          ),
-                        ),
+                  ),
                 ),
                 Flexible(
                   child: Container(

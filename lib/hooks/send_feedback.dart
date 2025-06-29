@@ -1,11 +1,10 @@
-import 'package:bokon_app/models/catalog/category.dart';
 import 'package:bokon_app/models/hook_models/hook_result.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:http/http.dart' as http;
 
 FetchHook useSendFeeback() {
-  final categories = useState<List<CategoryModel>?>(null);
+  // final categories = useState<List<CategoryModel>?>(null);
   final isLoading = useState<bool>(false);
   final error = useState<Exception?>(null);
 
@@ -20,7 +19,7 @@ FetchHook useSendFeeback() {
         // ApiError.value = apiErrorFromJson(response.body);
       }
 
-      categories.value = responseCategoriesModelFromJson(response.body).items;
+      // categories.value = responseCategoriesModelFromJson(response.body).items;
     } catch (e) {
       debugPrint(e.toString());
     } finally {
@@ -39,7 +38,7 @@ FetchHook useSendFeeback() {
   }
 
   return FetchHook(
-    data: categories.value,
+    data: [], //categories.value,
     isLoading: isLoading.value,
     error: error.value,
     refetch: refetch,

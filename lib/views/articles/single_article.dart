@@ -12,6 +12,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:get/get.dart';
+// import 'package:path_provider/path_provider.dart';
 
 class SingleArticle extends HookWidget {
   SingleArticle({super.key});
@@ -53,9 +54,8 @@ class GridItem extends StatefulWidget {
 class _GridItemState extends State<GridItem> {
   @override
   Widget build(BuildContext context) {
-    const String imagePath = '/data/user/0/com.bokon.bokon_app/cache/uploads';
-
-    // debugPrint(widget.item.content);
+    const String imagePath =
+        '/data/user/0/com.bokon_app.test.bokon_app/cache/uploads';
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
       decoration: BoxDecoration(
@@ -106,95 +106,5 @@ class _GridItemState extends State<GridItem> {
         ],
       ),
     );
-
-    // Column(
-    //   children: [
-    //     Expanded(
-    //       child: Container(
-    //         margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-    //         // height: 200,
-    //         decoration: BoxDecoration(
-    //           borderRadius: const BorderRadius.all(Radius.circular(8.0)),
-    //           color: kButtonBg.withOpacity(.6),
-    //           border:
-    //               Border.all(color: const Color.fromRGBO(122, 118, 128, 0.65)),
-    //         ),
-    //         child: SingleChildScrollView(
-    //           child: Column(
-    //             // margin: const EdgeInsets.all(15),
-    //             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-    //             children: [
-    //               Padding(
-    //                 padding: const EdgeInsets.only(top: 15, left: 15),
-    //                 child: Text(
-    //                   widget.item.name,
-    //                   style: appStyle(
-    //                     18,
-    //                     kPrimary,
-    //                     FontWeight.w600,
-    //                   ),
-    //                 ),
-    //               ),
-    //               Expanded(child: Markdown(data: widget.item.content)
-
-    //                   // Container(
-    //                   //   alignment: Alignment.topLeft,
-    //                   //   padding: const EdgeInsets.symmetric(
-    //                   //     horizontal: 15,
-    //                   //     vertical: 15,
-    //                   //   ),
-    //                   //   child: Markdown(data: widget.item.content),
-
-    //                   //   // HtmlWidget(
-    //                   //   //   widget.item.content,
-    //                   //   //   textStyle: const TextStyle(
-    //                   //   //     color: kPrimary,
-    //                   //   //     fontSize: 18,
-    //                   //   //     fontWeight: FontWeight.w400,
-    //                   //   //   ),
-    //                   //   // ),
-
-    //                   //   // Html.fromDom(
-    //                   //   //   document: dom.Document.html(widget.item.content),
-    //                   //   //   shrinkWrap: true,
-    //                   //   // )
-
-    //                   //   // Text(
-    //                   //   //   widget.item.content,
-    //                   //   // ),
-    //                   //   // child: Html(
-    //                   //   //   data: widget.item.content,
-    //                   //   //   style: {
-    //                   //   //     "p": Style(
-    //                   //   //       color: kPrimary,
-    //                   //   //       fontSize: FontSize(20),
-    //                   //   //       fontWeight: FontWeight.w500,
-    //                   //   //     ),
-    //                   //   //     "table": Style(
-    //                   //   //       backgroundColor: Colors.white,
-    //                   //   //     ),
-    //                   //   //     "tr": Style(
-    //                   //   //       // padding:  const EdgeInsets.all(2),
-    //                   //   //       border: Border.all(color: Colors.black),
-    //                   //   //     ),
-    //                   //   //     "th": Style(
-    //                   //   //       // padding: const EdgeInsets.all(2),
-    //                   //   //       border: Border.all(color: Colors.black),
-    //                   //   //     ),
-    //                   //   //     "td": Style(
-    //                   //   //       // padding: const EdgeInsets.all(2),
-    //                   //   //       border: Border.all(color: Colors.black),
-    //                   //   //     ),
-    //                   //   //   },
-    //                   //   // ),
-    //                   // ),
-    //                   ),
-    //             ],
-    //           ),
-    //         ),
-    //       ),
-    //     ),
-    //   ],
-    // );
   }
 }

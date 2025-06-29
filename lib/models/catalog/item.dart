@@ -1,24 +1,16 @@
-import 'dart:convert';
-import 'package:bokon_app/models/catalog/category.dart';
+import 'package:hive_ce/hive.dart';
 
-List<CatalogItemModel> catalogItemsModelFromJson(String str) =>
-    List<CatalogItemModel>.from(
-        json.decode(str).map((x) => CatalogItemModel.fromJson(x)));
-String itemsModelToJson(List<CatalogItemModel> data) =>
-    json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
-
-ResponseItemsModel responseItemsModelFromJson(String str) {
-  return ResponseItemsModel.fromJson(json.decode(str));
+ResponseItemsModel responseItemsModelFromJson(Map<String, dynamic> json) {
+  return ResponseItemsModel.fromJson(json);
 }
 
-class CatalogItemModel {
-  final int id;
-  final String name;
-  final int maingroup;
-  final String content;
-  final String description;
-  final String difficulty;
-  final CategoryModel? parent;
+class CatalogItemModel extends HiveObject {
+  int id;
+  String name;
+  int maingroup;
+  String content;
+  String description;
+  String difficulty;
 
   CatalogItemModel({
     required this.id,
@@ -27,7 +19,6 @@ class CatalogItemModel {
     required this.content,
     required this.description,
     required this.difficulty,
-    required this.parent,
   });
 
   factory CatalogItemModel.fromJson(Map<String, dynamic> json) =>
@@ -38,18 +29,7 @@ class CatalogItemModel {
         content: json['content'].toString(),
         description: json['description'].toString(),
         difficulty: json['difficulty'].toString(),
-        parent: CategoryModel.fromJson(json['parent'] ?? {}),
       );
-
-  Map<String, dynamic> toJson() => {
-        "id": id,
-        "name": name,
-        "maingroup": maingroup,
-        "content": content,
-        "description": description,
-        "difficulty": difficulty,
-        "parent": parent?.toJson(),
-      };
 }
 
 class ResponseItemsModel {

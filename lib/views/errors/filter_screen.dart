@@ -5,7 +5,8 @@ import 'package:bokon_app/common/main_app_bar.dart';
 import 'package:bokon_app/common/shimmers/categories_shemmer.dart';
 import 'package:bokon_app/constants/constants.dart';
 import 'package:bokon_app/controllers/catalog_controller.dart';
-import 'package:bokon_app/hooks/fetch_categories.dart';
+import 'package:bokon_app/hooks/catalog_hook.dart';
+import 'package:bokon_app/models/catalog/category.dart';
 import 'package:bokon_app/models/catalog/item.dart';
 import 'package:bokon_app/views/errors/widgets/items_list_widget.dart';
 import 'package:flutter/material.dart' hide BoxDecoration, BoxShadow;
@@ -18,18 +19,17 @@ class FilterScreen extends HookWidget {
   FilterScreen({
     super.key,
     required this.numberError,
-    required this.categoryId,
+    required this.category,
     required this.needNotice,
   });
   final CatalogController controller = Get.find();
   final TextEditingController numberError;
-  final int categoryId;
+  final CatalogCategoryModel? category;
   final bool needNotice;
 
   @override
   Widget build(BuildContext context) {
-    // print("categoryId ${categoryId}");
-    final hookResult = useFetchItems(categoryId, 1000);
+    final hookResult = useFetchItems(category!.id, 1000);
     List<CatalogItemModel> items = hookResult.data ?? [];
     final isLoading = hookResult.isLoading;
     // final error = hookResult.error;
@@ -76,13 +76,15 @@ class FilterScreen extends HookWidget {
                   validate.value = true;
 
                   Navigator.of(context)
-                      .push(MaterialPageRoute(
-                    builder: (context) => FilterScreen(
-                      numberError: numberError,
-                      categoryId: categoryId,
-                      needNotice: (items.length <= 1) ? false : needNotice,
+                      .push(
+                    MaterialPageRoute(
+                      builder: (context) => FilterScreen(
+                        numberError: numberError,
+                        category: category,
+                        needNotice: (items.length <= 1) ? false : needNotice,
+                      ),
                     ),
-                  ))
+                  )
                       .then((value) {
                     Navigator.of(context).pop(true);
                   });
@@ -138,7 +140,7 @@ class FilterScreen extends HookWidget {
                           MaterialPageRoute(
                             builder: (context) => FilterScreen(
                               numberError: numberError,
-                              categoryId: controller.category!.id,
+                              category: controller.category,
                               needNotice:
                                   (items.length <= 1) ? false : needNotice,
                             ),
@@ -167,6 +169,7 @@ class FilterScreen extends HookWidget {
                     ? Expanded(
                         child: ItemsListWidget(
                           items: items,
+                          category: category,
                           needNotice: (items.length <= 1) ? false : needNotice,
                         ),
                       )
@@ -263,22 +266,22 @@ class FilterScreen extends HookWidget {
                             width: (MediaQuery.of(context).size.width - 30),
                             height: 62,
                             margin: const EdgeInsets.only(top: 15),
-                            decoration: BoxDecoration(
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.grey.shade600,
-                                  spreadRadius: 1,
-                                  blurRadius: 2,
-                                  offset: const Offset(0, 5),
-                                  inset: true,
-                                ),
-                              ],
-                              border: Border.all(
-                                color: const Color.fromRGBO(222, 222, 226, 1),
-                                width: 1,
-                              ),
-                              color: const Color.fromRGBO(248, 148, 75, 1),
-                              borderRadius: const BorderRadius.all(
+                            decoration: const BoxDecoration(
+                              // boxShadow: [
+                              //   BoxShadow(
+                              //     color: Colors.grey.shade600,
+                              //     spreadRadius: 1,
+                              //     blurRadius: 2,
+                              //     offset: const Offset(0, 5),
+                              //     inset: true,
+                              //   ),
+                              // ],
+                              // border: Border.all(
+                              //   color: const Color.fromRGBO(222, 222, 226, 1),
+                              //   width: 1,
+                              // ),
+                              color: Color.fromRGBO(248, 148, 75, 1),
+                              borderRadius: BorderRadius.all(
                                 Radius.circular(6),
                               ),
                             ),
@@ -294,7 +297,7 @@ class FilterScreen extends HookWidget {
                                 Get.toNamed('/help');
                               },
                               child: Text(
-                                'Тех поддержка',
+                                'Позвонить через мессенджер',
                                 style: appStyle(
                                   18,
                                   Colors.white,

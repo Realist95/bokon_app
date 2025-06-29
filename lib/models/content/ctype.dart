@@ -1,12 +1,5 @@
-import 'dart:convert';
-
-List<CtypeModel> ctypeModelFromJson(String str) =>
-    List<CtypeModel>.from(json.decode(str).map((x) => CtypeModel.fromJson(x)));
-String ctypeModelToJson(List<CtypeModel> data) =>
-    json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
-
-ResponseArticlesModel responseCtypesModelFromJson(String str) {
-  return ResponseArticlesModel.fromJson(json.decode(str));
+ResponseArticlesModel responseCtypesModelFromJson(Map<String, dynamic> json) {
+  return ResponseArticlesModel.fromJson(json);
 }
 
 class CtypeModel {
@@ -23,18 +16,11 @@ class CtypeModel {
   });
 
   factory CtypeModel.fromJson(Map<String, dynamic> json) => CtypeModel(
-        id: int.parse(json['id'].toString()),
+        id: json['id'] as int,
         name: json['name'] as String,
         content: (json['content'] ?? '') as String,
         description: (json['description'] ?? '') as String,
       );
-
-  Map<String, dynamic> toJson() => {
-        "id": id,
-        "name": name,
-        "content": content,
-        "description": description,
-      };
 }
 
 class ResponseArticlesModel {

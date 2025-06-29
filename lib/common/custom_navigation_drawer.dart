@@ -4,18 +4,26 @@ import 'package:bokon_app/common/app_style.dart';
 import 'package:bokon_app/constants/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:flutter_share/flutter_share.dart';
+import 'package:share_plus/share_plus.dart';
 
 class CustomNavigationDrawer extends StatelessWidget {
   const CustomNavigationDrawer({super.key});
 
   Future<void> share() async {
-    await FlutterShare.share(
+    final params = ShareParams(
+      // text: 'Скачать приложение',
       title: 'Скачать приложение',
-      text: 'Скачать приложение',
-      linkUrl: 'https://bokon.ru/download-app',
-      chooserTitle: 'Здесь можно скачать актуальную версию приложения',
+      uri: Uri(
+        scheme: 'https',
+        host: 'bokon.ru',
+        path: 'download-app',
+      ),
+      subject: 'Здесь можно скачать актуальную версию приложения',
+      // uri: Uri(scheme: 'https', host: 'bokon.ru', path: 'store/apps/details?id=com.bokon_app.test.bokon_app'),
+      // subject: 'Здесь можно скачать актуальную версию приложения',
     );
+
+    await SharePlus.instance.share(params);
   }
 
   @override
@@ -101,7 +109,11 @@ class CustomNavigationDrawer extends StatelessWidget {
                     color: const Color(0xFFbfbfbf),
                   ),
                   buildMenuItem(
-                      'Поделиться приложением', 'share', null, context),
+                    'Поделиться приложением',
+                    'share',
+                    null,
+                    context,
+                  ),
                   Container(
                     height: 1,
                     color: const Color(0xFFbfbfbf),

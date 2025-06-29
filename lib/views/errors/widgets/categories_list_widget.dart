@@ -22,7 +22,7 @@ class CategoriesListWidget extends StatelessWidget {
 
 class GridItem extends StatefulWidget {
   const GridItem({super.key, required this.item});
-  final CategoryModel item;
+  final CatalogCategoryModel item;
 
   @override
   State<GridItem> createState() => _GridItemState();

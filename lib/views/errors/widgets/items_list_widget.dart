@@ -1,4 +1,5 @@
 import 'package:bokon_app/controllers/catalog_controller.dart';
+import 'package:bokon_app/models/catalog/category.dart';
 import 'package:bokon_app/models/catalog/item.dart';
 import 'package:bokon_app/views/errors/single_catalog_item.dart';
 import 'package:flutter/material.dart';
@@ -12,64 +13,73 @@ class ItemsListWidget extends StatelessWidget {
     super.key,
     required this.items,
     required this.needNotice,
+    required this.category,
   });
   final List<dynamic> items;
   final bool needNotice;
+  final CatalogCategoryModel? category;
 
   @override
   Widget build(BuildContext context) {
     return ListView(
         padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 16),
         children: [
-          needNotice ? Container(
-            margin: EdgeInsets.symmetric(vertical: 15.h),
-            decoration: BoxDecoration(
-              borderRadius: const BorderRadius.all(Radius.circular(8.0)),
-              color: kButtonBg.withOpacity(.6),
-              border:
-                  Border.all(color: const Color.fromRGBO(122, 118, 128, 0.65)),
-            ),
-            child: Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(top: 15),
-                  child: Text(
-                    'ВАЖНО!',
-                    textAlign: TextAlign.center,
-                    style: appStyle(
-                      20,
-                      const Color(0xFFD52B1E),
-                      FontWeight.w500,
-                    ),
+          needNotice
+              ? Container(
+                  margin: EdgeInsets.symmetric(vertical: 15.h),
+                  decoration: BoxDecoration(
+                    borderRadius: const BorderRadius.all(Radius.circular(8.0)),
+                    color: kButtonBg.withOpacity(.6),
+                    border: Border.all(
+                        color: const Color.fromRGBO(122, 118, 128, 0.65)),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(
-                    bottom: 15,
-                    left: 15,
-                    right: 15,
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 15),
+                        child: Text(
+                          'ВАЖНО!',
+                          textAlign: TextAlign.center,
+                          style: appStyle(
+                            20,
+                            const Color(0xFFD52B1E),
+                            FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          bottom: 15,
+                          left: 15,
+                          right: 15,
+                        ),
+                        child: Text(
+                          'Этот код принадлежит к разным системам, выберете интересующий блок для устранения ошибки',
+                          textAlign: TextAlign.center,
+                          style: appStyle(
+                            18,
+                            const Color(0xFF464646),
+                            FontWeight.w400,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-                  child: Text(
-                    'Этот код принадлежит к разным системам, выберете интересующий блок для устранения ошибки',
-                    textAlign: TextAlign.center,
-                    style: appStyle(
-                      18,
-                      const Color(0xFF464646),
-                      FontWeight.w400,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ) : const SizedBox(),
-          ...items.map((item) => GridItem(item: item)),
+                )
+              : const SizedBox(),
+          ...items.map((item) => GridItem(item: item, category: category!)),
         ]);
   }
 }
 
 class GridItem extends StatefulWidget {
-  const GridItem({super.key, required this.item});
+  const GridItem({
+    super.key,
+    required this.item,
+    required this.category,
+  });
   final CatalogItemModel item;
+  final CatalogCategoryModel category;
 
   @override
   State<GridItem> createState() => _GridItemState();
@@ -77,9 +87,16 @@ class GridItem extends StatefulWidget {
 
 class _GridItemState extends State<GridItem> {
   final controller = Get.put(CatalogController());
-
   @override
   Widget build(BuildContext context) {
+    CatalogCategoryModel parent = widget.category;
+
+    for (var children in widget.category.childrens) {
+      if (children.id == widget.item.maingroup) {
+        parent = children;
+      }
+    }
+
     return ListTile(
       focusColor: kButtonBgActive,
       onTap: () {
@@ -138,9 +155,7 @@ class _GridItemState extends State<GridItem> {
               ],
             ),
             child: Text(
-              widget.item.parent!.titleH1.isNotEmpty
-                  ? widget.item.parent!.titleH1
-                  : widget.item.parent!.description,
+              parent.titleH1.isNotEmpty ? parent.titleH1 : parent.description,
               textAlign: TextAlign.center,
               maxLines: 2,
               style: appStyle(

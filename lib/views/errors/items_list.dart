@@ -5,7 +5,7 @@ import 'package:bokon_app/common/main_app_bar.dart';
 import 'package:bokon_app/common/shimmers/categories_shemmer.dart';
 import 'package:bokon_app/constants/constants.dart';
 import 'package:bokon_app/controllers/catalog_controller.dart';
-import 'package:bokon_app/hooks/fetch_categories.dart';
+import 'package:bokon_app/hooks/catalog_hook.dart';
 import 'package:bokon_app/models/catalog/item.dart';
 import 'package:bokon_app/views/errors/filter_screen.dart';
 import 'package:bokon_app/views/errors/single_catalog_item.dart';
@@ -67,7 +67,7 @@ class ItemsList extends HookWidget {
                         Get.to(
                           () => FilterScreen(
                             numberError: numberError,
-                            categoryId: controller.subCategory!.id,
+                            category: controller.subCategory,
                             needNotice: false,
                           ),
                           transition: Transition.leftToRight,
@@ -123,7 +123,7 @@ class ItemsList extends HookWidget {
                               Get.to(
                                 () => FilterScreen(
                                   numberError: numberError,
-                                  categoryId: controller.subCategory!.id,
+                                  category: controller.subCategory,
                                   needNotice: false,
                                 ),
                                 transition: Transition.leftToRight,

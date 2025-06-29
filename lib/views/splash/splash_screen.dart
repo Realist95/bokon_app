@@ -1,4 +1,6 @@
 import 'package:archive/archive_io.dart';
+import 'package:bokon_app/models/profile/user_model.dart';
+import 'package:bokon_app/services/hive_service.dart';
 // import 'package:connectivity/connectivity.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
@@ -18,42 +20,45 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen>
     with SingleTickerProviderStateMixin {
-  final String contentPhotoResized =
-      'https://bokon.ru/uploads/content/photos/resized.zip';
-
-  final String catalogPhotoResized =
-      'https://bokon.ru/uploads/shop/photos/resized.zip';
+  static const String baseUrl = 'https://bokon.ru/uploads';
+  static const String contentPhotoResized = '/content/photos.zip';
+  static const String catalogPhotoResized = '/shop/photos.zip';
 
   final Dio dio = Dio();
+  ProfileUserModel? profileUser;
 
   Future<bool> saveFile(String urlPath, String path) async {
     Directory downloadsDirectory;
     downloadsDirectory = await getApplicationCacheDirectory();
     // print(downloadsDirectory);
     try {
-      // print(urlPath);
       String newPath = "${downloadsDirectory.path}/uploads/$path";
       downloadsDirectory = Directory(newPath);
       await downloadsDirectory.create(recursive: true);
       // print("newPath : $newPath");
       if (await downloadsDirectory.exists()) {
         File savePath = File("${downloadsDirectory.path}/bokon.zip");
+        // print("${downloadsDirectory.path}/bokon.zip");
 
-        dio.download(urlPath, savePath.path,
-            onReceiveProgress: (downloaded, totlaSize) async {
-          // print(downloaded / totlaSize);
-          if (downloaded / totlaSize == 1) {
-            // print("OpenFile, ${savePath.path}");
-
-            final inputStream = InputFileStream(savePath.path);
-            // print(inputStream.file);
-
-            final archive = ZipDecoder().decodeBuffer(inputStream);
-            extractArchiveToDisk(archive, newPath);
-            // await OpenFile.open(savePath.path,
-            // type: 'application/x-zip-compressed');
-          }
-        });
+        try {
+          // print("urlPath : " + baseUrl + urlPath);
+          // print(savePath.path);
+          dio.download(baseUrl + urlPath, savePath.path,
+              onReceiveProgress: (downloaded, totlaSize) async {
+            if (downloaded / totlaSize == 1) {
+              final inputStream = InputFileStream(savePath.path);
+              final archive = ZipDecoder().decodeBuffer(inputStream);
+              extractArchiveToDisk(archive, newPath);
+            }
+          });
+        } on DioException catch (e) {
+          debugPrint(e.message);
+          print("DioException");
+          File savePath = File("/assets/$urlPath");
+          final inputStream = InputFileStream(savePath.path);
+          final archive = ZipDecoder().decodeBuffer(inputStream);
+          extractArchiveToDisk(archive, newPath);
+        }
       }
     } catch (e) {
       debugPrint("Exception: ${e.toString()}");
@@ -65,14 +70,20 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   void initState() {
     super.initState();
+    profileUser = HiveService.getUserData();
 
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
     Future.delayed(const Duration(seconds: 3), () {
-      Get.toNamed('/home');
+      if (profileUser == null || profileUser!.id <= 0) {
+        Get.toNamed('/login');
+      } else {
+        Get.toNamed('/home');
+      }
     });
 
-    saveFile(contentPhotoResized, 'content/photos/resized');
-    saveFile(catalogPhotoResized, 'shop/photos/resized');
+    saveFile(contentPhotoResized, 'content/photos');
+
+    saveFile(catalogPhotoResized, 'shop/photos');
   }
 
   @override

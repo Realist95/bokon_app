@@ -4,7 +4,7 @@ import 'package:bokon_app/common/custom_navigation_drawer.dart';
 import 'package:bokon_app/common/main_app_bar.dart';
 import 'package:bokon_app/common/shimmers/categories_shemmer.dart';
 import 'package:bokon_app/controllers/catalog_controller.dart';
-import 'package:bokon_app/hooks/fetch_articles.dart';
+import 'package:bokon_app/hooks/articles_hook.dart';
 import 'package:bokon_app/models/content/article.dart';
 import 'package:bokon_app/views/articles/widgets/grid_article.dart';
 import 'package:bokon_app/views/articles/widgets/grid_special_article.dart';

@@ -4,7 +4,6 @@ import 'package:bokon_app/common/custom_navigation_drawer.dart';
 import 'package:bokon_app/common/main_app_bar.dart';
 import 'package:bokon_app/constants/constants.dart';
 import 'package:bokon_app/controllers/catalog_controller.dart';
-import 'package:bokon_app/hooks/fetch_categories.dart';
 import 'package:bokon_app/models/catalog/category.dart';
 import 'package:bokon_app/views/errors/filter_screen.dart';
 import 'package:bokon_app/views/errors/items_list.dart';
@@ -20,8 +19,8 @@ class SubGroupsList extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final items = controller.category!.childrens;
-    // final hookResult = 
-    useFetchItems(controller.category!.id, 10000);
+    // final hookResult =
+    // useFetchItems(controller.category!.id, 10000);
     // final isLoading = hookResult.isLoading;
     // final error = hookResult.error;
     final numberError = TextEditingController();
@@ -64,7 +63,7 @@ class SubGroupsList extends HookWidget {
                   Get.to(
                     () => FilterScreen(
                       numberError: numberError,
-                      categoryId: controller.category!.id,
+                      category: controller.category,
                       needNotice: true,
                     ),
                     transition: Transition.leftToRight,
@@ -120,7 +119,7 @@ class SubGroupsList extends HookWidget {
                         Get.to(
                           () => FilterScreen(
                             numberError: numberError,
-                            categoryId: controller.category!.id,
+                            category: controller.category,
                             needNotice: true,
                           ),
                           transition: Transition.leftToRight,
@@ -158,7 +157,7 @@ class SubGroupsList extends HookWidget {
 
 class GridItem extends StatefulWidget {
   const GridItem({super.key, required this.item});
-  final CategoryModel item;
+  final CatalogCategoryModel item;
 
   @override
   State<GridItem> createState() => _GridItemState();

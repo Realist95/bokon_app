@@ -7,7 +7,7 @@ import 'package:bokon_app/common/main_app_bar.dart';
 import 'package:bokon_app/common/shimmers/categories_shemmer.dart';
 import 'package:bokon_app/constants/constants.dart';
 import 'package:bokon_app/controllers/catalog_controller.dart';
-import 'package:bokon_app/hooks/fetch_categories.dart';
+import 'package:bokon_app/hooks/catalog_hook.dart';
 import 'package:bokon_app/models/catalog/category.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -20,7 +20,7 @@ class CatalogScreen extends HookWidget {
   Widget build(BuildContext context) {
     final hookResult = useFetchCategories();
 
-    List<CategoryModel> items = hookResult.data ?? [];
+    List<CatalogCategoryModel> items = hookResult.data ?? [];
     final isLoading = hookResult.isLoading;
     // final error = hookResult.error;
 
@@ -52,7 +52,7 @@ class CatalogScreen extends HookWidget {
 class GridItem extends StatefulWidget {
   const GridItem({super.key, required this.item});
 
-  final CategoryModel item;
+  final CatalogCategoryModel item;
 
   @override
   State<GridItem> createState() => _GridItemState();
@@ -120,121 +120,3 @@ class _GridItemState extends State<GridItem> {
     );
   }
 }
-// class GridItem extends StatefulWidget {
-//   const GridItem({super.key, required this.item});
-
-//   final CategoryModel item;
-
-//   @override
-//   State<GridItem> createState() => _GridItemState();
-// }
-
-// class _GridItemState extends State<GridItem> {
-//   final controller = Get.put(CatalogController());
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return ListTile(
-//       focusColor: kButtonBgActive,
-//       onTap: () {
-//         controller.setCategory(widget.item);
-//         Get.toNamed("/category/${widget.item.id}");
-//       },
-//       textColor:
-//           (widget.item.id == controller.category?.id) ? kButtonBg : kButtonText,
-//       contentPadding: const EdgeInsets.all(0),
-//       title: !(widget.item.id == controller.category?.id)
-//           ? Stack(
-//               alignment: AlignmentDirectional.bottomEnd,
-//               children: [
-//                 Container(
-//                   height: 1,
-//                   decoration: const BoxDecoration(
-//                     borderRadius: BorderRadius.all(Radius.circular(8.0)),
-//                     boxShadow: [
-//                       BoxShadow(
-//                         color: Color.fromRGBO(0, 0, 0, .25),
-//                         spreadRadius: -4,
-//                         blurRadius: 1,
-//                         offset: Offset(0, 1),
-//                       ),
-//                     ],
-//                   ),
-//                 ),
-//                 Container(
-//                   alignment: Alignment.centerLeft,
-//                   padding:
-//                       const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-//                   decoration: BoxDecoration(
-//                     borderRadius: const BorderRadius.all(Radius.circular(8.0)),
-//                     color: kButtonBg.withOpacity(.6),
-//                     border: Border.all(
-//                       color: kButtonBorder,
-//                     ),
-//                     boxShadow: const [
-//                       BoxShadow(
-//                         color: Color.fromRGBO(0, 0, 0, .8),
-//                         spreadRadius: 0,
-//                         blurRadius: 3,
-//                         offset: Offset(0, 1),
-//                         blurStyle: BlurStyle.outer,
-//                       ),
-//                     ],
-//                   ),
-//                   child: Text(
-//                     widget.item.name.toUpperCase(),
-//                     style: appStyle(
-//                       18,
-//                       kPrimary,
-//                       FontWeight.w500,
-//                     ),
-//                   ),
-//                 ),
-//               ],
-//             )
-//           // оранжевая кнопка рабочий вариант
-//           : Container(
-//               decoration: BoxDecoration(
-//                 borderRadius: const BorderRadius.all(Radius.circular(6.0)),
-//                 border: Border.all(
-//                   color: kButtonBorder,
-//                 ),
-//                 boxShadow: [
-//                   const BoxShadow(
-//                     color: Color.fromRGBO(0, 0, 0, .4),
-//                     blurStyle: BlurStyle.inner,
-//                   ),
-//                   BoxShadow(
-//                     color: kButtonBgActive.withOpacity(.8),
-//                     spreadRadius: -2.0,
-//                     blurRadius: 2.0,
-//                     offset: const Offset(
-//                       2,
-//                       1.0,
-//                     ),
-//                   ),
-//                   BoxShadow(
-//                     color: kButtonBgActive.withOpacity(.8),
-//                     spreadRadius: -2.0,
-//                     blurRadius: 2.0,
-//                     offset: const Offset(
-//                       -2,
-//                       1.0,
-//                     ),
-//                   ),
-//                 ],
-//               ),
-//               child: Center(
-//                 child: Text(
-//                   widget.item.name.toString().toUpperCase(),
-//                   style: appStyle(
-//                     18,
-//                     Colors.white,
-//                     FontWeight.w500,
-//                   ),
-//                 ),
-//               ),
-//             ),
-//     );
-//   }
-// }

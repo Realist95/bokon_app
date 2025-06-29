@@ -5,7 +5,8 @@ import 'package:bokon_app/common/main_app_bar.dart';
 import 'package:bokon_app/common/shimmers/categories_shemmer.dart';
 import 'package:bokon_app/constants/constants.dart';
 import 'package:bokon_app/controllers/content_controller.dart';
-import 'package:bokon_app/hooks/fetch_articles.dart';
+import 'package:bokon_app/hooks/articles_hook.dart';
+import 'package:bokon_app/hooks/ctypes_hook.dart';
 import 'package:bokon_app/models/content/article.dart';
 import 'package:bokon_app/models/content/ctype.dart';
 import 'package:bokon_app/views/articles/single_article.dart';
@@ -21,8 +22,12 @@ class ArticlesUpdates extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final hookResult2 = useFetchCtype(11);
-    CtypeModel ctype = hookResult2.data?[0] ??
-        CtypeModel(id: 0, name: '', content: '', description: '');
+
+    print(hookResult2.data);
+
+    CtypeModel ctype = hookResult2.data != null && hookResult2.data.isNotEmpty
+        ? hookResult2.data[0]
+        : CtypeModel(id: 0, name: '', content: '', description: '');
 
     final hookResult = useFetchArticles(11);
     List<ArticleModel> items = hookResult.data ?? [];
