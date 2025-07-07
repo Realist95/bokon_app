@@ -42,6 +42,7 @@ class _ValidateScreenState extends State<ValidateScreen> {
         return;
       }
       setState(() {
+        _resendTimer > 0 ? _resendTimer-- : _resendTimer = _resendTimer;
         _resendTimer--;
       });
     });

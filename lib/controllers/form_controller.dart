@@ -90,13 +90,17 @@ class FormController extends GetxController {
           throw Exception(data.html);
         }
 
-        Navigator.of(context).push(
+        Navigator.of(context)
+            .push(
           MaterialPageRoute(
             builder: (context) => ValidateScreen(
               phone: phone,
             ),
           ),
-        );
+        )
+            .then((value) {
+          Navigator.of(context).pop(true);
+        });
       } else {
         throw Exception('Неизвестная ошибка');
       }
@@ -150,7 +154,8 @@ class FormController extends GetxController {
           HiveService.putUserData(data.userData!);
         }
 
-        Navigator.of(context).push(
+        Navigator.of(context)
+            .push(
           MaterialPageRoute(
             builder: (context) => data.userData!.id <= 0
                 ? RegisterAccountScreen(
@@ -158,7 +163,10 @@ class FormController extends GetxController {
                   )
                 : const HomeScreen(),
           ),
-        );
+        )
+            .then((value) {
+          Navigator.of(context).pop(true);
+        });
       } else {
         throw Exception('Неизвестная ошибка');
       }
@@ -207,11 +215,15 @@ class FormController extends GetxController {
 
         // Navigator.pop(context);
 
-        Navigator.of(context).push(
+        Navigator.of(context)
+            .push(
           MaterialPageRoute(
             builder: (context) => const HomeScreen(),
           ),
-        );
+        )
+            .then((value) {
+          Navigator.of(context).pop(true);
+        });
       } else {
         throw Exception('Неизвестная ошибка');
       }

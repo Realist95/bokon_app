@@ -27,6 +27,7 @@ class ItemsList extends HookWidget {
     // final error = hookResult.error;
     final numberError = TextEditingController();
     final validate = useState<bool>(true);
+    final errorText = useState<String>('');
 
     String? validateSearch(String value) {
       return "Укажите не менее 2-х символов";
@@ -58,9 +59,17 @@ class ItemsList extends HookWidget {
                       maxLength: 6,
                       textInputAction: TextInputAction.go,
                       controller: numberError,
+                      onChanged: (value) {
+                        final cyrillicRegex = RegExp(r'[А-Яа-я]');
+                        if (cyrillicRegex.hasMatch(value)) {
+                          errorText.value =
+                              'Допускается только латиница и цифры.';
+                        }
+                      },
                       onSubmitted: (value) {
                         if (value.isEmpty || value.length < 2) {
                           validate.value = false;
+                          errorText.value = "Укажите не менее 2-х символов";
                           return;
                         }
                         validate.value = true;
@@ -75,9 +84,8 @@ class ItemsList extends HookWidget {
                         );
                       },
                       decoration: InputDecoration(
-                        errorText: (validate.value == false
-                            ? validateSearch(numberError.text)
-                            : null),
+                        errorText:
+                            errorText.value.isNotEmpty ? errorText.value : null,
                         counterText: "",
                         contentPadding: const EdgeInsets.symmetric(
                           horizontal: 18,

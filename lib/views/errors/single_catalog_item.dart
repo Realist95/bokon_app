@@ -260,7 +260,7 @@ class _GridItemState extends State<GridItem> {
                 ],
               ),
               child: Text(
-                'Сообщить об ошибке',
+                'Сообщить об ошибке в приложении',
                 style: appStyle(
                   18,
                   kPrimary,

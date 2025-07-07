@@ -119,7 +119,11 @@ class CustomNavigationDrawer extends StatelessWidget {
                     color: const Color(0xFFbfbfbf),
                   ),
                   buildMenuItem(
-                      'Сообщить об ошибке', '/send-error', null, context),
+                    'Сообщить об ошибке в приложении',
+                    '/send-error',
+                    null,
+                    context,
+                  ),
                   Container(
                     height: 1,
                     color: const Color(0xFFbfbfbf),

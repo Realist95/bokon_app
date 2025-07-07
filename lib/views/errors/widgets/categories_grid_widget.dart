@@ -29,6 +29,7 @@ class CategoriesGridWidget extends HookWidget {
   Widget build(BuildContext context) {
     final numberError = TextEditingController();
     final validate = useState<bool>(true);
+    final errorText = useState<String>('');
 
     return Column(
       children: [
@@ -44,8 +45,15 @@ class CategoriesGridWidget extends HookWidget {
             maxLength: 6,
             textInputAction: TextInputAction.go,
             controller: numberError,
+            onChanged: (value) {
+              final cyrillicRegex = RegExp(r'[А-Яа-я]');
+              if (cyrillicRegex.hasMatch(value)) {
+                errorText.value = 'Допускается только латиница и цифры.';
+              }
+            },
             onSubmitted: (value) {
               if (value.isEmpty || value.length < 2) {
+                errorText.value = "Укажите не менее 2-х символов";
                 validate.value = false;
                 return;
               }
@@ -61,9 +69,7 @@ class CategoriesGridWidget extends HookWidget {
               );
             },
             decoration: InputDecoration(
-              errorText: (validate.value == false
-                  ? validateSearch(numberError.text)
-                  : null),
+              errorText: errorText.value.isNotEmpty ? errorText.value : null,
               counterText: "",
               contentPadding: const EdgeInsets.symmetric(
                 horizontal: 18,

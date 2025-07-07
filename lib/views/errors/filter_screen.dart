@@ -10,6 +10,7 @@ import 'package:bokon_app/models/catalog/category.dart';
 import 'package:bokon_app/models/catalog/item.dart';
 import 'package:bokon_app/views/errors/widgets/items_list_widget.dart';
 import 'package:flutter/material.dart' hide BoxDecoration, BoxShadow;
+import 'package:flutter/services.dart';
 import 'package:flutter_inset_shadow/flutter_inset_shadow.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_svg/svg.dart';
@@ -26,6 +27,7 @@ class FilterScreen extends HookWidget {
   final TextEditingController numberError;
   final CatalogCategoryModel? category;
   final bool needNotice;
+  final FocusNode _focusNode = FocusNode();
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +36,7 @@ class FilterScreen extends HookWidget {
     final isLoading = hookResult.isLoading;
     // final error = hookResult.error;
     final validate = useState<bool>(true);
+    final errorText = useState<String>('');
 
     String? validateSearch(String value) {
       return "Укажите не менее 2-х символов";
@@ -68,9 +71,16 @@ class FilterScreen extends HookWidget {
                 maxLength: 6,
                 textInputAction: TextInputAction.go,
                 controller: numberError,
+                onChanged: (value) {
+                  final cyrillicRegex = RegExp(r'[А-Яа-я]');
+                  if (cyrillicRegex.hasMatch(value)) {
+                    errorText.value = 'Допускается только латиница и цифры.';
+                  }
+                },
                 onSubmitted: (value) {
                   if (value.isEmpty || value.length < 2) {
                     validate.value = false;
+                    errorText.value = "Укажите не менее 2-х символов";
                     return;
                   }
                   validate.value = true;
@@ -90,9 +100,8 @@ class FilterScreen extends HookWidget {
                   });
                 },
                 decoration: InputDecoration(
-                  errorText: (validate.value == false
-                      ? validateSearch(numberError.text)
-                      : null),
+                  errorText:
+                      errorText.value.isNotEmpty ? errorText.value : null,
                   counterText: "",
                   contentPadding: const EdgeInsets.symmetric(
                     horizontal: 18,
@@ -241,7 +250,7 @@ class FilterScreen extends HookWidget {
                                 ),
                                 Center(
                                   child: Text(
-                                    'Нет времени ждать?',
+                                    'Не хотите ждать?',
                                     style: appStyle(
                                       18,
                                       Colors.black,
@@ -251,7 +260,7 @@ class FilterScreen extends HookWidget {
                                 ),
                                 Center(
                                   child: Text(
-                                    'Звони поищем вместе.',
+                                    'Позвоните нам, поищем вместе.',
                                     style: appStyle(
                                       18,
                                       Colors.black,
