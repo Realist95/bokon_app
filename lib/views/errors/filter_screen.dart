@@ -237,19 +237,6 @@ class FilterScreen extends HookWidget {
                                 ),
                                 Center(
                                   child: Text(
-                                    'Но не ранее чем через 3 часа.',
-                                    style: appStyle(
-                                      18,
-                                      Colors.black,
-                                      FontWeight.w400,
-                                    ),
-                                  ),
-                                ),
-                                const SizedBox(
-                                  height: 15,
-                                ),
-                                Center(
-                                  child: Text(
                                     'Не хотите ждать?',
                                     style: appStyle(
                                       18,

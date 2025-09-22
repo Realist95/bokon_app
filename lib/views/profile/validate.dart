@@ -148,40 +148,43 @@ class _ValidateScreenState extends State<ValidateScreen> {
                                     Radius.circular(6),
                                   ),
                                 ),
-                                child: TextButton(
-                                  style: TextButton.styleFrom(
-                                    shape: const BeveledRectangleBorder(
-                                      borderRadius: BorderRadius.all(
-                                        Radius.circular(6),
+                                child: Obx(
+                                  () => TextButton(
+                                    style: TextButton.styleFrom(
+                                      shape: const BeveledRectangleBorder(
+                                        borderRadius: BorderRadius.all(
+                                          Radius.circular(6),
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                  onPressed: controller
-                                          .isLoading // отключаем кнопку, пока идет загрузка кода
-                                      ? null
-                                      : () {
-                                          if (formKey.currentState!
-                                              .validate()) {
-                                            LoginModel loginModel = LoginModel(
-                                              phone: widget.phone,
-                                              code: code.text,
-                                            );
+                                    onPressed: controller
+                                            .isLoading // отключаем кнопку, пока идет загрузка кода
+                                        ? null
+                                        : () {
+                                            if (formKey.currentState!
+                                                .validate()) {
+                                              LoginModel loginModel =
+                                                  LoginModel(
+                                                phone: widget.phone,
+                                                code: code.text,
+                                              );
 
-                                            controller.validateSmsCodeForm(
-                                              loginModel.phone,
-                                              loginModel.code,
-                                              context,
-                                            );
-                                          }
-                                        },
-                                  child: Text(
-                                    controller.isLoading
-                                        ? 'Ожидайте...'
-                                        : 'Подтвердить',
-                                    style: appStyle(
-                                      18,
-                                      Colors.white,
-                                      FontWeight.w500,
+                                              controller.validateSmsCodeForm(
+                                                loginModel.phone,
+                                                loginModel.code,
+                                                context,
+                                              );
+                                            }
+                                          },
+                                    child: Text(
+                                      controller.isLoading
+                                          ? 'Ожидайте...'
+                                          : 'Подтвердить',
+                                      style: appStyle(
+                                        18,
+                                        Colors.white,
+                                        FontWeight.w500,
+                                      ),
                                     ),
                                   ),
                                 ),

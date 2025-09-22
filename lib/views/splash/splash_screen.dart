@@ -79,6 +79,8 @@ class _SplashScreenState extends State<SplashScreen>
       } else {
         Get.toNamed('/home');
       }
+
+      // Get.toNamed('/login');
     });
 
     saveFile(contentPhotoResized, 'content/photos');
