@@ -177,12 +177,17 @@ class _GridItemState extends State<GridItem> {
       focusColor: kButtonBgActive,
       onPressed: () {
         controller.setCategory(widget.item);
-        Get.to(
-          () =>
-              widget.item.childrens.isNotEmpty ? SubGroupsList() : ItemsList(),
-          transition: Transition.leftToRight,
-          duration: const Duration(microseconds: 500),
-        );
+        if (widget.item.childrens.isNotEmpty) {
+          Get.toNamed(
+            "/category/${widget.item.id}",
+            arguments: {'name': widget.item.name},
+          );
+        } else {
+          Get.toNamed(
+            "/items/${widget.item.id}",
+            arguments: {'name': widget.item.name},
+          );
+        }
       },
       textColor: kButtonText,
       padding: const EdgeInsets.all(0),
@@ -223,20 +228,7 @@ class _GridItemState extends State<GridItem> {
                 SizedBox(
                   width: 350.w,
                   height: 200.h,
-                  // fit: FlexFit.tight,
-                  child:
-                      //   ImgNetwork(
-                      //     fit: BoxFit.cover,
-                      //     pathImg: pathImg,
-                      //     borderRadius: const BorderRadius.only(
-                      //       topLeft: Radius.circular(16),
-                      //       topRight: Radius.circular(16),
-                      //       bottomRight: Radius.circular(8),
-                      //       bottomLeft: Radius.circular(8),
-                      //     ),
-                      //   )
-                      // :
-                      ClipRRect(
+                  child: ClipRRect(
                     borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(16),
                       topRight: Radius.circular(16),

@@ -180,8 +180,10 @@ class _GridItemState extends State<GridItem> {
       onTap: () {
         controller.setSubCategory(widget.item);
         if (widget.item.childrens.isNotEmpty) {
-          Get.toNamed("/category/${widget.item.id}",
-              arguments: 'Get is the best');
+          Get.toNamed(
+            "/category/${widget.item.id}",
+            arguments: {'name': widget.item.name},
+          );
         } else {
           Get.to(
             () => ItemsList(),

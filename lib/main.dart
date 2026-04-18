@@ -6,6 +6,7 @@ import 'package:bokon_app/views/articles/help_article.dart';
 import 'package:bokon_app/views/articles/send_error.dart';
 import 'package:bokon_app/views/errors/catalog.dart';
 import 'package:bokon_app/views/errors/groups_list.dart';
+import 'package:bokon_app/views/errors/items_list.dart';
 import 'package:bokon_app/views/home/home_screen.dart';
 import 'package:bokon_app/views/profile/login.dart';
 import 'package:bokon_app/views/splash/splash_screen.dart';
@@ -113,21 +114,18 @@ class MyApp extends HookWidget {
               transition: Transition.leftToRight,
               transitionDuration: const Duration(microseconds: 500),
             ),
-            // GetPage(
-            //   name: '/profile/',
-            //   page: () => MyProfile(),
-            // ),
             GetPage(
               name: '/category/:id',
-              page: () => GroupsList(),
+              page: () => const GroupsList(),
               transition: Transition.leftToRight,
               transitionDuration: const Duration(microseconds: 500),
             ),
-            // GetPage(
-            //   name: '/third',
-            //   page: () => Third(),
-            //   transition: Transition.cupertino,
-            // ),
+            GetPage(
+              name: '/items/:id',
+              page: () => ItemsList(),
+              transition: Transition.leftToRight,
+              transitionDuration: const Duration(microseconds: 500),
+            ),
           ],
         );
       },

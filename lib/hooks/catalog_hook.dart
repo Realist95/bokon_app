@@ -17,7 +17,19 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 const localPathItems = 'assets/json/catalog_items.json';
 const localPathCategories = 'assets/json/catalog_categories.json';
 
-final Dio dio = Dio();
+final Dio dio = Dio(
+  BaseOptions(
+    connectTimeout: const Duration(
+      seconds: 5,
+    ), // Время до установления соединения, в миллисекундах
+    receiveTimeout: const Duration(
+      seconds: 2,
+    ), // Время ожидания получения ответа, в миллисекундах
+    sendTimeout: const Duration(
+      seconds: 5,
+    ), // Время ожидания отправки данных, в миллисекундах
+  ),
+);
 
 /// получает список всех категорий
 FetchHook useFetchCategories() {
@@ -52,10 +64,6 @@ FetchHook useFetchCategories() {
 
   Future<void> fetchData() async {
     isLoading.value = true;
-    categories.value = await getLocalData().then((value) {
-      isLoading.value = false;
-      return value;
-    });
 
     List<CatalogCategoryModel> result = <CatalogCategoryModel>[];
     try {
@@ -68,12 +76,18 @@ FetchHook useFetchCategories() {
       if (response.statusCode == 200) {
         result = responseCategoriesModelFromJson(response.data).items;
       }
+
+      HiveService.addCatalogCategories(result);
     } catch (e) {
       debugPrint('useFetchCategories');
       debugPrint(e.toString());
       // error.value = e as Exception;
+      result = await getLocalData().then((value) {
+        return value;
+      });
     } finally {
-      HiveService.addCatalogCategories(result);
+      categories.value = result;
+      isLoading.value = false;
     }
   }
 
@@ -163,11 +177,6 @@ FetchHook useFetchItems(int parentId, int limit) {
         HiveService.getCatalogCategories();
     List<int> categoryIds = getAllCategories(treeCategories, parentId);
 
-    items.value = await getLocalData(parentId, categoryIds).then((value) {
-      isLoading.value = false;
-      return value;
-    });
-
     List<CatalogItemModel> result = <CatalogItemModel>[];
     try {
       final response = await dio.post(
@@ -179,12 +188,18 @@ FetchHook useFetchItems(int parentId, int limit) {
       if (response.statusCode == 200) {
         result = responseItemsModelFromJson(response.data).items;
       }
+
+      HiveService.addCatalogItems(result);
     } catch (e) {
-      debugPrint('useFetchCategories');
+      debugPrint('useFetchItems');
       debugPrint(e.toString());
       // error.value = e as Exception;
+      result = await getLocalData(parentId, categoryIds).then((value) {
+        return value;
+      });
     } finally {
-      HiveService.addCatalogItems(result);
+      items.value = result;
+      isLoading.value = false;
     }
   }
 
@@ -200,6 +215,95 @@ FetchHook useFetchItems(int parentId, int limit) {
 
   return FetchHook(
     data: items.value,
+    isLoading: isLoading.value,
+    error: error.value,
+    refetch: refetch,
+  );
+}
+
+FetchHook useFetchCategory(int categoryId) {
+  final category = useState<CatalogCategoryModel?>(null);
+  final isLoading = useState<bool>(false);
+  final error = useState<Exception?>(null);
+  // final apiError = useState<ApiError?>(null);
+
+  getCategoryPath(List<CatalogCategoryModel> categories, String categoryId) {
+    CatalogCategoryModel? category;
+
+    for (var item in categories) {
+      debugPrint(item.id.toString());
+      if (item.id == int.parse(categoryId)) {
+        category = item;
+        break;
+      }
+
+      if (item.childrens.isEmpty) {
+        continue;
+      }
+
+      category = getCategoryPath(item.childrens, categoryId);
+      if (category is CatalogCategoryModel) {
+        break;
+      }
+    }
+
+    return category;
+  }
+
+  Future<List<CatalogCategoryModel>> getLocalData() async {
+    List<CatalogCategoryModel> items = [];
+    // Simulate fetching data from a remote server
+    return Future.delayed(const Duration(seconds: 1), () async {
+      items = HiveService.getCatalogCategories();
+      if (items.isEmpty) {
+        String jsonString = await rootBundle.loadString(localPathCategories);
+        Map<String, dynamic> jsonData = {
+          "items": json.decode(jsonString),
+          "paging": {
+            "limit": 0,
+            "totalItems": 0,
+            "totalPages": 0,
+          }
+        };
+        items = responseCategoriesModelFromJson(jsonData).items;
+        HiveService.addCatalogCategories(items);
+      }
+
+      return items;
+    });
+  }
+
+  Future<void> fetchData() async {
+    isLoading.value = true;
+
+    CatalogCategoryModel? result;
+    try {
+      result = await getLocalData().then((categories) {
+        return getCategoryPath(categories, categoryId.toString());
+      });
+
+      print(result!.name);
+    } catch (e) {
+      debugPrint(e.toString());
+      debugPrint('useFetchCategory');
+    } finally {
+      category.value = result;
+      isLoading.value = false;
+    }
+  }
+
+  useEffect(() {
+    fetchData();
+    return null;
+  }, []);
+
+  void refetch() {
+    isLoading.value = true;
+    fetchData();
+  }
+
+  return FetchHook(
+    data: category.value,
     isLoading: isLoading.value,
     error: error.value,
     refetch: refetch,

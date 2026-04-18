@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:bokon_app/constants/constants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 
 class MainAppBar extends StatelessWidget {
   const MainAppBar(this.needBack, this.title, {super.key});
@@ -55,7 +56,7 @@ class MainAppBar extends StatelessWidget {
                           ),
                         ),
                         onPressed: () {
-                          Navigator.pop(context);
+                          Get.back();
                         },
                       )
                     : MaterialButton(
