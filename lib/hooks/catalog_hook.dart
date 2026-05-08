@@ -129,7 +129,7 @@ FetchHook useFetchItems(int parentId, int limit) {
     }
 
     // Simulate fetching data from a remote server
-    return Future.delayed(const Duration(seconds: 1), () async {
+    return Future.delayed(const Duration(milliseconds: 300), () async {
       items = HiveService.getCatalogItems();
       if (items.isEmpty) {
         String jsonString = await rootBundle.loadString(localPathItems);
@@ -178,6 +178,7 @@ FetchHook useFetchItems(int parentId, int limit) {
     List<int> categoryIds = getAllCategories(treeCategories, parentId);
 
     List<CatalogItemModel> result = <CatalogItemModel>[];
+    List<CatalogItemModel> data = <CatalogItemModel>[];
     try {
       final response = await dio.post(
         '$apiBaseUrl/catalog:get.items',
@@ -186,20 +187,19 @@ FetchHook useFetchItems(int parentId, int limit) {
 
       debugPrint(response.statusCode.toString());
       if (response.statusCode == 200) {
-        result = responseItemsModelFromJson(response.data).items;
+        data = responseItemsModelFromJson(response.data).items;
       }
 
-      HiveService.addCatalogItems(result);
+      HiveService.addCatalogItems(data);
     } catch (e) {
       debugPrint('useFetchItems');
       debugPrint(e.toString());
       // error.value = e as Exception;
-      result = await getLocalData(parentId, categoryIds).then((value) {
+    } finally {
+      items.value = await getLocalData(parentId, categoryIds).then((value) {
+        isLoading.value = false;
         return value;
       });
-    } finally {
-      items.value = result;
-      isLoading.value = false;
     }
   }
 

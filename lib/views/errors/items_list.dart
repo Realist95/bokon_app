@@ -26,7 +26,7 @@ class ItemsList extends HookWidget {
 
     final CatalogCategoryModel? category = hookCategoryResult.data;
 
-    print(category);
+    // print(category);
 
     final hookResult = useFetchItems(categoryId, 1000);
     List<CatalogItemModel> items = hookResult.data ?? [];
