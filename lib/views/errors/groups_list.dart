@@ -23,22 +23,22 @@ class GroupsList extends HookWidget {
 
     final List<dynamic> items = category?.childrens ?? [];
 
-    return isLoading
-        ? const CategoriesShimmer()
-        : (categoryId == 1284
-            ? SubGroupsList()
-            : BackGroundContainer(
-                child: Scaffold(
-                  backgroundColor: Colors.transparent,
-                  appBar: AppBar(
-                    toolbarHeight: 90,
-                    backgroundColor: Colors.transparent,
-                    flexibleSpace: MainAppBar(true, category?.name ?? ''),
-                    automaticallyImplyLeading: false,
-                  ),
-                  drawer: const CustomNavigationDrawer(),
-                  body: CategoriesGridWidget(items: items),
-                ),
-              ));
+    return (categoryId == 1284
+        ? SubGroupsList()
+        : BackGroundContainer(
+            child: Scaffold(
+              backgroundColor: Colors.transparent,
+              appBar: AppBar(
+                toolbarHeight: 90,
+                backgroundColor: Colors.transparent,
+                flexibleSpace: MainAppBar(true, category?.name ?? ''),
+                automaticallyImplyLeading: false,
+              ),
+              drawer: const CustomNavigationDrawer(),
+              body: isLoading
+                  ? const CategoriesShimmer()
+                  : CategoriesGridWidget(items: items),
+            ),
+          ));
   }
 }

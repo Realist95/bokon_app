@@ -169,10 +169,8 @@ class _GridItemState extends State<GridItem> {
   Widget build(BuildContext context) {
     const String imagePath =
         '/data/user/0/com.bokon_app.test.bokon_app/cache/uploads/shop/photos/original/';
-    final String pathImg = widget.item.image.isNotEmpty
-        ? imagePath + widget.item.image
-        : 'assets/images/short-logo.png';
-
+    final String pathImg = widget.item.image != 'null'
+        ? imagePath + widget.item.image : '';
     return MaterialButton(
       focusColor: kButtonBgActive,
       onPressed: () {
@@ -235,7 +233,7 @@ class _GridItemState extends State<GridItem> {
                       bottomRight: Radius.circular(8),
                       bottomLeft: Radius.circular(8),
                     ),
-                    child: widget.item.image.isNotEmpty
+                    child: pathImg.isNotEmpty
                         ? Image.file(
                             File(pathImg),
                             fit: BoxFit.cover,
