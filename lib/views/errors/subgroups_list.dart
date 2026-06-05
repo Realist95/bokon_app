@@ -180,15 +180,17 @@ class _GridItemState extends State<GridItem> {
       onTap: () {
         controller.setSubCategory(widget.item);
         if (widget.item.childrens.isNotEmpty) {
+          String title = widget.item.description.isNotEmpty &&
+                  widget.item.description != 'null'
+              ? widget.item.description
+              : widget.item.name;
           Get.toNamed(
             "/category/${widget.item.id}",
-            arguments: {'name': widget.item.name},
+            arguments: {'name': title},
           );
         } else {
-          Get.to(
-            () => ItemsList(),
-            transition: Transition.leftToRight,
-            duration: const Duration(microseconds: 500),
+          Get.toNamed(
+            "/items/${widget.item.id}",
           );
         }
       },
@@ -216,7 +218,11 @@ class _GridItemState extends State<GridItem> {
         child: Container(
           alignment: Alignment.center,
           child: Text(
-            widget.item.name,
+            textAlign: TextAlign.center,
+            widget.item.description.isNotEmpty &&
+                    widget.item.description != 'null'
+                ? widget.item.description
+                : widget.item.name,
             style: appStyle(
               16,
               kPrimary,

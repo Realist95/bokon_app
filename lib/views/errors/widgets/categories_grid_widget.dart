@@ -6,18 +6,19 @@ import 'package:bokon_app/views/errors/filter_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:bokon_app/common/app_style.dart';
 import 'package:bokon_app/constants/constants.dart';
-import 'package:bokon_app/services/img_network.dart';
-import 'package:bokon_app/views/errors/items_list.dart';
-import 'package:bokon_app/views/errors/subgroups_list.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'dart:convert';
 
 class CategoriesGridWidget extends HookWidget {
-  CategoriesGridWidget({super.key, required this.items});
+  CategoriesGridWidget({
+    super.key,
+    required this.items,
+    required this.category,
+  });
   final List<dynamic> items;
+  final CatalogCategoryModel category;
 
   final CatalogController controller = Get.find();
 
@@ -58,10 +59,10 @@ class CategoriesGridWidget extends HookWidget {
                 return;
               }
               validate.value = true;
-              Get.to(
+              Get.off(
                 () => FilterScreen(
                   numberError: numberError,
-                  category: controller.category,
+                  category: category,
                   needNotice: true,
                 ),
                 transition: Transition.leftToRight,
@@ -115,7 +116,7 @@ class CategoriesGridWidget extends HookWidget {
                     Get.to(
                       () => FilterScreen(
                         numberError: numberError,
-                        category: controller.category,
+                        category: category,
                         needNotice: true,
                       ),
                       transition: Transition.leftToRight,
@@ -169,8 +170,8 @@ class _GridItemState extends State<GridItem> {
   Widget build(BuildContext context) {
     const String imagePath =
         '/data/user/0/com.bokon_app.test.bokon_app/cache/uploads/shop/photos/original/';
-    final String pathImg = widget.item.image != 'null'
-        ? imagePath + widget.item.image : '';
+    final String pathImg =
+        widget.item.image != 'null' ? imagePath + widget.item.image : '';
     return MaterialButton(
       focusColor: kButtonBgActive,
       onPressed: () {

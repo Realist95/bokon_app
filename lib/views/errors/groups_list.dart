@@ -2,6 +2,7 @@ import 'package:bokon_app/common/background_container.dart';
 import 'package:bokon_app/common/custom_navigation_drawer.dart';
 import 'package:bokon_app/common/main_app_bar.dart';
 import 'package:bokon_app/common/shimmers/categories_shemmer.dart';
+import 'package:bokon_app/controllers/catalog_controller.dart';
 import 'package:bokon_app/hooks/catalog_hook.dart';
 import 'package:bokon_app/models/catalog/category.dart';
 import 'package:bokon_app/views/errors/subgroups_list.dart';
@@ -11,7 +12,8 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:get/get.dart';
 
 class GroupsList extends HookWidget {
-  const GroupsList({super.key});
+  GroupsList({super.key});
+  final controller = Get.put(CatalogController());
 
   @override
   Widget build(BuildContext context) {
@@ -22,8 +24,27 @@ class GroupsList extends HookWidget {
     final isLoading = hookResult.isLoading;
 
     final List<dynamic> items = category?.childrens ?? [];
+    if (!isLoading && category is CatalogCategoryModel) {
+      controller.setCategory(category);
+    }
 
-    return (categoryId == 1284
+    if (isLoading) {
+      return BackGroundContainer(
+        child: Scaffold(
+          backgroundColor: Colors.transparent,
+          appBar: AppBar(
+            toolbarHeight: 90,
+            backgroundColor: Colors.transparent,
+            flexibleSpace: MainAppBar(true, category?.name ?? ''),
+            automaticallyImplyLeading: false,
+          ),
+          drawer: const CustomNavigationDrawer(),
+          body: const CategoriesShimmer(),
+        ),
+      );
+    }
+
+    return ((category!.childrens.isNotEmpty && category.parent != 0)
         ? SubGroupsList()
         : BackGroundContainer(
             child: Scaffold(
@@ -31,13 +52,14 @@ class GroupsList extends HookWidget {
               appBar: AppBar(
                 toolbarHeight: 90,
                 backgroundColor: Colors.transparent,
-                flexibleSpace: MainAppBar(true, category?.name ?? ''),
+                flexibleSpace: MainAppBar(true, category.name ?? ''),
                 automaticallyImplyLeading: false,
               ),
               drawer: const CustomNavigationDrawer(),
-              body: isLoading
-                  ? const CategoriesShimmer()
-                  : CategoriesGridWidget(items: items),
+              body: CategoriesGridWidget(
+                items: items,
+                category: category,
+              ),
             ),
           ));
   }

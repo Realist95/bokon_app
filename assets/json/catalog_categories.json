@@ -1,1 +1,1908 @@
-[{"id":1,"name":"ACTROS (Актрос)","parent":0,"image":"1/ms191gfaeztv106bx7uuc4o6i9c0aeqc.jpg","content":"","description":"MPI-MPV+Китай — семейство крупнотоннажных грузовых автомобилей и седельных тягачей полной массой от 18 до 25 тонн","title_h1":"","childrens":[{"id":2,"name":"MPI 96-03","parent":1,"image":"2/ekzk53447z2qzfi3ntdiy0zxrx0ze442.jpg","content":"","description":"","title_h1":"","childrens":[{"id":19,"name":"ABS-Actros-MP1","parent":2,"image":"","content":"","description":"ABS - антиблокировочная система 96-03","title_h1":"","childrens":null},{"id":20,"name":"AG-Actros-MP1","parent":2,"image":"","content":"","description":"AG - автоматический выбор передачи 96-03","title_h1":"","childrens":null},{"id":21,"name":"ART-Actros-MP1","parent":2,"image":"","content":"","description":"ART - темпомат с регулятором допустимой безопасной дистанции 96-03","title_h1":"","childrens":null},{"id":22,"name":"BS-Actros-MP1","parent":2,"image":"","content":"","description":"BS EBS(EPB) - блок управления тормозной системой 96-03","title_h1":"","childrens":null},{"id":23,"name":"EDW-Actros-MP1","parent":2,"image":"","content":"","description":"EDW - система противоугонной сигнализации 96-03","title_h1":"","childrens":null},{"id":24,"name":"FLA-Actros-MP1","parent":2,"image":"","content":"","description":"FLA - электрофакельный подогреватель воздуха 96-03","title_h1":"","childrens":null},{"id":25,"name":"FR-Actros-MP1","parent":2,"image":"","content":"","description":"FR(FMR) - система управления движением 96-03","title_h1":"","childrens":null},{"id":28,"name":"GS-Actros-MP1","parent":2,"image":"","content":"","description":"GS - управление переключением передач 96-03","title_h1":"","childrens":null},{"id":29,"name":"HZR-Actros-MP1","parent":2,"image":"","content":"","description":"HZR - регулирование отопления 96-03","title_h1":"","childrens":null},{"id":30,"name":"ins-Actros-MP1","parent":2,"image":"","content":"","description":"INS - блок управления 96-03","title_h1":"","childrens":null},{"id":31,"name":"KS-Actros-MP1","parent":2,"image":"","content":"","description":"KS - система управления сцеплением 96-03","title_h1":"","childrens":null},{"id":32,"name":"KSA-Actros-MP1","parent":2,"image":"","content":"","description":"KSA - система комфортабельного открывния-закрывания 96-03","title_h1":"","childrens":null},{"id":33,"name":"MR-Actros-MP1","parent":2,"image":"","content":"","description":"MR(PLD) - система управления двигателем 96-03","title_h1":"","childrens":null},{"id":34,"name":"NR-Actros-MP1","parent":2,"image":"","content":"","description":"NR(ENR) - система регулирования уровня кузова 96-03","title_h1":"","childrens":null},{"id":35,"name":"PSM-Actros-MP1","parent":2,"image":"","content":"","description":"PSM - параметрируемый спецмодуль 96-03","title_h1":"","childrens":null},{"id":36,"name":"RS-Actros-MP1","parent":2,"image":"","content":"","description":"RS - управление тормозом-замедлителем (ретардером) 96-03","title_h1":"","childrens":null},{"id":37,"name":"SIL-Actros-MP1","parent":2,"image":"","content":"","description":"SIL - электронное оборудование левого сиденья 96-03","title_h1":"","childrens":null},{"id":38,"name":"SIR-Actros-MP1","parent":2,"image":"","content":"","description":"SIR - электронное оборудование правого сиденья 96-03","title_h1":"","childrens":null},{"id":39,"name":"SPA-Actros-MP1","parent":2,"image":"","content":"","description":"SPA - ассистент помощи движения по полосе 96-03","title_h1":"","childrens":null},{"id":40,"name":"SRS-Actros-MP1","parent":2,"image":"","content":"","description":"SRS - система пассивной безопасности 96-03","title_h1":"","childrens":null},{"id":41,"name":"TCO-Actros-MP1","parent":2,"image":"","content":"","description":"TCO - тахограф 96-03","title_h1":"","childrens":null},{"id":42,"name":"WS-Actros-MP1","parent":2,"image":"","content":"","description":"WS - система техобслуживания 96-03","title_h1":"","childrens":null},{"id":43,"name":"WSK-Actros-MP1","parent":2,"image":"","content":"","description":"WSK - сцепление с гидротрансформатором 96-03","title_h1":"","childrens":null},{"id":44,"name":"ZHE-Actros-MP1","parent":2,"image":"","content":"","description":"ZHE - дополнительное отоплеие 96-03","title_h1":"","childrens":null},{"id":45,"name":"ZV-Actros-MP1","parent":2,"image":"","content":"","description":"ZV - центральная блокировка замков","title_h1":"","childrens":null}]},{"id":3,"name":"MPII 03-07","parent":1,"image":"3/weibrd0k0615gjucwuypb29c2qx0f9j9.jpg","content":"","description":"","title_h1":"","childrens":[{"id":46,"name":"ABA-Actros-MP2","parent":3,"image":"","content":"","description":"ABA - активный тормозной ассистент 03-19","title_h1":"","childrens":null},{"id":47,"name":"ART-Actros-MP2","parent":3,"image":"","content":"","description":"ART - темпомат с регулятором допустимой безопасной дистанции 03-19","title_h1":"","childrens":null},{"id":48,"name":"BNT-Actros-MP2","parent":3,"image":"","content":"","description":"BNT - панель управления навигацией, телефоном 03-19","title_h1":"","childrens":null},{"id":49,"name":"BS-Actros-MP2","parent":3,"image":"","content":"","description":"BS - управление тормозной системой 03-19","title_h1":"","childrens":null},{"id":50,"name":"BVDR-Actros-MP2","parent":3,"image":"","content":"","description":"BVDR - цифровой тахограф DTCO 03-19","title_h1":"","childrens":null},{"id":51,"name":"DTCO-Actros-MP2","parent":3,"image":"","content":"","description":"DTCO - цифровой тахограф 03-19","title_h1":"","childrens":null},{"id":52,"name":"EAPU-Actros-MP2","parent":3,"image":"","content":"","description":"EAPU 03-19","title_h1":"","childrens":null},{"id":53,"name":"EDW-Actros-MP2","parent":3,"image":"","content":"","description":"EDW - система противоугонной сигнализации 03-19","title_h1":"","childrens":null},{"id":54,"name":"EHZ-Actros-MP2","parent":3,"image":"","content":"","description":"EHZ - электронно-гдравлический дополнительный рулевой привод 03-19","title_h1":"","childrens":null},{"id":55,"name":"FLA-Actros-MP2","parent":3,"image":"","content":"","description":"FLA - электрофакельный подогреватель воздуха 03-19","title_h1":"","childrens":null},{"id":56,"name":"FM-Actros-MP2","parent":3,"image":"","content":"","description":"FM - передний модуль 03-19","title_h1":"","childrens":null},{"id":57,"name":"FR-Actros-MP2","parent":3,"image":"","content":"","description":"FR - система управления движением 03-19","title_h1":"","childrens":null},{"id":58,"name":"GM-Actros-MP2","parent":3,"image":"","content":"","description":"GM 03-19","title_h1":"","childrens":null},{"id":59,"name":"GS-II-Actros-MP2","parent":3,"image":"","content":"","description":"GS - управление переключением передач 03-19","title_h1":"","childrens":null},{"id":60,"name":"HM-Actros-MP2","parent":3,"image":"","content":"","description":"HM - задний модуль 03-19","title_h1":"","childrens":null},{"id":61,"name":"HPS-Actros-MP2","parent":3,"image":"","content":"","description":"HPS - система гидропневматического переключения передач 03-19","title_h1":"","childrens":null},{"id":62,"name":"HZR-Actros-MP2","parent":3,"image":"","content":"","description":"HZ - регулирование отопления 03-19","title_h1":"","childrens":null},{"id":63,"name":"INS-Actros-MP2","parent":3,"image":"","content":"","description":"INS - комбинация приборов 03-19","title_h1":"","childrens":null},{"id":64,"name":"KOM-Actros-MP2","parent":3,"image":"","content":"","description":"KOM - коммуникационный интерфейс 03-19","title_h1":"","childrens":null},{"id":65,"name":"LWS-Actros-MP2","parent":3,"image":"","content":"","description":"LWS - датчик угла поворота рулевого колеса 03-19","title_h1":"","childrens":null},{"id":66,"name":"MSF-Actros-MP2","parent":3,"image":"","content":"","description":"MSF - модульная панель переключателей 03-19","title_h1":"","childrens":null},{"id":67,"name":"MTCO-Actros-MP2","parent":3,"image":"","content":"","description":"MTCO - модульный тахограф 03-19","title_h1":"","childrens":null},{"id":68,"name":"PSM-Actros-MP2","parent":3,"image":"","content":"","description":"PSM - параметрируемый спецмодуль 03-19","title_h1":"","childrens":null},{"id":69,"name":"RDK-Actros-MP2","parent":3,"image":"","content":"","description":"RD - система давления воздуха в шинах 03-19","title_h1":"","childrens":null},{"id":70,"name":"RS-Actros-MP2","parent":3,"image":"","content":"","description":"RS - управление тормозом-замедлителем (ретардер) 03-19","title_h1":"","childrens":null},{"id":71,"name":"SPA-Actros-MP2","parent":3,"image":"","content":"","description":"SPA - ассистент помощи движения по полосе 03-19","title_h1":"","childrens":null},{"id":72,"name":"SRS-Actros-MP2","parent":3,"image":"","content":"","description":"SRS - система удержания пассажиров 03-19","title_h1":"","childrens":null},{"id":73,"name":"TEL-Actros-MP2","parent":3,"image":"","content":"","description":"TEL - телефон-Система громкой связи FSA 03-19","title_h1":"","childrens":null},{"id":74,"name":"ТК-Actros-MP2","parent":3,"image":"","content":"","description":"TK - гидродинамическая муфта сцепления 03-19","title_h1":"","childrens":null},{"id":75,"name":"TMB-Actros-MP2","parent":3,"image":"","content":"","description":"TMB - дверной модуль переднего пассажира 03-19","title_h1":"","childrens":null},{"id":76,"name":"TMF-Actros-MP2","parent":3,"image":"","content":"","description":"TMF - дверной модуль со стороы водителя 03-19","title_h1":"","childrens":null},{"id":77,"name":"WS-Actros-MP2","parent":3,"image":"","content":"","description":"WS - система техобслуживания 03-19","title_h1":"","childrens":null},{"id":78,"name":"WSK-Actros-MP2","parent":3,"image":"","content":"","description":"WSK - сцепление с гидротрансформатором 03-19","title_h1":"","childrens":null},{"id":79,"name":"ZDS-Actros-MP2","parent":3,"image":"","content":"","description":"ZDS - центральный банк данных 03-19","title_h1":"","childrens":null},{"id":80,"name":"ZHE-Actros-MP2","parent":3,"image":"","content":"","description":"ZHE - дополнительное отопление 03-19","title_h1":"","childrens":null},{"id":256,"name":"MR-Actros-MP2","parent":3,"image":"","content":"","description":"MR - система управления двигателем","title_h1":"","childrens":null}]},{"id":4,"name":"MPIII 07-19","parent":1,"image":"4/xkrpb85a89lcnek8aflbjna0g43332d0.jpg","content":"","description":"","title_h1":"","childrens":[{"id":81,"name":"ABA-Actros-MP3","parent":4,"image":"","content":"","description":"ABA - активный тормозной ассистент 03-19","title_h1":"","childrens":null},{"id":82,"name":"ART-Actros-MP3","parent":4,"image":"","content":"","description":"ART - темпомат с регулятором допустимой безопасной дистанции 03-19","title_h1":"","childrens":null},{"id":83,"name":"BNT-Actros-MP3","parent":4,"image":"","content":"","description":"BNT - панель управления навигацией, телефоном 03-19","title_h1":"","childrens":null},{"id":84,"name":"BS-Actros-MP3","parent":4,"image":"","content":"","description":"BS - управление тормозной системой 03-19","title_h1":"","childrens":null},{"id":85,"name":"BVDR-Actros-MP3","parent":4,"image":"","content":"","description":"BVDR - цифровой тахограф DTCO 03-19","title_h1":"","childrens":null},{"id":86,"name":"DTCO-Actros-MP3","parent":4,"image":"","content":"","description":"DTCO - цифровой тахограф 03-19","title_h1":"","childrens":null},{"id":87,"name":"EAPU-Actros-MP3","parent":4,"image":"","content":"","description":"EAPU 03-19","title_h1":"","childrens":null},{"id":88,"name":"EDW-Actros-MP3","parent":4,"image":"","content":"","description":"EDW - система противоугонной сигнализации 03-19","title_h1":"","childrens":null},{"id":89,"name":"EHZ-Actros-MP3","parent":4,"image":"","content":"","description":"EHZ - электронно-гдравлический дополнительный рулевой привод 03-19","title_h1":"","childrens":null},{"id":90,"name":"FLA-Actros-MP3","parent":4,"image":"","content":"","description":"FLA - электрофакельный подогреватель воздуха 03-19","title_h1":"","childrens":null},{"id":91,"name":"FM-Actros-MP3","parent":4,"image":"","content":"","description":"FM - передний модуль 03-19","title_h1":"","childrens":null},{"id":92,"name":"FR-Actros-MP3","parent":4,"image":"","content":"","description":"FR - система управления движением 03-19","title_h1":"","childrens":null},{"id":93,"name":"GM-Actros-MP3","parent":4,"image":"","content":"","description":"GM 03-19","title_h1":"","childrens":null},{"id":94,"name":"GS-II-Actros-MP3","parent":4,"image":"","content":"","description":"GS - управление переключением передач 03-19","title_h1":"","childrens":null},{"id":95,"name":"HM-Actros-MP3","parent":4,"image":"","content":"","description":"HM - задний модуль 03-19","title_h1":"","childrens":null},{"id":96,"name":"HPS-Actros-MP3","parent":4,"image":"","content":"","description":"HPS - система гидропневматического переключения передач 03-19","title_h1":"","childrens":null},{"id":97,"name":"HZR-Actros-MP3","parent":4,"image":"","content":"","description":"HZ - регулирование отопления 03-19","title_h1":"","childrens":null},{"id":98,"name":"INS-Actros-MP3","parent":4,"image":"","content":"","description":"INS - комбинация приборов 03-19","title_h1":"","childrens":null},{"id":99,"name":"KOM-Actros-MP3","parent":4,"image":"","content":"","description":"KOM - коммуникационный интерфейс 03-19","title_h1":"","childrens":null},{"id":100,"name":"LWS-Actros-MP3","parent":4,"image":"","content":"","description":"LWS - датчик угла поворота рулевого колеса 03-19","title_h1":"","childrens":null},{"id":101,"name":"MSF-Actros-MP3","parent":4,"image":"","content":"","description":"MSF - модульная панель переключателей 03-19","title_h1":"","childrens":null},{"id":102,"name":"MTCO-Actros-MP3","parent":4,"image":"","content":"","description":"MTCO - модульный тахограф 03-19","title_h1":"","childrens":null},{"id":103,"name":"PSM-Actros-MP3","parent":4,"image":"","content":"","description":"PSM - параметрируемый спецмодуль 03-19","title_h1":"","childrens":null},{"id":104,"name":"RDK-Actros-MP3","parent":4,"image":"","content":"","description":"RD - система давления воздуха в шинах 03-19","title_h1":"","childrens":null},{"id":105,"name":"RS-Actros-MP3","parent":4,"image":"","content":"","description":"RS - управление тормозом-замедлителем (ретардер) 03-19","title_h1":"","childrens":null},{"id":106,"name":"SPA-Actros-MP3","parent":4,"image":"","content":"","description":"SPA - ассистент помощи движения по полосе 03-19","title_h1":"","childrens":null},{"id":107,"name":"SRS-Actros-MP3","parent":4,"image":"","content":"","description":"SRS - система удержания пассажиров 03-19","title_h1":"","childrens":null},{"id":108,"name":"TEL-Actros-MP3","parent":4,"image":"","content":"","description":"TEL - телефон-Система громкой связи FSA 03-19","title_h1":"","childrens":null},{"id":109,"name":"ТК-Actros-MP3","parent":4,"image":"","content":"","description":"TK - гидродинамическая муфта сцепления 03-19","title_h1":"","childrens":null},{"id":110,"name":"TMB-Actros-MP3","parent":4,"image":"","content":"","description":"TMB - дверной модуль переднего пассажира 03-19","title_h1":"","childrens":null},{"id":111,"name":"TMF-Actros-MP3","parent":4,"image":"","content":"","description":"TMF - дверной модуль со стороы водителя 03-19","title_h1":"","childrens":null},{"id":112,"name":"WS-Actros-MP3","parent":4,"image":"","content":"","description":"WS - система техобслуживания 03-19","title_h1":"","childrens":null},{"id":113,"name":"WSK-Actros-MP3","parent":4,"image":"","content":"","description":"WSK - сцепление с гидротрансформатором 03-19","title_h1":"","childrens":null},{"id":114,"name":"ZDS-Actros-MP3","parent":4,"image":"","content":"","description":"ZDS - центральный банк данных 03-19","title_h1":"","childrens":null},{"id":115,"name":"ZHE-Actros-MP3","parent":4,"image":"","content":"","description":"ZHE - дополнительное отопление 03-19","title_h1":"","childrens":null},{"id":257,"name":"MR-Actros-MP3","parent":4,"image":"","content":"","description":"MR - система управления двигателем","title_h1":"","childrens":null}]},{"id":1161,"name":"MPIV 11-19","parent":1,"image":"1161/okmolxwjg4g2n3u5xhab1c70cgnabg1i.jpg","content":"","description":"","title_h1":"","childrens":[{"id":1169,"name":"AALS","parent":1161,"image":"","content":"","description":"","title_h1":"AALC - автоматическое управление механизмом подъема моста","childrens":null},{"id":1171,"name":"АСМ","parent":1161,"image":"","content":"","description":"","title_h1":"ACM - система нейтрализации ОГ","childrens":null},{"id":1172,"name":"APS","parent":1161,"image":"","content":"","description":"","title_h1":"APS - электрогидравлический усилитель рулевого управления","childrens":null},{"id":1173,"name":"ASA","parent":1161,"image":"","content":"","description":"","title_h1":"ASA - дополнительный управляемый мост","childrens":null},{"id":1174,"name":"ATA","parent":1161,"image":"","content":"","description":"","title_h1":"ATA - система противоугонной сигнализации","childrens":null},{"id":1175,"name":"BESO","parent":1161,"image":"","content":"","description":"","title_h1":"BESO - Разъединительный выключатель аккумуляторной батареи (А33)","childrens":null},{"id":1177,"name":"ССМ","parent":1161,"image":"","content":"","description":"","title_h1":"CCM - Турботормоз- замедлитель-сцепление (А69)","childrens":null},{"id":1178,"name":"CGW","parent":1161,"image":"","content":"","description":"","title_h1":"CGW центральный интерфейс (А2)","childrens":null},{"id":1179,"name":"COM","parent":1161,"image":"","content":"","description":"","title_h1":"COM - центральный банк данных (А2 а1)","childrens":null},{"id":1181,"name":"СРС","parent":1161,"image":"","content":"","description":"","title_h1":"CPC - система управления движением (А3)","childrens":null},{"id":1183,"name":"CTP","parent":1161,"image":"","content":"","description":"","title_h1":"CTP - Common Telematic Platform (A150)","childrens":null},{"id":1184,"name":"DCMD","parent":1161,"image":"","content":"","description":"","title_h1":"DCMD - дверной модуль Водитель (А16)","childrens":null},{"id":1185,"name":"DCMP","parent":1161,"image":"","content":"","description":"","title_h1":"DCMP - дверной модуль Передний пассажир (А17)","childrens":null},{"id":1186,"name":"EAPU","parent":1161,"image":"","content":"","description":"","title_h1":"EAPU - Electronic Air- Processing Unit (A18)","childrens":null},{"id":1187,"name":"EBS","parent":1161,"image":"","content":"","description":"","title_h1":"EBS - Электронная тормозная система (А10b)","childrens":null},{"id":1188,"name":"EIS","parent":1161,"image":"","content":"","description":"","title_h1":"EIS - Электронный замок зажигания (S1)","childrens":null},{"id":1189,"name":"EPAC","parent":1161,"image":"","content":"","description":"","title_h1":"EPAC - электрический стояночный кондиционер (А147а)","childrens":null},{"id":1190,"name":"HAD","parent":1161,"image":"","content":"","description":"","title_h1":"HAD - Hydraulic Auxiliary Drive (F83)","childrens":null},{"id":1191,"name":"HVAC","parent":1161,"image":"","content":"","description":"","title_h1":"HVAC - Отопитель,вентиляция,кондиционирование (А12b)","childrens":null},{"id":1192,"name":"ICUC","parent":1161,"image":"","content":"","description":"","title_h1":"ICUC - Комбинация приборов(А1)","childrens":null},{"id":1193,"name":"ITH","parent":1161,"image":"","content":"","description":"","title_h1":"ITH - Дополнительный отпитель (А13)","childrens":null},{"id":1195,"name":"МСМ","parent":1161,"image":"","content":"","description":"","title_h1":"MCM - Система управления двигателем (А4)","childrens":null},{"id":1197,"name":"МРС","parent":1161,"image":"","content":"","description":"","title_h1":"MPC - Многофункциональная камера (А84)","childrens":null},{"id":1198,"name":"MS","parent":1161,"image":"","content":"","description":"","title_h1":"MS - Система технического обслуживания (А2а3)","childrens":null},{"id":1200,"name":"РРС","parent":1161,"image":"","content":"","description":"","title_h1":"PPC- Predictive powertrain Control (A56)","childrens":null},{"id":1201,"name":"PSM","parent":1161,"image":"","content":"","description":"","title_h1":"PSM - Параметрируемый спецмодуль (А22)","childrens":null},{"id":1202,"name":"RCM","parent":1161,"image":"","content":"","description":"","title_h1":"RCM - Тормоз-замедлитель (Ретардер) (А11)","childrens":null},{"id":1203,"name":"RDF","parent":1161,"image":"","content":"","description":"","title_h1":"RDF - Передний радарный датчик (А15)","childrens":null},{"id":1204,"name":"RPS","parent":1161,"image":"","content":"","description":"","title_h1":"RPS - Дублирующее электропитание (А76)","childrens":null},{"id":1205,"name":"SAS","parent":1161,"image":"","content":"","description":"","title_h1":"SAS - датчик угла поворота рулевого колеса (В66)","childrens":null},{"id":1206,"name":"SCH","parent":1161,"image":"","content":"","description":"","title_h1":"SCH - Блок обработки сигналов и управления рамы (А8)","childrens":null},{"id":1207,"name":"SRRR","parent":1161,"image":"","content":"","description":"","title_h1":"SRRR - Радар ближнего действия (Master) (A148)","childrens":null},{"id":1208,"name":"SRS","parent":1161,"image":"","content":"","description":"","title_h1":"SRS - Supplemental Restraint System (A40)","childrens":null},{"id":1209,"name":"SSAM","parent":1161,"image":"","content":"","description":"","title_h1":"SSAM - Одинарный модуль обработки сигналов и управления  (А7а)","childrens":null},{"id":1211,"name":"ТСС","parent":1161,"image":"","content":"","description":"","title_h1":"TCC - Truck Control Center (A9)","childrens":null},{"id":1212,"name":"ТСМ","parent":1161,"image":"","content":"","description":"","title_h1":"TCM - Управление КП (А5)","childrens":null},{"id":1213,"name":"ТСО","parent":1161,"image":"","content":"","description":"","title_h1":"TCO - Тахограф (Р1)","childrens":null},{"id":1215,"name":"ТР","parent":1161,"image":"","content":"","description":"","title_h1":"TP - Платформа телематики (А30А30а)","childrens":null},{"id":1216,"name":"ТРМ","parent":1161,"image":"","content":"","description":"","title_h1":"TPM - Система контроля давления воздуха в шинах (А35)","childrens":null},{"id":1217,"name":"VRDU","parent":1161,"image":"","content":"","description":"","title_h1":"VRDU - Система помощи водителю (А53)","childrens":null}]},{"id":1168,"name":"MPV 19 -...","parent":1,"image":"1168/ief7imemmnsoy0gw2250gl7mhrgio4cq.jpg","content":"","description":"","title_h1":"","childrens":[{"id":1221,"name":"AALS-MPV","parent":1168,"image":"","content":"","description":"","title_h1":"AALS - автоматическое управление механизмом подъема моста","childrens":null},{"id":1222,"name":"АСМ-MPV","parent":1168,"image":"","content":"","description":"","title_h1":"ACM - система нейтрализации ОГ","childrens":null},{"id":1223,"name":"APS-MPV","parent":1168,"image":"","content":"","description":"","title_h1":"APS - электрогидравлический усилитель рулевого управления","childrens":null},{"id":1224,"name":"ASA-MPV","parent":1168,"image":"","content":"","description":"","title_h1":"ASA дополнительный управляемый мост","childrens":null},{"id":1225,"name":"ASAM-MPV","parent":1168,"image":"","content":"","description":"","title_h1":"ASAM - Модуль обработки сигналов и управления кабины водителя с расширенными функциями (А7)","childrens":null},{"id":1226,"name":"ATA-MPV","parent":1168,"image":"","content":"","description":"","title_h1":"ATA - система противоугонной сигнализации","childrens":null},{"id":1227,"name":"BESO-MPV","parent":1168,"image":"","content":"","description":"","title_h1":"BESO - Разъединительный выключатель аккумуляторной батареи (А33)","childrens":null},{"id":1228,"name":"ССМ-MPV","parent":1168,"image":"","content":"","description":"","title_h1":"CCM - Турботормоз- замедлитель-сцепление (А69)","childrens":null},{"id":1229,"name":"CGW-MPV","parent":1168,"image":"","content":"","description":"","title_h1":"CGW - центральный интерфейс (А2)","childrens":null},{"id":1230,"name":"CLCS-MPV","parent":1168,"image":"","content":"","description":"","title_h1":"CLCS - регулировка уровня кузова","childrens":null},{"id":1231,"name":"COM-MPV","parent":1168,"image":"","content":"","description":"","title_h1":"COM - центральный банк данных (А2 а1)","childrens":null},{"id":1232,"name":"СРС-MPV","parent":1168,"image":"","content":"","description":"","title_h1":"CPC - система управления движением (А3)","childrens":null},{"id":1233,"name":"CTP-MPV","parent":1168,"image":"","content":"","description":"","title_h1":"CTP - Common Telematic Platform (A150)","childrens":null},{"id":1234,"name":"DCMD-MPV","parent":1168,"image":"","content":"","description":"","title_h1":"DCMD - дверной модуль Водитель (А16)","childrens":null},{"id":1235,"name":"DCMP-MPV","parent":1168,"image":"","content":"","description":"","title_h1":"DCMP - дверной модуль Передний пассажир (А17)","childrens":null},{"id":1236,"name":"EAPU-MPV","parent":1168,"image":"","content":"","description":"","title_h1":"EAPU - Electronic Air- Processing Unit (A18)","childrens":null},{"id":1237,"name":"EBS-MPV","parent":1168,"image":"","content":"","description":"","title_h1":"EBS - Электронная тормозная система (А10b)","childrens":null},{"id":1238,"name":"EIS-MPV","parent":1168,"image":"","content":"","description":"","title_h1":"EIS - Электронный замок зажигания (S1)","childrens":null},{"id":1239,"name":"EPAC-MPV","parent":1168,"image":"","content":"","description":"","title_h1":"EPAC - электрический стояночный кондиционер (А147а)","childrens":null},{"id":1240,"name":"FNPD-MPV","parent":1168,"image":"","content":"","description":"","title_h1":"FNPD - Навигационная панель","childrens":null},{"id":1241,"name":"HAD-MPV","parent":1168,"image":"","content":"","description":"","title_h1":"HAD - Hydraulic Auxiliary Drive (F83)","childrens":null},{"id":1242,"name":"HUS-MPV","parent":1168,"image":"","content":"","description":"","title_h1":"HUS - экран головного устройства","childrens":null},{"id":1243,"name":"HVAC-MPV","parent":1168,"image":"","content":"","description":"","title_h1":"HVAC - Отопитель, вентиляция, кондиционирование (А12b)","childrens":null},{"id":1244,"name":"IAC-MPV","parent":1168,"image":"","content":"","description":"","title_h1":"IAC - Стояночный кондиционер","childrens":null},{"id":1245,"name":"IC-MPV","parent":1168,"image":"","content":"","description":"","title_h1":"IC - блок управления комбинации приборов","childrens":null},{"id":1246,"name":"ICS-MPV","parent":1168,"image":"","content":"","description":"","title_h1":"ICS - экран комбинации приборов","childrens":null},{"id":1247,"name":"ICUC-MPV","parent":1168,"image":"","content":"","description":"","title_h1":"ICUC - Комбинация приборов(А1)","childrens":null},{"id":1248,"name":"ITH-MPV","parent":1168,"image":"","content":"","description":"","title_h1":"ITH - Дополнительный отпитель (А13)","childrens":null},{"id":1249,"name":"МСМ-MPV","parent":1168,"image":"","content":"","description":"","title_h1":"MCM - Система управления двигателем (А4)","childrens":null},{"id":1250,"name":"MDD-MPV","parent":1168,"image":"","content":"","description":"","title_h1":"MDD - дисплей MirrorCam водителя","childrens":null},{"id":1251,"name":"MDP-MPV","parent":1168,"image":"","content":"","description":"","title_h1":"MDP - Дисплей MirronCam переднего пассажира","childrens":null},{"id":1252,"name":"МРС-MPV","parent":1168,"image":"","content":"","description":"","title_h1":"MPC - Многофункциональная камера (А84)","childrens":null},{"id":1253,"name":"MS-MPV","parent":1168,"image":"","content":"","description":"","title_h1":"MS - Система технического обслуживания (А2а3)","childrens":null},{"id":1254,"name":"MSF-MPV","parent":1168,"image":"","content":"","description":"","title_h1":"MSF - Модульная панель переключателей","childrens":null},{"id":1255,"name":"NGT-MPV","parent":1168,"image":"","content":"","description":"","title_h1":"NGT - система управления двигателем","childrens":null},{"id":1256,"name":"РРС-MPV","parent":1168,"image":"","content":"","description":"","title_h1":"PPC - Predictive powertrain Control (A56)","childrens":null},{"id":1257,"name":"PSM-MPV","parent":1168,"image":"","content":"","description":"","title_h1":"PSM - Параметрируемый спецмодуль (А22)","childrens":null},{"id":1258,"name":"RCM-MPV","parent":1168,"image":"","content":"","description":"","title_h1":"RCM - Тормоз-замедлитель (Ретардер) (А11)","childrens":null},{"id":1259,"name":"RDF-MPV","parent":1168,"image":"","content":"","description":"","title_h1":"RDF - Передний радарный датчик (А15)","childrens":null},{"id":1260,"name":"RPS-MPV","parent":1168,"image":"","content":"","description":"","title_h1":"RPS - Дублирующее электропитание (А76)","childrens":null},{"id":1261,"name":"SAS-MPV","parent":1168,"image":"","content":"","description":"","title_h1":"SAS - датчик угла поворота рулевого колеса (В66)","childrens":null},{"id":1262,"name":"SCA-MPV","parent":1168,"image":"","content":"","description":"","title_h1":"SCA - Блок обработки сигналов и управления кабины водителя","childrens":null},{"id":1263,"name":"SCH-MPV","parent":1168,"image":"","content":"","description":"","title_h1":"SCH - Блок обработки сигналов и управления рамы (А8)","childrens":null},{"id":1264,"name":"SRRR-MPV","parent":1168,"image":"","content":"","description":"","title_h1":"SRRR - Радар ближнего действия (Master) (A148)","childrens":null},{"id":1265,"name":"SRS-MPV","parent":1168,"image":"","content":"","description":"","title_h1":"SRS - Supplemental Restraint System (A40)","childrens":null},{"id":1266,"name":"SSAM-MPV","parent":1168,"image":"","content":"","description":"","title_h1":"SSAM - Одинарный модуль обработки сигналов и управления  (А7а)","childrens":null},{"id":1267,"name":"ТСС-MPV","parent":1168,"image":"","content":"","description":"","title_h1":"TCC - Truck Control Center (A9)","childrens":null},{"id":1268,"name":"ТСМ-MPV","parent":1168,"image":"","content":"","description":"","title_h1":"TCM - Управление КП (А5)","childrens":null},{"id":1269,"name":"ТСО-MPV","parent":1168,"image":"","content":"","description":"","title_h1":"TCO - Тахограф (Р1)","childrens":null},{"id":1270,"name":"ТР-MPV","parent":1168,"image":"","content":"","description":"","title_h1":"TP - Платформа телематики (А30А30а)","childrens":null},{"id":1271,"name":"ТРМ-MPV","parent":1168,"image":"","content":"","description":"","title_h1":"TPM - Система контроля давления воздуха в шинах (А35)","childrens":null},{"id":1272,"name":"VRDU-MPV","parent":1168,"image":"","content":"","description":"","title_h1":"VRDU - Система помощи водителю (А53)","childrens":null},{"id":1273,"name":"WSPC-MPV","parent":1168,"image":"","content":"","description":"","title_h1":"WSPC - беспроводное соединение со смартфоном","childrens":null},{"id":1274,"name":"XMC-MPV","parent":1168,"image":"","content":"","description":"","title_h1":"XMC- SAM с дополнительными функциями","childrens":null},{"id":1283,"name":"CDS-MPV","parent":1168,"image":"","content":"<p>В данном блоке управления CDS, все коды ошибок имеют одинаковую расшифровку - \"Неизвестный код неисправности\".<br></p><p><br></p>","description":"CDS - Центральный банк данных (А2 а1)","title_h1":"CDS - Центральный банк данных (А2 а1)","childrens":null}]},{"id":1330,"name":"Китайский Актрос","parent":1,"image":"b/mr8qfsp771j622149phmesh3vcw3rpot.jpg","content":"","description":"","title_h1":"","childrens":null}]},{"id":6,"name":"ATEGO (Атего)","parent":0,"image":"6/0tsm9xx42470j4ktjfdptw0ziltafjoa.jpg","content":"","description":"Популярное в Европе семейство среднетоннажных грузовых автомобилей полной массой от 6,5 до 16 тонн.","title_h1":"","childrens":[{"id":7,"name":"MPI 96-04","parent":6,"image":"7/pi2c2a2cdihyw8mg0tfdrjoe0sozfuw6.jpg","content":"","description":"","title_h1":"","childrens":[{"id":155,"name":"ABS-Atego-MP1","parent":7,"image":"","content":"","description":"ABS - антиблокировочная система","title_h1":"","childrens":null},{"id":156,"name":"AGN-Atego","parent":7,"image":"","content":"","description":"AGN - атоматическая КП","title_h1":"","childrens":null},{"id":157,"name":"AGS-Atego-MP1","parent":7,"image":"","content":"","description":"AGS - управление переключением передач","title_h1":"","childrens":null},{"id":158,"name":"BS-Atego-MP1","parent":7,"image":"","content":"","description":"BS - управление тормозной системой","title_h1":"","childrens":null},{"id":159,"name":"EDW-Atego-MP1","parent":7,"image":"","content":"","description":"EDW - система противоугонной сигнализации","title_h1":"","childrens":null},{"id":160,"name":"FLA-Atego-MP1","parent":7,"image":"","content":"","description":"FLA - электрофакельный подогреватель воздуха","title_h1":"","childrens":null},{"id":161,"name":"FR-Atego-MP1","parent":7,"image":"","content":"","description":"FR - система управления движением","title_h1":"","childrens":null},{"id":162,"name":"INS-Atego-MP1","parent":7,"image":"","content":"","description":"INS - комбинация приборов","title_h1":"","childrens":null},{"id":163,"name":"KSA-Atego-MP1","parent":7,"image":"","content":"","description":"KSA - система комфортабельного открывания-закрывания","title_h1":"","childrens":null},{"id":164,"name":"MR-Atego-MP1","parent":7,"image":"","content":"","description":"MR - система управления двигателем","title_h1":"","childrens":null},{"id":165,"name":"NR-Atego-MP1","parent":7,"image":"","content":"","description":"NR - Система регулирования уровня кузова ENR","title_h1":"","childrens":null},{"id":166,"name":"PSM-Atego-MP1","parent":7,"image":"","content":"","description":"PSM - параметрируемый спецмодуль","title_h1":"","childrens":null},{"id":167,"name":"SIL-Atego-MP1","parent":7,"image":"","content":"","description":"SIL - электронное оборудование левого сиденья","title_h1":"","childrens":null},{"id":168,"name":"SIR-Atego-MP1","parent":7,"image":"","content":"","description":"SIR - электронное оборудование правого сиденья","title_h1":"","childrens":null},{"id":169,"name":"SRS-Atego-MP1","parent":7,"image":"","content":"","description":"SRS - система пассивной безопасности","title_h1":"","childrens":null},{"id":170,"name":"TCO-Atego-MP1","parent":7,"image":"","content":"","description":"TCO - тахограф","title_h1":"","childrens":null},{"id":171,"name":"WS-Atego-MP1","parent":7,"image":"","content":"","description":"WS - система техобслуживания","title_h1":"","childrens":null},{"id":172,"name":"ZHE-Atego-MP1","parent":7,"image":"","content":"","description":"ZHE - дополнительное отопление","title_h1":"","childrens":null},{"id":173,"name":"ZV-Atego-MP1","parent":7,"image":"","content":"","description":"ZV - центральная блокировка замков","title_h1":"","childrens":null}]},{"id":8,"name":"MPII 04-13","parent":6,"image":"8/he4ulx0yao4s0u9gmkpymunz5ld7q1fa.jpg","content":"","description":"","title_h1":"","childrens":[{"id":174,"name":"ABS-Atego-MP2","parent":8,"image":"","content":"","description":"ABS - антиблокировочная система","title_h1":"","childrens":null},{"id":175,"name":"AGN-Atego-MP2","parent":8,"image":"","content":"","description":"AGN - Автоматическая КП коммерческих ам","title_h1":"","childrens":null},{"id":176,"name":"AGS-Atego-MP2","parent":8,"image":"","content":"","description":"AGS - управление переключением передач (AGN)","title_h1":"","childrens":null},{"id":177,"name":"BS-Atego-MP2","parent":8,"image":"","content":"","description":"BS - управление тормозной системой","title_h1":"","childrens":null},{"id":178,"name":"DTCO-Atego-MP2","parent":8,"image":"","content":"","description":"DTCO - цифровой тахограф","title_h1":"","childrens":null},{"id":179,"name":"EHZ-Atego-MP2","parent":8,"image":"","content":"","description":"EHZ - электронно-гидравлический дополнительный рулевой привод","title_h1":"","childrens":null},{"id":180,"name":"FLA-Atego-MP2","parent":8,"image":"","content":"","description":"FLA - электрофакельный подогреватель воздуха","title_h1":"","childrens":null},{"id":181,"name":"FR-Atego-MP2","parent":8,"image":"","content":"","description":"FR - система управления движением","title_h1":"","childrens":null},{"id":182,"name":"HPS-Atego-MP2","parent":8,"image":"","content":"","description":"HPS - Система гидропневматического переключения передач","title_h1":"","childrens":null},{"id":183,"name":"INS-Atego-MP2","parent":8,"image":"","content":"","description":"INS - комбинация приборов","title_h1":"","childrens":null},{"id":184,"name":"KSA-Atego-MP2","parent":8,"image":"","content":"","description":"KSA - система комфортабельного открывания-закрывания","title_h1":"","childrens":null},{"id":185,"name":"MR-Atego-MP2","parent":8,"image":"","content":"","description":"MR - система управления двигателем","title_h1":"","childrens":null},{"id":186,"name":"MTCO-Atego-MP2","parent":8,"image":"","content":"","description":"MTCO - модульный тахограф","title_h1":"","childrens":null},{"id":187,"name":"NR-Atego-MP2","parent":8,"image":"","content":"","description":"NR - система регулирования уровня кузова","title_h1":"","childrens":null},{"id":188,"name":"PSM-Atego-MP2","parent":8,"image":"","content":"","description":"PSM - параметрируемый спецмодуль","title_h1":"","childrens":null},{"id":189,"name":"SRS-Atego-MP2","parent":8,"image":"","content":"","description":"SRS - система удержания пассажиров","title_h1":"","childrens":null},{"id":190,"name":"WS-Atego-MP2","parent":8,"image":"","content":"","description":"WS - система техобслуживания","title_h1":"","childrens":null},{"id":191,"name":"ZHE-Atego-MP2","parent":8,"image":"","content":"","description":"ZHE - дополнительное отопление","title_h1":"","childrens":null},{"id":192,"name":"ZV-Atego-MP2","parent":8,"image":"","content":"","description":"ZV - центральная блокировка замков","title_h1":"","childrens":null}]},{"id":9,"name":"MPIII 13 -...","parent":6,"image":"9/t74es3qbns703rfhrb6f202c39qv4go7.jpg","content":"","description":"","title_h1":"","childrens":[{"id":193,"name":"AALC-Atego-MP3","parent":9,"image":"","content":"","description":"AALS - автоматическое управление механизмом подъема моста","title_h1":"","childrens":null},{"id":194,"name":"АСМ-Atego-MP3","parent":9,"image":"","content":"","description":"ACM - система нейтрализации ОГ","title_h1":"","childrens":null},{"id":195,"name":"BESO-Atego-MP3","parent":9,"image":"","content":"","description":"BESO - разъединительный выключатель аккумуляторной батареи","title_h1":"","childrens":null},{"id":196,"name":"CGW-Atego-MP3","parent":9,"image":"","content":"","description":"CGW - центральный интерфейс","title_h1":"","childrens":null},{"id":197,"name":"COM-Atego-MP3","parent":9,"image":"","content":"","description":"COM - коммуникационный интерфейс","title_h1":"","childrens":null},{"id":198,"name":"СРС-Atego-MP3","parent":9,"image":"","content":"","description":"CPC - система управления движением","title_h1":"","childrens":null},{"id":199,"name":"CTR-Atego-MP3","parent":9,"image":"","content":"","description":"CTР - Common Telematic Platform (A150)","title_h1":"","childrens":null},{"id":200,"name":"EAPU-Atego-MP3","parent":9,"image":"","content":"","description":"EAPU - Electronic Air- Processing Unit (A18)","title_h1":"","childrens":null},{"id":201,"name":"EBS-Atego-MP3","parent":9,"image":"","content":"","description":"EBS - Электронная тормозная система (А10b)","title_h1":"","childrens":null},{"id":202,"name":"ICUC-Atego-MP3","parent":9,"image":"","content":"","description":"ICUC - Комбинация приборов(А1)","title_h1":"","childrens":null},{"id":203,"name":"KSA-Atego-MP3","parent":9,"image":"","content":"","description":"KSA - система комфортабельного открывания-закрывания (А64)","title_h1":"","childrens":null},{"id":204,"name":"МСМ-Atego-MP3","parent":9,"image":"","content":"","description":"MCM - Система управления двигателем (А4)","title_h1":"","childrens":null},{"id":205,"name":"МРС-Atego-MP3","parent":9,"image":"","content":"","description":"MPC - Многофункциональная камера (А84)","title_h1":"","childrens":null},{"id":206,"name":"MS-Atego-MP3","parent":9,"image":"","content":"","description":"MS - Система технического обслуживания (А2а3)","title_h1":"","childrens":null},{"id":207,"name":"PSM-Atego-MP3","parent":9,"image":"","content":"","description":"PSM - Параметрируемый спецмодуль (А22)","title_h1":"","childrens":null},{"id":208,"name":"RDF-Atego-MP3","parent":9,"image":"","content":"","description":"RDF - Передний радарный датчик (А15)","title_h1":"","childrens":null},{"id":209,"name":"SAS-Atego-MP3","parent":9,"image":"","content":"","description":"SAS - датчик угла поворота рулевого колеса (В66)","title_h1":"","childrens":null},{"id":210,"name":"SRS-Atego-MP3","parent":9,"image":"","content":"","description":"SRS - Supplemental Restraint System (A40)","title_h1":"","childrens":null},{"id":211,"name":"SSAM-Atego-MP3","parent":9,"image":"","content":"","description":"SSAM - Одинарный модуль обработки сигналов и управления (А7а)","title_h1":"","childrens":null},{"id":212,"name":"ТСС-Atego-MP3","parent":9,"image":"","content":"","description":"TCC - Truck Control Center (A9)","title_h1":"","childrens":null},{"id":213,"name":"ТР-Atego-MP3","parent":9,"image":"","content":"","description":"TP - Платформа телематики (А30А30а)","title_h1":"","childrens":null},{"id":214,"name":"VRDU-Atego-MP3","parent":9,"image":"","content":"","description":"VRDU - Система помощи водителю (А53)","title_h1":"","childrens":null},{"id":215,"name":"ZHE-Atego-MP3","parent":9,"image":"","content":"","description":"ZHE - дополнительный отопитель (А13)","title_h1":"","childrens":null},{"id":216,"name":"ZVFB-Atego-MP3","parent":9,"image":"","content":"","description":"ZVFB - дистанционное радиоуправление","title_h1":"","childrens":null},{"id":217,"name":"ТСМ-Atego-MP3","parent":9,"image":"","content":"","description":"ТСМ - Управление КП (А5)","title_h1":"","childrens":null},{"id":218,"name":"ТСО-Atego-MP3","parent":9,"image":"","content":"","description":"ТСО - Тахограф (Р1)","title_h1":"","childrens":null}]}]},{"id":10,"name":"AXOR (Аксор)","parent":0,"image":"10/3fyi50ei338pwwil3xzvzfuhxauxie02.jpg","content":"","description":"Семейство крупнотоннажных грузовых автомобилей полной массой от 18 до 26 тонн.","title_h1":"","childrens":[{"id":11,"name":"MPI  ...- 06","parent":10,"image":"11/4hf9knky64vni9nueqd0gmp0oejfvkc0.jpg","content":"","description":"","title_h1":"","childrens":[{"id":219,"name":"ABS-Axor-MP1","parent":11,"image":"","content":"","description":"ABS - антиблокировочная система","title_h1":"","childrens":null},{"id":220,"name":"BS-Axor-MP1","parent":11,"image":"","content":"","description":"BS - управление тормозной системой","title_h1":"","childrens":null},{"id":221,"name":"FLA-Axor-MP1","parent":11,"image":"","content":"","description":"FLA - электрофакельный подогреватель воздуха","title_h1":"","childrens":null},{"id":222,"name":"FR-Axor-MP1","parent":11,"image":"","content":"","description":"FR - система управления движением","title_h1":"","childrens":null},{"id":223,"name":"GS-Axor-MP1","parent":11,"image":"","content":"","description":"GS - управление переключением передач","title_h1":"","childrens":null},{"id":224,"name":"INS-Axor-MP1","parent":11,"image":"","content":"","description":"INS - комбинация приборов","title_h1":"","childrens":null},{"id":225,"name":"MR-Axor-MP1","parent":11,"image":"","content":"","description":"MR - система управления двигателем","title_h1":"","childrens":null},{"id":226,"name":"NR-Axor-MP1","parent":11,"image":"","content":"","description":"NR - система регулирования уровня кузова","title_h1":"","childrens":null},{"id":227,"name":"PSM-Axor-MP1","parent":11,"image":"","content":"","description":"PSM - парамтрируемый спецмодуль","title_h1":"","childrens":null},{"id":228,"name":"RS-Axor-MP1","parent":11,"image":"","content":"","description":"RS - управление тормозом-замедлителем (ретардером)","title_h1":"","childrens":null},{"id":229,"name":"SRS-Axor-MP1","parent":11,"image":"","content":"","description":"SRS - система удержания пассажиров","title_h1":"","childrens":null},{"id":230,"name":"TCO-Axor-MP1","parent":11,"image":"","content":"","description":"TCO - модульный тахограф","title_h1":"","childrens":null},{"id":231,"name":"WS-Axor-MP1","parent":11,"image":"","content":"","description":"WS - система техобслуживания","title_h1":"","childrens":null},{"id":232,"name":"ZHE-Axor-MP1","parent":11,"image":"","content":"","description":"ZHE - дополнительное отопление","title_h1":"","childrens":null}]},{"id":12,"name":"MPII 06 -...","parent":10,"image":"12/xi5z16dqh8ky02jrubtmok725bze16qn.jpg","content":"","description":"","title_h1":"","childrens":[{"id":233,"name":"ABS-AXOR-MP2","parent":12,"image":"","content":"","description":"ABS - Антиблокировочная система","title_h1":"","childrens":null},{"id":234,"name":"AGN-AXOR-MP2","parent":12,"image":"","content":"","description":"AGN - Автоматическая КП коммерческих ам","title_h1":"","childrens":null},{"id":235,"name":"AGS-AXOR-MP2","parent":12,"image":"","content":"","description":"AGS - управление переключением передач","title_h1":"","childrens":null},{"id":236,"name":"BS-AXOR-MP2","parent":12,"image":"","content":"","description":"BS - управление тормозной системой","title_h1":"","childrens":null},{"id":237,"name":"DTCO-AXOR-MP2","parent":12,"image":"","content":"","description":"DTCO - цифровой тахограф","title_h1":"","childrens":null},{"id":238,"name":"EHZ-AXOR-MP2","parent":12,"image":"","content":"","description":"EHZ - электро-гидравлический дополнительный рулевой привод","title_h1":"","childrens":null},{"id":239,"name":"FLA-AXOR-MP2","parent":12,"image":"","content":"","description":"FLA - электрофакельный подогреватель воздуха","title_h1":"","childrens":null},{"id":240,"name":"FR-AXOR-MP2","parent":12,"image":"","content":"","description":"FR - система управлеия движением","title_h1":"","childrens":null},{"id":241,"name":"GS-AXOR-MP2","parent":12,"image":"","content":"","description":"GS - управление переключением передач","title_h1":"","childrens":null},{"id":242,"name":"HPS-AXOR-MP2","parent":12,"image":"","content":"","description":"HPS - система гидропневматического переключения передач","title_h1":"","childrens":null},{"id":243,"name":"INS-AXOR-MP2","parent":12,"image":"","content":"","description":"INS - комбинация приборов","title_h1":"","childrens":null},{"id":244,"name":"KSA-AXOR-MP2","parent":12,"image":"","content":"","description":"KSA - система комфортабельного открывания- закрывания","title_h1":"","childrens":null},{"id":245,"name":"LWS-AXOR-MP2","parent":12,"image":"","content":"","description":"LWS - датчик угла поворота рулевого колеса","title_h1":"","childrens":null},{"id":246,"name":"MR-AXOR-MP2","parent":12,"image":"","content":"","description":"MR - Система управления двигателем","title_h1":"","childrens":null},{"id":247,"name":"TCO-AXOR-MP2","parent":12,"image":"","content":"","description":"MTCO - тахограф","title_h1":"","childrens":null},{"id":248,"name":"NR-AXOR-MP2","parent":12,"image":"","content":"","description":"NR - Система регулирования уровня кузова","title_h1":"","childrens":null},{"id":249,"name":"PSM-AXOR-MP2","parent":12,"image":"","content":"","description":"PSM - параметрируемый спецмодуль","title_h1":"","childrens":null},{"id":250,"name":"RS-AXOR-MP2","parent":12,"image":"","content":"","description":"RS - управление тормозом-замедлителем (ретардером)","title_h1":"","childrens":null},{"id":251,"name":"SRS-AXOR-MP2","parent":12,"image":"","content":"","description":"SRS - Система удержания пассажиров","title_h1":"","childrens":null},{"id":252,"name":"WS-AXOR-MP2","parent":12,"image":"","content":"","description":"WS - Система техобслуживания","title_h1":"","childrens":null},{"id":253,"name":"ZHE-AXOR-MP2","parent":12,"image":"","content":"","description":"ZHE - дополнительное отопление","title_h1":"","childrens":null},{"id":254,"name":"ZV-AXOR-MP2","parent":12,"image":"","content":"","description":"ZV - центральная блокировка замков","title_h1":"","childrens":null}]}]},{"id":1284,"name":"AROCS (Арокс)","parent":0,"image":"1284/kmsvhx0h7ovaazdeq6nslba6ydw5gqo0.jpg","content":"","description":"Cемейство крупнотоннажных грузовых автомобилей, дебютировавшее в январе 2013 года, выпускающихся под видом шасси, самосвала и седельного тягача.","title_h1":"","childrens":[{"id":1285,"name":"AALС-Arocs","parent":1284,"image":"","content":"","description":"AALC - автоматическое управление механизмом подъема моста","title_h1":"AALC - автоматическое управление механизмом подъема моста","childrens":null},{"id":1286,"name":"АСМ-Arocs","parent":1284,"image":"","content":"","description":"ACM - система нейтрализации ОГ","title_h1":"ACM - система нейтрализации ОГ","childrens":null},{"id":1287,"name":"APS-Arocs","parent":1284,"image":"","content":"","description":"APS - электрогидравлический усилитель рулевого управления","title_h1":"APS - электрогидравлический усилитель рулевого управления","childrens":null},{"id":1288,"name":"ASA-Arocs","parent":1284,"image":"","content":"","description":"ASA - дополнительный управляемый мост","title_h1":"ASA - дополнительный управляемый мост","childrens":null},{"id":1289,"name":"ATA-Arocs","parent":1284,"image":"","content":"","description":"ATA - система противоугонной сигнализации","title_h1":"ATA - система противоугонной сигнализации","childrens":null},{"id":1290,"name":"BESO-Arocs","parent":1284,"image":"","content":"","description":"BESO - Разъединительный выключатель аккумуляторной батареи (А33)","title_h1":"BESO - Разъединительный выключатель аккумуляторной батареи (А33)","childrens":null},{"id":1291,"name":"CGW-Arocs","parent":1284,"image":"","content":"","description":"CGW - центральный интерфейс (А2)","title_h1":"CGW - центральный интерфейс (А2)","childrens":null},{"id":1292,"name":"COM-Arocs","parent":1284,"image":"","content":"","description":"COM - центральный банк данных (А2 а1)","title_h1":"COM - центральный банк данных (А2 а1)","childrens":null},{"id":1293,"name":"СРС-Arocs","parent":1284,"image":"","content":"","description":"CPC - система управления движением (А3)","title_h1":"CPC - система управления движением (А3)","childrens":null},{"id":1294,"name":"CTR-Arocs","parent":1284,"image":"","content":"","description":"CTР - Common Telematic Platform (A150)","title_h1":"CTР - Common Telematic Platform (A150)","childrens":null},{"id":1295,"name":"DCMD-Arocs","parent":1284,"image":"","content":"","description":"DCMD - дверной модуль Водитель (А16)","title_h1":"DCMD - дверной модуль Водитель (А16)","childrens":null},{"id":1296,"name":"DCMP-Arocs","parent":1284,"image":"","content":"","description":"DCMP - дверной модуль Передний пассажир (А17)","title_h1":"DCMP - дверной модуль Передний пассажир (А17)","childrens":null},{"id":1297,"name":"EAPU-Arocs","parent":1284,"image":"","content":"","description":"EAPU - Electronic Air-Processing Unit","title_h1":"EAPU - Electronic Air-Processing Unit","childrens":null},{"id":1298,"name":"EBS-Arocs","parent":1284,"image":"","content":"","description":"EBS - Электронная система","title_h1":"EBS - Электронная система","childrens":null},{"id":1299,"name":"EIS-Arocs","parent":1284,"image":"","content":"","description":"EIS - Электронный замок зажигания (S1)","title_h1":"EIS - Электронный замок зажигания (S1)","childrens":null},{"id":1300,"name":"EPAC-Arocs","parent":1284,"image":"","content":"","description":"EPAC - электрический стояночный кондиционер (А147а)","title_h1":"EPAC - электрический стояночный кондиционер (А147а)","childrens":null},{"id":1301,"name":"HAD-Arocs","parent":1284,"image":"","content":"","description":"HAD - Hydraulic Auxiliary Drive (F83)","title_h1":"HAD - Hydraulic Auxiliary Drive (F83)","childrens":null},{"id":1302,"name":"HVAC-Arocs","parent":1284,"image":"","content":"","description":"HVAC - Отопитель, вентиляция, кондиционирование (А12b)","title_h1":"HVAC - Отопитель, вентиляция, кондиционирование (А12b)","childrens":null},{"id":1303,"name":"ICUC-Arocs","parent":1284,"image":"","content":"","description":"ICUC - Комбинация приборов(А1)","title_h1":"ICUC - Комбинация приборов(А1)","childrens":null},{"id":1304,"name":"ITH-Arocs","parent":1284,"image":"","content":"","description":"ITH - Дополнительный отпитель (А13)","title_h1":"ITH - Дополнительный отпитель (А13)","childrens":null},{"id":1305,"name":"МСМ-Arocs","parent":1284,"image":"","content":"","description":"MCM - система управления двигателем","title_h1":"MCM - система управления двигателем","childrens":null},{"id":1306,"name":"МРС-Arocs","parent":1284,"image":"","content":"","description":"MPC - Многофункциональная камера (А84)","title_h1":"MPC - Многофункциональная камера (А84)","childrens":null},{"id":1307,"name":"MS-Arocs","parent":1284,"image":"","content":"","description":"MS - Система технического обслуживания (А2а3)","title_h1":"MS - Система технического обслуживания (А2а3)","childrens":null},{"id":1308,"name":"MSF-Arocs","parent":1284,"image":"","content":"","description":"MSF - Модульная панель переключателей","title_h1":"MSF - Модульная панель переключателей","childrens":null},{"id":1309,"name":"РРС-Arocs","parent":1284,"image":"","content":"","description":"PPC - Predictive powertrain Control (A56)","title_h1":"PPC - Predictive powertrain Control (A56)","childrens":null},{"id":1310,"name":"PSM-Arocs","parent":1284,"image":"","content":"","description":"PSM - Параметрируемый спецмодуль (А22)","title_h1":"PSM - Параметрируемый спецмодуль (А22)","childrens":null},{"id":1311,"name":"RDF-Arocs","parent":1284,"image":"","content":"","description":"RDF - Передний радарный датчик (А15)","title_h1":"RDF - Передний радарный датчик (А15)","childrens":null},{"id":1312,"name":"RPS-Arocs","parent":1284,"image":"","content":"","description":"RPS - Дублирующее электропитание (А76)","title_h1":"RPS - Дублирующее электропитание (А76)","childrens":null},{"id":1313,"name":"SAS-Arocs","parent":1284,"image":"","content":"","description":"SAS - датчик угла поворота рулевого колеса (В66)","title_h1":"SAS - датчик угла поворота рулевого колеса (В66)","childrens":null},{"id":1314,"name":"SCH-Arocs","parent":1284,"image":"","content":"","description":"SCH - Блок обработки сигналов и управления рамы (А8)","title_h1":"SCH - Блок обработки сигналов и управления рамы (А8)","childrens":null},{"id":1315,"name":"SRRR-Arocs","parent":1284,"image":"","content":"","description":"SRRR - Радар ближнего действия (Master) (A148)","title_h1":"SRRR - Радар ближнего действия (Master) (A148)","childrens":null},{"id":1316,"name":"SRS-Arocs","parent":1284,"image":"","content":"","description":"SRS - Supplemental Restraint System (A40)","title_h1":"SRS - Supplemental Restraint System (A40)","childrens":null},{"id":1317,"name":"SSAM-Arocs","parent":1284,"image":"","content":"","description":"SSAM - Одинарный модуль обработки сигналов и управления (А7а)","title_h1":"SSAM - Одинарный модуль обработки сигналов и управления  (А7а)","childrens":null},{"id":1318,"name":"ТСС-Arocs","parent":1284,"image":"","content":"","description":"TCC - Truck Control Center (A9)","title_h1":"TCC  - Truck Control Center (A9)","childrens":null},{"id":1319,"name":"ТР-Arocs","parent":1284,"image":"","content":"","description":"TP - Платформа телематики (А30А30а)","title_h1":"TP - Платформа телематики (А30А30а)","childrens":null},{"id":1320,"name":"VRDU-Arocs","parent":1284,"image":"","content":"","description":"VRDU - Система помощи водителю (А53)","title_h1":"VRDU - Система помощи водителю (А53)","childrens":null},{"id":1321,"name":"ТРМ-Arocs","parent":1284,"image":"","content":"","description":"ТРМ - Система контроля давления воздуха в шинах (А35)","title_h1":"ТРМ - Система контроля давления воздуха в шинах (А35)","childrens":null},{"id":1322,"name":"ТСО-Arocs","parent":1284,"image":"","content":"","description":"ТСО - Тахограф (Р1)","title_h1":"ТСО - Тахограф (Р1)","childrens":null}]}]
+[
+    {
+        "id": 1,
+        "name": "ACTROS (Актрос)",
+        "parent": 0,
+        "image": "1/ms191gfaeztv106bx7uuc4o6i9c0aeqc.jpg",
+        "content": "",
+        "description": "MPI-MPV+Китай — семейство крупнотоннажных грузовых автомобилей и седельных тягачей полной массой от 18 до 25 тонн",
+        "title_h1": "",
+        "childrens": [
+            {
+                "id": 2,
+                "name": "MPI 96-03",
+                "parent": 1,
+                "image": "2/ekzk53447z2qzfi3ntdiy0zxrx0ze442.jpg",
+                "content": "",
+                "description": "",
+                "title_h1": "",
+                "childrens": [
+                    {
+                        "id": 3,
+                        "name": "ABS-Actros-MP1",
+                        "parent": 2,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP1 ABS антиблокировочная система",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 4,
+                        "name": "AG-Actros-MP1",
+                        "parent": 2,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP1 AG автоматический выбор передачи",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 5,
+                        "name": "ART-Actros-MP1",
+                        "parent": 2,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP1 ART темпомат с регулятором допустимой безопасной дистанции",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 6,
+                        "name": "BS-Actros-MP1",
+                        "parent": 2,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP1 BS блок управления тормозной системой",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 7,
+                        "name": "EDW-Actros-MP1",
+                        "parent": 2,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP1 EDW система противоугонной сигнализации",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 8,
+                        "name": "FLA-Actros-MP1",
+                        "parent": 2,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP1 FLA электрофакельный подогреватель воздуха",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 9,
+                        "name": "FR-Actros-MP1",
+                        "parent": 2,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP1 FR система управления движением",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 10,
+                        "name": "GS-Actros-MP1",
+                        "parent": 2,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP1 GS управление переключением передач",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 11,
+                        "name": "HZR-Actros-MP1",
+                        "parent": 2,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP1 HZR регулирование отопления",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 12,
+                        "name": "INS-Actros-MP1",
+                        "parent": 2,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP1 INS блок управления",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 13,
+                        "name": "KSA-Actros-MP1",
+                        "parent": 2,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP1 KSA система комфортабельного открывния / закрывания",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 14,
+                        "name": "MR-Actros-MP1",
+                        "parent": 2,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP1 MR система управления двигателем",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 15,
+                        "name": "NR-Actros-MP1",
+                        "parent": 2,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP1 NR система регулирования уровня кузова",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 16,
+                        "name": "PSM-Actros-MP1",
+                        "parent": 2,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP1 PSM параметрируемый спецмодуль",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 17,
+                        "name": "RS-Actros-MP1",
+                        "parent": 2,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP1 RS управление тормозом замедлителем (ретардером)",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 18,
+                        "name": "SIL-Actros-MP1",
+                        "parent": 2,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP1 SIL электронное оборудование левого сиденья",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 19,
+                        "name": "SIR-Actros-MP1",
+                        "parent": 2,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP1 SIR электронное оборудование правого сиденья",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 20,
+                        "name": "SPA-Actros-MP1",
+                        "parent": 2,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP1 SPA ассистент помощи движения по полосе",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 21,
+                        "name": "SRS-Actros-MP1",
+                        "parent": 2,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP1 SRS система пассивной безопасности",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 22,
+                        "name": "TCO-Actros-MP1",
+                        "parent": 2,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP1 TCO тахограф",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 23,
+                        "name": "WS-Actros-MP1",
+                        "parent": 2,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP1 WS система техобслуживания",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 24,
+                        "name": "WSK-Actros-MP1",
+                        "parent": 2,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP1 WSK сцепление с гидротрансформатором",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 25,
+                        "name": "ZHE-Actros-MP1",
+                        "parent": 2,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP1 ZHE дополнительное отоплеие",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 26,
+                        "name": "ZV-Actros-MP1",
+                        "parent": 2,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP1 ZV центральная блокировка замков",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 189,
+                        "name": "KS-Actros-MP1",
+                        "parent": 2,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP1 KS система управления сцеплением",
+                        "title_h1": "",
+                        "childrens": null
+                    }
+                ]
+            },
+            {
+                "id": 27,
+                "name": "MPII 03-07",
+                "parent": 1,
+                "image": "3/weibrd0k0615gjucwuypb29c2qx0f9j9.jpg",
+                "content": "",
+                "description": "",
+                "title_h1": "",
+                "childrens": [
+                    {
+                        "id": 28,
+                        "name": "ABA-Actros-MP2",
+                        "parent": 27,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP2 ABA активный тормозной ассистент",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 29,
+                        "name": "ART-Actros-MP2",
+                        "parent": 27,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP2 ART темпомат с регулятором допустимой безопасной дистанции",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 30,
+                        "name": "BNT-Actros-MP2",
+                        "parent": 27,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP2 BNT панель управления навигацией / телефоном",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 31,
+                        "name": "BS-Actros-MP2",
+                        "parent": 27,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP2 BS управление тормозной системой",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 32,
+                        "name": "BVDR-Actros-MP2",
+                        "parent": 27,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP2 BVDR цифровой тахограф DTCO",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 33,
+                        "name": "DTCO-Actros-MP2",
+                        "parent": 27,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP2 DTCO цифровой тахограф",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 34,
+                        "name": "EAPU-Actros-MP2",
+                        "parent": 27,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP2 EAPU Electronic Air-Processing Unit",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 35,
+                        "name": "EDW-Actros-MP2",
+                        "parent": 27,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP2 EDW система противоугонной сигнализации",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 36,
+                        "name": "EHZ-Actros-MP2",
+                        "parent": 27,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP2 EHZ электронно гдравлический дополнительный рулевой привод",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 37,
+                        "name": "FLA-Actros-MP2",
+                        "parent": 27,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP2 FLA электрофакельный подогреватель воздуха",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 38,
+                        "name": "FM-Actros-MP2",
+                        "parent": 27,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP2 FM передний модуль",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 39,
+                        "name": "FR-Actros-MP2",
+                        "parent": 27,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP2 FR система управления движением",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 40,
+                        "name": "GM-Actros-MP2",
+                        "parent": 27,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP2 GM базовый модуль",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 41,
+                        "name": "GS-II-Actros-MP2",
+                        "parent": 27,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP2 GS управление переключением передач",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 42,
+                        "name": "HM-Actros-MP2",
+                        "parent": 27,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP2 HM задний модуль",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 43,
+                        "name": "HPS-Actros-MP2",
+                        "parent": 27,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP2 HPS система гидропневматического переключения передач",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 44,
+                        "name": "HZR-Actros-MP2",
+                        "parent": 27,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP2 HZR регулирование отопления",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 45,
+                        "name": "INS-Actros-MP2",
+                        "parent": 27,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP2 INS комбинация приборов",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 46,
+                        "name": "KOM-Actros-MP2",
+                        "parent": 27,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP2 KOM коммуникационный интерфейс",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 47,
+                        "name": "LWS-Actros-MP2",
+                        "parent": 27,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP2 LWS датчик угла поворота рулевого колеса",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 48,
+                        "name": "MR-Actros-MP2",
+                        "parent": 27,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP2 MR система управления двигателем",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 49,
+                        "name": "MSF-Actros-MP2",
+                        "parent": 27,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP2 MSF модульная панель переключателей",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 50,
+                        "name": "MTCO-Actros-MP2",
+                        "parent": 27,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP2 MTCO модульный тахограф",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 51,
+                        "name": "PSM-Actros-MP2",
+                        "parent": 27,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP2 PSM параметрируемый спецмодуль",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 52,
+                        "name": "RDK-Actros-MP2",
+                        "parent": 27,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP2 RD система давления воздуха в шинах",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 53,
+                        "name": "RS-Actros-MP2",
+                        "parent": 27,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP2 RS управление тормозом замедлителем (ретардер)",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 54,
+                        "name": "SPA-Actros-MP2",
+                        "parent": 27,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP2 SPA ассистент помощи движения по полосе",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 55,
+                        "name": "SRS-Actros-MP2",
+                        "parent": 27,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP2 SRS система удержания пассажиров",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 56,
+                        "name": "TEL-Actros-MP2",
+                        "parent": 27,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP2 TEL телефон / система громкой связи FSA",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 57,
+                        "name": "ТК-Actros-MP2",
+                        "parent": 27,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP2 TK гидродинамическая муфта сцепления",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 58,
+                        "name": "TMB-Actros-MP2",
+                        "parent": 27,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP2 TMB дверной модуль переднего пассажира",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 59,
+                        "name": "TMF-Actros-MP2",
+                        "parent": 27,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP2 TMF дверной модуль со стороы водителя",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 60,
+                        "name": "WS-Actros-MP2",
+                        "parent": 27,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP2 WS система техобслуживания",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 61,
+                        "name": "WSK-Actros-MP2",
+                        "parent": 27,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP2 WSK сцепление с гидротрансформатором",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 62,
+                        "name": "ZDS-Actros-MP2",
+                        "parent": 27,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP2 ZDS центральный банк данных",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 63,
+                        "name": "ZHE-Actros-MP2",
+                        "parent": 27,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP2 ZHE дополнительное отопление",
+                        "title_h1": "",
+                        "childrens": null
+                    }
+                ]
+            },
+            {
+                "id": 64,
+                "name": "MPIII 07-19",
+                "parent": 1,
+                "image": "4/xkrpb85a89lcnek8aflbjna0g43332d0.jpg",
+                "content": "",
+                "description": "",
+                "title_h1": "",
+                "childrens": [
+                    {
+                        "id": 65,
+                        "name": "ABA-Actros-MP3",
+                        "parent": 64,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP3 ABA активный тормозной ассистент",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 66,
+                        "name": "ART-Actros-MP3",
+                        "parent": 64,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP3 ART темпомат с регулятором допустимой безопасной дистанции",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 67,
+                        "name": "BNT-Actros-MP3",
+                        "parent": 64,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP3 BNT панель управления навигацией / телефоном",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 68,
+                        "name": "BS-Actros-MP3",
+                        "parent": 64,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP3 BS управление тормозной системой",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 69,
+                        "name": "BVDR-Actros-MP3",
+                        "parent": 64,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP3 BVDR цифровой тахограф DTCO",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 70,
+                        "name": "DTCO-Actros-MP3",
+                        "parent": 64,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP3 DTCO цифровой тахограф",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 71,
+                        "name": "EAPU-Actros-MP3",
+                        "parent": 64,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP3 EAPU Electronic Air-Processing Unit",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 72,
+                        "name": "EDW-Actros-MP3",
+                        "parent": 64,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP3 EDW система противоугонной сигнализации",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 73,
+                        "name": "EHZ-Actros-MP3",
+                        "parent": 64,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP3 EHZ электронно гдравлический дополнительный рулевой привод",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 74,
+                        "name": "FLA-Actros-MP3",
+                        "parent": 64,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP3 FLA электрофакельный подогреватель воздуха",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 75,
+                        "name": "FM-Actros-MP3",
+                        "parent": 64,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP3 FM передний модуль",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 76,
+                        "name": "FR-Actros-MP3",
+                        "parent": 64,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP3 FR система управления движением",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 77,
+                        "name": "GM-Actros-MP3",
+                        "parent": 64,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP3 GM базовый модуль",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 78,
+                        "name": "GS-II-Actros-MP3",
+                        "parent": 64,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP3 GS управление переключением передач",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 79,
+                        "name": "HM-Actros-MP3",
+                        "parent": 64,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP3 HM задний модуль",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 80,
+                        "name": "HPS-Actros-MP3",
+                        "parent": 64,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP3 HPS система гидропневматического переключения передач",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 81,
+                        "name": "HZR-Actros-MP3",
+                        "parent": 64,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP3 HZ регулирование отопления",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 82,
+                        "name": "INS-Actros-MP3",
+                        "parent": 64,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP3 INS комбинация приборов",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 83,
+                        "name": "KOM-Actros-MP3",
+                        "parent": 64,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP3 KOM коммуникационный интерфейс",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 84,
+                        "name": "LWS-Actros-MP3",
+                        "parent": 64,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP3 LWS датчик угла поворота рулевого колеса",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 85,
+                        "name": "MR-Actros-MP3",
+                        "parent": 64,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP3 MR система управления двигателем",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 86,
+                        "name": "MSF-Actros-MP3",
+                        "parent": 64,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP3 MSF модульная панель переключателей",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 87,
+                        "name": "MTCO-Actros-MP3",
+                        "parent": 64,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP3 MTCO модульный тахограф",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 88,
+                        "name": "PSM-Actros-MP3",
+                        "parent": 64,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP3 PSM параметрируемый спецмодуль",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 89,
+                        "name": "RDK-Actros-MP3",
+                        "parent": 64,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP3 RD система давления воздуха в шинах",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 90,
+                        "name": "RS-Actros-MP3",
+                        "parent": 64,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP3 RS управление тормозом замедлителем (ретардер)",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 91,
+                        "name": "SPA-Actros-MP3",
+                        "parent": 64,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP3 SPA ассистент помощи движения по полосе",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 92,
+                        "name": "SRS-Actros-MP3",
+                        "parent": 64,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP3 SRS система удержания пассажиров",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 93,
+                        "name": "TEL-Actros-MP3",
+                        "parent": 64,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP3 TEL телефон Система громкой связи FSA",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 94,
+                        "name": "ТК-Actros-MP3",
+                        "parent": 64,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP3 TK гидродинамическая муфта сцепления",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 95,
+                        "name": "TMB-Actros-MP3",
+                        "parent": 64,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP3 TMB дверной модуль переднего пассажира",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 96,
+                        "name": "TMF-Actros-MP3",
+                        "parent": 64,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP3 TMF дверной модуль со стороы водителя",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 97,
+                        "name": "WS-Actros-MP3",
+                        "parent": 64,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP3 WS система техобслуживания",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 98,
+                        "name": "WSK-Actros-MP3",
+                        "parent": 64,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP3 WSK сцепление с гидротрансформатором",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 99,
+                        "name": "ZDS-Actros-MP3",
+                        "parent": 64,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP3 ZDS центральный банк данных",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 100,
+                        "name": "ZHE-Actros-MP3",
+                        "parent": 64,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP3 ZHE дополнительное отопление",
+                        "title_h1": "",
+                        "childrens": null
+                    }
+                ]
+            },
+            {
+                "id": 101,
+                "name": "MPIV 11-19",
+                "parent": 1,
+                "image": "1161/okmolxwjg4g2n3u5xhab1c70cgnabg1i.jpg",
+                "content": "",
+                "description": "",
+                "title_h1": "",
+                "childrens": [
+                    {
+                        "id": 102,
+                        "name": "AALS-Actros-MP4",
+                        "parent": 101,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP4 AALC автоматическое управление механизмом подъема моста",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 103,
+                        "name": "АСМ-Actros-MP4",
+                        "parent": 101,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP4 ACM система нейтрализации ОГ",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 104,
+                        "name": "APS-Actros-MP4",
+                        "parent": 101,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP4 APS электрогидравлический усилитель рулевого управления",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 105,
+                        "name": "ASA-Actros-MP4",
+                        "parent": 101,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP4 ASA дополнительный управляемый мост",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 106,
+                        "name": "ATA-Actros-MP4",
+                        "parent": 101,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP4 ATA система противоугонной сигнализации",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 107,
+                        "name": "BESO-Actros-MP4",
+                        "parent": 101,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP4 BESO разъединительный выключатель аккумуляторной батареи (А33)",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 108,
+                        "name": "ССМ-Actros-MP4",
+                        "parent": 101,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP4 CCM турботормоз / замедлитель / сцепление (А69)",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 109,
+                        "name": "CGW-Actros-MP4",
+                        "parent": 101,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP4 CGW центральный интерфейс (А2)",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 110,
+                        "name": "COM-Actros-MP4",
+                        "parent": 101,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP4 COM центральный банк данных (А2 а1)",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 111,
+                        "name": "СРС-Actros-MP4",
+                        "parent": 101,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP4 CPC система управления движением (А3)",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 112,
+                        "name": "CTR-Actros-MP4",
+                        "parent": 101,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP4 CTР Common Telematic Platform (A150)",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 113,
+                        "name": "DCMD-Actros-MP4",
+                        "parent": 101,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP4 DCMD дверной модуль водитель (А16)",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 114,
+                        "name": "DCMP-Actros-MP4",
+                        "parent": 101,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP4 DCMP дверной модуль переднего пассажира (А17)",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 115,
+                        "name": "EAPU-Actros-MP4",
+                        "parent": 101,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP4 EAPU Electronic Air / Processing Unit (A18)",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 116,
+                        "name": "EBS-Actros-MP4",
+                        "parent": 101,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP4 EBS электронная тормозная система (А10b)",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 117,
+                        "name": "EIS-Actros-MP4",
+                        "parent": 101,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP4 EIS электронный замок зажигания (S1)",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 118,
+                        "name": "EPAC-Actros-MP4",
+                        "parent": 101,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP4 EPAC электрический стояночный кондиционер (А147а)",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 119,
+                        "name": "HAD-Actros-MP4",
+                        "parent": 101,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP4 HAD Hydraulic Auxiliary Drive (F83)",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 120,
+                        "name": "HVAC-Actros-MP4",
+                        "parent": 101,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP4 HVAC отопитель / вентиляция / кондиционирование (А12b)",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 121,
+                        "name": "ICUC-Actros-MP4",
+                        "parent": 101,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP4 ICUC комбинация приборов(А1)",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 122,
+                        "name": "ITH-Actros-MP4",
+                        "parent": 101,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP4 ITH дополнительный отпитель (А13)",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 123,
+                        "name": "МСМ-Actros-MP4",
+                        "parent": 101,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP4 MCM система управления двигателем (А4)",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 124,
+                        "name": "МРС-Actros-MP4",
+                        "parent": 101,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP4 MPC многофункциональная камера (А84)",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 125,
+                        "name": "MS-Actros-MP4",
+                        "parent": 101,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP4 MS система технического обслуживания (А2а3)",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 126,
+                        "name": "РРС-Actros-MP4",
+                        "parent": 101,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP4 PPC Predictive powertrain Control (A56)",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 127,
+                        "name": "PSM-Actros-MP4",
+                        "parent": 101,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP4 PSM параметрируемый спецмодуль (А22)",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 128,
+                        "name": "RDF-Actros-MP4",
+                        "parent": 101,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP4 RDF передний радарный датчик (А15)",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 129,
+                        "name": "RPS-Actros-MP4",
+                        "parent": 101,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP4 RPS дублирующее электропитание (А76)",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 130,
+                        "name": "SAS-Actros-MP4",
+                        "parent": 101,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP4 SAS датчик угла поворота рулевого колеса (В66)",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 131,
+                        "name": "SCH-Actros-MP4",
+                        "parent": 101,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP4 SCH блок обработки сигналов и управления рамы (А8)",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 132,
+                        "name": "SRRR-Actros-MP4",
+                        "parent": 101,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP4 SRRR радар ближнего действия Master (A148)",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 133,
+                        "name": "SRS-Actros-MP4",
+                        "parent": 101,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP4 SRS Supplemental Restraint System (A40)",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 134,
+                        "name": "SSAM-Actros-MP4",
+                        "parent": 101,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP4 SSAM одинарный модуль обработки сигналов и управления (А7а)",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 135,
+                        "name": "ТСС-Actros-MP4",
+                        "parent": 101,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP4 TCC Truck Control Center (A9)",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 136,
+                        "name": "ТСМ-Actros-MP4",
+                        "parent": 101,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP4 TCM управление КП (А5)",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 137,
+                        "name": "ТСО-Actros-MP4",
+                        "parent": 101,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP4 TCO тахограф (Р1)",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 138,
+                        "name": "ТР-Actros-MP4",
+                        "parent": 101,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP4 TP платформа телематики (А30А30а)",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 139,
+                        "name": "ТРМ-Actros-MP4",
+                        "parent": 101,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP4 TPM система контроля давления воздуха в шинах (А35)",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 140,
+                        "name": "RCM-Actros-MP4",
+                        "parent": 101,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP4 RCM тормоз замедлитель Ретардер (А11)",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 141,
+                        "name": "VRDU-Actros-MP4",
+                        "parent": 101,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP4 VRDU система помощи водителю (А53)",
+                        "title_h1": "",
+                        "childrens": null
+                    }
+                ]
+            },
+            {
+                "id": 142,
+                "name": "MPV ",
+                "parent": 1,
+                "image": "1168/ief7imemmnsoy0gw2250gl7mhrgio4cq.jpg",
+                "content": "",
+                "description": "",
+                "title_h1": "",
+                "childrens": [
+                    {
+                        "id": 143,
+                        "name": "MDP-Actros-MP5",
+                        "parent": 142,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP5 MDP дисплей MirronCam переднего пассажира",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 144,
+                        "name": "AALS-Actros-MP5",
+                        "parent": 142,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP5 AALS автоматическое управление механизмом подъема моста",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 145,
+                        "name": "АСМ-Actros-MP5",
+                        "parent": 142,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP5 ACM система нейтрализации ОГ",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 146,
+                        "name": "APS-Actros-MP5",
+                        "parent": 142,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP5 APS электрогидравлический усилитель рулевого управления",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 147,
+                        "name": "ASA-Actros-MP5",
+                        "parent": 142,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP5 ASA дополнительный управляемый мост",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 148,
+                        "name": "ATA-Actros-MP5",
+                        "parent": 142,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP5 ATA система противоугонной сигнализации A6",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 149,
+                        "name": "BESO-Actros-MP5",
+                        "parent": 142,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP5 BESO разъединительный выключатель аккумуляторной батареи А33",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 150,
+                        "name": "ССМ-Actros-MP5",
+                        "parent": 142,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP5 CCM турботормоз : замедлитель : сцепление А69",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 151,
+                        "name": "CGW-Actros-MP5",
+                        "parent": 142,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP5 CGW центральный интерфейс (А2)",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 152,
+                        "name": "CLCS-Actros-MP5",
+                        "parent": 142,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP5 CLCS регулировка уровня кузова",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 153,
+                        "name": "COM-Actros-MP5",
+                        "parent": 142,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP5 COM центральный банк данных А2 а1",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 154,
+                        "name": "СРС-Actros-MP5",
+                        "parent": 142,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP5 CPC система управления движением А3",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 155,
+                        "name": "CTP-Actros-MP5",
+                        "parent": 142,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP5 CTР Common Telematic Platform (A150)",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 156,
+                        "name": "DCMD-Actros-MP5",
+                        "parent": 142,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP5 DCMD дверной модуль Водитель (А16)",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 157,
+                        "name": "DCMP-Actros-MP5",
+                        "parent": 142,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP5 DCMP дверной модуль Передний пассажир А17",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 158,
+                        "name": "EAPU-Actros-MP5",
+                        "parent": 142,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP5 EAPU Electronic Air- Processing Unit (A18)",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 159,
+                        "name": "EIS-Actros-MP5",
+                        "parent": 142,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP5 EIS электронный замок зажигания S1",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 160,
+                        "name": "EPAC-Actros-MP5",
+                        "parent": 142,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP5 EPAC электрический стояночный кондиционер А147а",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 161,
+                        "name": "FNPD-Actros-MP5",
+                        "parent": 142,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP5 FNPD навигационная панель",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 162,
+                        "name": "HAD-Actros-MP5",
+                        "parent": 142,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP5 HAD Hydraulic Auxiliary Drive (F83)",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 163,
+                        "name": "HUS-Actros-MP5",
+                        "parent": 142,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP5 HUS экран головного устройства A154",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 164,
+                        "name": "HVAC-Actros-MP5",
+                        "parent": 142,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP5 HVAC отопитель : вентиляция : кондиционирование А12b",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 165,
+                        "name": "IAC-Actros-MP5",
+                        "parent": 142,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP5 IAC стояночный кондиционер",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 166,
+                        "name": "IC-Actros-MP5",
+                        "parent": 142,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP5 IC блок управления комбинации приборов A151",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 167,
+                        "name": "ICS-Actros-MP5",
+                        "parent": 142,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP5 ICS экран комбинации приборов",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 168,
+                        "name": "ITH-Actros-MP5",
+                        "parent": 142,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP5 ITH дополнительный отпитель (А13)",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 169,
+                        "name": "МСМ-Actros-MP5",
+                        "parent": 142,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP5 MCM система управления двигателем А4",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 170,
+                        "name": "МРС-Actros-MP5",
+                        "parent": 142,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP5 MPC многофункциональная камера А84",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 171,
+                        "name": "NGT-Actros-MP5",
+                        "parent": 142,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP5 NGT система управления двигателем",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 172,
+                        "name": "РРС-Actros-MP5",
+                        "parent": 142,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP5 PPC Predictive powertrain Control (A56)",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 173,
+                        "name": "RCM-Actros-MP5",
+                        "parent": 142,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP5 RCM тормоз замедлитель Ретардер А11",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 174,
+                        "name": "RDF-Actros-MP5",
+                        "parent": 142,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP5 RDF передний радарный датчик А15",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 175,
+                        "name": "RPS-Actros-MP5",
+                        "parent": 142,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP5 RPS дублирующее электропитание А76",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 176,
+                        "name": "SAS-Actros-MP5",
+                        "parent": 142,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP5 SAS датчик угла поворота рулевого колеса В66",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 177,
+                        "name": "SCH-Actros-MP5",
+                        "parent": 142,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP5 SCH блок обработки сигналов и управления рамы А8",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 178,
+                        "name": "SRRR-Actros-MP5",
+                        "parent": 142,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP5 SRRR радар ближнего действия Master A148",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 179,
+                        "name": "SRS-Actros-MP5",
+                        "parent": 142,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP5 SRS Supplemental Restraint System (A40)",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 180,
+                        "name": "ТСС-MP5-MP5",
+                        "parent": 142,
+                        "image": null,
+                        "content": "",
+                        "description": "",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 181,
+                        "name": "ТСС-MP4-5-MP5",
+                        "parent": 142,
+                        "image": null,
+                        "content": "",
+                        "description": "",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 182,
+                        "name": "ТСМ-Actros-MP5",
+                        "parent": 142,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP5 TCM управление КП (А5)",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 183,
+                        "name": "ТСО-Actros-MP5",
+                        "parent": 142,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP5 TCO тахограф (Р1)",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 184,
+                        "name": "ТРМ-Actros-MP5",
+                        "parent": 142,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP5 TPM система контроля давления воздуха в шинах А35",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 185,
+                        "name": "VRDU-Actros-MP5",
+                        "parent": 142,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP5 VRDU система помощи водителю (А53)",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 186,
+                        "name": "WSPC-MP5-MP5",
+                        "parent": 142,
+                        "image": null,
+                        "content": "",
+                        "description": "MP5 MP5 WSPC беспроводное соединение со смартфоном",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 187,
+                        "name": "WSPC-MP4-5-MP5",
+                        "parent": 142,
+                        "image": null,
+                        "content": "",
+                        "description": "",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 188,
+                        "name": "XMC-Actros-MP5",
+                        "parent": 142,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP5 XMC SAM с дополнительными функциями",
+                        "title_h1": "",
+                        "childrens": null
+                    },
+                    {
+                        "id": 190,
+                        "name": "ТСС-Actros-MP5",
+                        "parent": 142,
+                        "image": null,
+                        "content": "",
+                        "description": "Actros MP5 TCC Truck Control Center (A9)",
+                        "title_h1": "",
+                        "childrens": null
+                    }
+                ]
+            }
+        ]
+    }
+]

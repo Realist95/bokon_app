@@ -22,6 +22,7 @@ class ItemsList extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final int categoryId = int.parse(Get.parameters['id'] ?? '0');
+    print(" categoryId: $categoryId");
     final hookCategoryResult = useFetchCategory(categoryId);
 
     final CatalogCategoryModel? category = hookCategoryResult.data;

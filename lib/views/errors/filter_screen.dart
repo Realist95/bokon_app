@@ -31,6 +31,7 @@ class FilterScreen extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
+    print("${controller.category!.id} filteres");
     final hookResult = useFetchItems(category!.id, 1000);
     List<CatalogItemModel> items = hookResult.data ?? [];
     final isLoading = hookResult.isLoading;
@@ -85,19 +86,15 @@ class FilterScreen extends HookWidget {
                   }
                   validate.value = true;
 
-                  Navigator.of(context)
-                      .push(
-                    MaterialPageRoute(
-                      builder: (context) => FilterScreen(
-                        numberError: numberError,
-                        category: category,
-                        needNotice: (items.length <= 1) ? false : needNotice,
-                      ),
+                  Get.off(
+                    () => FilterScreen(
+                      numberError: numberError,
+                      category: category,
+                      needNotice: (items.length <= 1) ? false : needNotice,
                     ),
-                  )
-                      .then((value) {
-                    Navigator.of(context).pop(true);
-                  });
+                    transition: Transition.leftToRight,
+                    duration: const Duration(microseconds: 500),
+                  );
                 },
                 decoration: InputDecoration(
                   errorText:

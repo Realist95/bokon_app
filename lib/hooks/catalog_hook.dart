@@ -145,9 +145,14 @@ FetchHook useFetchItems(int parentId, int limit) {
         HiveService.addCatalogItems(items);
       }
 
-      items = (items
-          .where((item) => categoryIds.contains(item.maingroup))
-          .toList());
+      items = (items.where((item) {
+        return categoryIds.contains(item.maingroup);
+      }).toList());
+
+      // items = items.where((product) {
+      //   final idStr = product.maingroup.toString();
+      //   return !categoryIds.any((num) => idStr.contains(num.toString()));
+      // }).toList();
 
       return items;
     });
@@ -157,6 +162,8 @@ FetchHook useFetchItems(int parentId, int limit) {
   getAllCategories(List arr, int parentId) {
     for (var item in arr) {
       if (item.id != parentId && item.parent != parentId) {
+        print(
+            ' item.id ${item.id} item.parent ${item.parent} parentId ${parentId}');
         getAllCategories(item.childrens, parentId);
         continue;
       }
@@ -173,6 +180,7 @@ FetchHook useFetchItems(int parentId, int limit) {
   Future<void> fetchData() async {
     isLoading.value = true;
 
+    localCategories = [];
     List<CatalogCategoryModel> treeCategories =
         HiveService.getCatalogCategories();
     List<int> categoryIds = getAllCategories(treeCategories, parentId);

@@ -116,12 +116,18 @@ class MyApp extends HookWidget {
             ),
             GetPage(
               name: '/category/:id',
-              page: () => const GroupsList(),
+              page: () => GroupsList(),
               transition: Transition.leftToRight,
               transitionDuration: const Duration(microseconds: 500),
             ),
             GetPage(
               name: '/items/:id',
+              page: () => ItemsList(),
+              transition: Transition.leftToRight,
+              transitionDuration: const Duration(microseconds: 500),
+            ),
+            GetPage(
+              name: '/filter/:id',
               page: () => ItemsList(),
               transition: Transition.leftToRight,
               transitionDuration: const Duration(microseconds: 500),
