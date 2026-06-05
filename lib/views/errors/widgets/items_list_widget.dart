@@ -89,13 +89,8 @@ class _GridItemState extends State<GridItem> {
   final controller = Get.put(CatalogController());
   @override
   Widget build(BuildContext context) {
-    CatalogCategoryModel parent = widget.category;
-
-    for (var children in widget.category.childrens) {
-      if (children.id == widget.item.maingroup) {
-        parent = children;
-      }
-    }
+    CatalogCategoryModel parent =
+        _findParentCategory(widget.category.childrens) ?? widget.category;
 
     return ListTile(
       focusColor: kButtonBgActive,
@@ -168,5 +163,17 @@ class _GridItemState extends State<GridItem> {
         ],
       ),
     );
+  }
+
+  CatalogCategoryModel? _findParentCategory(
+      List<CatalogCategoryModel> categories) {
+    for (var category in categories) {
+      if (category.id == widget.item.maingroup) return category;
+      if (category.childrens.isNotEmpty) {
+        final found = _findParentCategory(category.childrens);
+        if (found != null) return found;
+      }
+    }
+    return null;
   }
 }

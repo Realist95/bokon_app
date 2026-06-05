@@ -4,8 +4,10 @@ import 'package:bokon_app/common/app_style.dart';
 import 'package:bokon_app/common/background_container.dart';
 import 'package:bokon_app/common/custom_navigation_drawer.dart';
 import 'package:bokon_app/common/main_app_bar.dart';
+import 'package:bokon_app/common/shimmers/categories_shemmer.dart';
 import 'package:bokon_app/constants/constants.dart';
 import 'package:bokon_app/controllers/catalog_controller.dart';
+import 'package:bokon_app/hooks/catalog_hook.dart';
 // import 'package:bokon_app/hooks/catalog_hook.dart';
 import 'package:bokon_app/models/catalog/category.dart';
 import 'package:bokon_app/models/catalog/item.dart';
@@ -27,9 +29,11 @@ class SingleCatalogItems extends HookWidget {
     // final hookResult = useFetchItems(controller.category!.id, 1000);
 
     CatalogItemModel item = controller.currentItem!;
+    final hookResult = useFetchCategory(item.maingroup);
+
     CatalogCategoryModel parent =
-        controller.subCategory ?? controller.category!;
-    // final isLoading = hookResult.isLoading;
+        hookResult.data ?? (controller.subCategory ?? controller.category!);
+    final isLoading = hookResult.isLoading;
     // final error = hookResult.error;
     return BackGroundContainer(
       child: Scaffold(
@@ -41,7 +45,9 @@ class SingleCatalogItems extends HookWidget {
           automaticallyImplyLeading: false,
         ),
         drawer: const CustomNavigationDrawer(),
-        body: GridItem(item: item, parent: parent),
+        body: isLoading
+            ? const CategoriesShimmer()
+            : GridItem(item: item, parent: parent),
       ),
     );
   }
@@ -64,15 +70,32 @@ class GridItem extends StatefulWidget {
 class _GridItemState extends State<GridItem> {
   @override
   Widget build(BuildContext context) {
-    final Color badgeColor = widget.item.difficulty == 'Сложная'
-        ? const Color(0xFFee1d00)
-        : const Color(0xff68C659);
+    final Map difficulties = {
+      '0': {
+        'text': 'Лёгкая',
+        'color': const Color(0xff68C659),
+      },
+      '1': {
+        'text': 'Средняя',
+        'color': const Color.fromARGB(255, 190, 167, 15),
+      },
+      '2': {
+        'text': 'Сложная',
+        'color': const Color(0xFFee1d00),
+      },
+    };
+
+    final Color badgeColor = difficulties[widget.item.difficulty] != null
+        ? difficulties[widget.item.difficulty]['color']
+        : (widget.item.difficulty == 'Сложная'
+            ? const Color(0xFFee1d00)
+            : const Color(0xff68C659));
+
     const String imagePath = '/data/user/0/com.bokon.bokon_app/cache/uploads';
 
-    String defaultDifficulty =
-        widget.item.difficulty.isEmpty || widget.item.difficulty == "null"
-            ? ""
-            : widget.item.difficulty;
+    String defaultDifficulty = difficulties[widget.item.difficulty] != null
+        ? difficulties[widget.item.difficulty]['text']
+        : widget.item.difficulty;
 
     return SingleChildScrollView(
       padding: const EdgeInsets.only(

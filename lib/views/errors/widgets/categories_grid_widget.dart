@@ -6,18 +6,19 @@ import 'package:bokon_app/views/errors/filter_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:bokon_app/common/app_style.dart';
 import 'package:bokon_app/constants/constants.dart';
-import 'package:bokon_app/services/img_network.dart';
-import 'package:bokon_app/views/errors/items_list.dart';
-import 'package:bokon_app/views/errors/subgroups_list.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'dart:convert';
 
 class CategoriesGridWidget extends HookWidget {
-  CategoriesGridWidget({super.key, required this.items});
+  CategoriesGridWidget({
+    super.key,
+    required this.items,
+    required this.category,
+  });
   final List<dynamic> items;
+  final CatalogCategoryModel category;
 
   final CatalogController controller = Get.find();
 
@@ -58,10 +59,10 @@ class CategoriesGridWidget extends HookWidget {
                 return;
               }
               validate.value = true;
-              Get.to(
+              Get.off(
                 () => FilterScreen(
                   numberError: numberError,
-                  category: controller.category,
+                  category: category,
                   needNotice: true,
                 ),
                 transition: Transition.leftToRight,
@@ -115,7 +116,7 @@ class CategoriesGridWidget extends HookWidget {
                     Get.to(
                       () => FilterScreen(
                         numberError: numberError,
-                        category: controller.category,
+                        category: category,
                         needNotice: true,
                       ),
                       transition: Transition.leftToRight,
@@ -169,20 +170,23 @@ class _GridItemState extends State<GridItem> {
   Widget build(BuildContext context) {
     const String imagePath =
         '/data/user/0/com.bokon_app.test.bokon_app/cache/uploads/shop/photos/original/';
-    final String pathImg = widget.item.image.isNotEmpty
-        ? imagePath + widget.item.image
-        : 'assets/images/short-logo.png';
-
+    final String pathImg =
+        widget.item.image != 'null' ? imagePath + widget.item.image : '';
     return MaterialButton(
       focusColor: kButtonBgActive,
       onPressed: () {
         controller.setCategory(widget.item);
-        Get.to(
-          () =>
-              widget.item.childrens.isNotEmpty ? SubGroupsList() : ItemsList(),
-          transition: Transition.leftToRight,
-          duration: const Duration(microseconds: 500),
-        );
+        if (widget.item.childrens.isNotEmpty) {
+          Get.toNamed(
+            "/category/${widget.item.id}",
+            arguments: {'name': widget.item.name},
+          );
+        } else {
+          Get.toNamed(
+            "/items/${widget.item.id}",
+            arguments: {'name': widget.item.name},
+          );
+        }
       },
       textColor: kButtonText,
       padding: const EdgeInsets.all(0),
@@ -223,27 +227,14 @@ class _GridItemState extends State<GridItem> {
                 SizedBox(
                   width: 350.w,
                   height: 200.h,
-                  // fit: FlexFit.tight,
-                  child:
-                      //   ImgNetwork(
-                      //     fit: BoxFit.cover,
-                      //     pathImg: pathImg,
-                      //     borderRadius: const BorderRadius.only(
-                      //       topLeft: Radius.circular(16),
-                      //       topRight: Radius.circular(16),
-                      //       bottomRight: Radius.circular(8),
-                      //       bottomLeft: Radius.circular(8),
-                      //     ),
-                      //   )
-                      // :
-                      ClipRRect(
+                  child: ClipRRect(
                     borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(16),
                       topRight: Radius.circular(16),
                       bottomRight: Radius.circular(8),
                       bottomLeft: Radius.circular(8),
                     ),
-                    child: widget.item.image.isNotEmpty
+                    child: pathImg.isNotEmpty
                         ? Image.file(
                             File(pathImg),
                             fit: BoxFit.cover,

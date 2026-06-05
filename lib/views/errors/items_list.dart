@@ -6,6 +6,7 @@ import 'package:bokon_app/common/shimmers/categories_shemmer.dart';
 import 'package:bokon_app/constants/constants.dart';
 import 'package:bokon_app/controllers/catalog_controller.dart';
 import 'package:bokon_app/hooks/catalog_hook.dart';
+import 'package:bokon_app/models/catalog/category.dart';
 import 'package:bokon_app/models/catalog/item.dart';
 import 'package:bokon_app/views/errors/filter_screen.dart';
 import 'package:bokon_app/views/errors/single_catalog_item.dart';
@@ -20,8 +21,15 @@ class ItemsList extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    // print("subCategory ${controller.subCategory!.id}");
-    final hookResult = useFetchItems(controller.subCategory!.id, 1000);
+    final int categoryId = int.parse(Get.parameters['id'] ?? '0');
+    print(" categoryId: $categoryId");
+    final hookCategoryResult = useFetchCategory(categoryId);
+
+    final CatalogCategoryModel? category = hookCategoryResult.data;
+
+    // print(category);
+
+    final hookResult = useFetchItems(categoryId, 1000);
     List<CatalogItemModel> items = hookResult.data ?? [];
     final isLoading = hookResult.isLoading;
     // final error = hookResult.error;
@@ -40,10 +48,10 @@ class ItemsList extends HookWidget {
         appBar: AppBar(
           toolbarHeight: 90,
           backgroundColor: Colors.transparent,
-          flexibleSpace: MainAppBar(true, controller.subCategory!.name),
+          flexibleSpace: MainAppBar(true, category?.name ?? ''),
           automaticallyImplyLeading: false,
         ),
-        body: isLoading
+        body: isLoading || hookCategoryResult.isLoading
             ? const CategoriesShimmer()
             : Column(
                 children: [
@@ -76,7 +84,7 @@ class ItemsList extends HookWidget {
                         Get.to(
                           () => FilterScreen(
                             numberError: numberError,
-                            category: controller.subCategory,
+                            category: category,
                             needNotice: false,
                           ),
                           transition: Transition.leftToRight,
@@ -131,7 +139,7 @@ class ItemsList extends HookWidget {
                               Get.to(
                                 () => FilterScreen(
                                   numberError: numberError,
-                                  category: controller.subCategory,
+                                  category: category,
                                   needNotice: false,
                                 ),
                                 transition: Transition.leftToRight,
